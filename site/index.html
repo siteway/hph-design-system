@@ -159,17 +159,18 @@ h3.group-title{font-size:15px;font-weight:600;color:var(--heading);margin-bottom
 .stack-tag{display:inline-flex;align-items:center;padding:5px 12px;background:var(--bg-sub);border:1px solid var(--border);border-radius:6px;font-size:13px;font-weight:500;color:var(--heading);gap:6px}
 
 /* Module Grid */
-.module-grid{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px}
-.module-card{position:relative;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:16px 16px 14px;cursor:pointer;transition:border-color .15s,box-shadow .15s,transform .15s;display:flex;flex-direction:column}
-.module-card:hover{border-color:var(--primary);box-shadow:0 4px 16px rgba(0,64,184,.12);transform:translateY(-2px)}
-.module-card .full-link{position:absolute;inset:0;border-radius:10px;z-index:1}
-.module-icon-wrap{width:52px;height:52px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:12px;flex-shrink:0}
-.module-card h6{font-size:13px;font-weight:700;color:var(--heading);margin-bottom:4px;line-height:1.3}
+.module-grid{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.module-card{position:relative;background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:24px 16px 16px;cursor:pointer;transition:border-color .15s,box-shadow .15s,transform .15s;display:flex;flex-direction:column;align-items:center;text-align:center}
+.module-card:hover{border-color:var(--primary);box-shadow:0 6px 20px rgba(0,64,184,.13);transform:translateY(-2px)}
+.module-card .full-link{position:absolute;inset:0;border-radius:12px;z-index:1}
+.module-icon-wrap{width:80px;height:80px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;flex-shrink:0}
+.module-icon-wrap svg{width:56px;height:56px}
+.module-card h6{font-size:13px;font-weight:700;color:var(--primary);margin-bottom:5px;line-height:1.35}
 .module-card p{font-size:12px;color:var(--body);line-height:1.45;flex:1}
-.module-tags{display:flex;gap:4px;margin-top:10px;flex-wrap:wrap}
-.module-tag{font-size:10px;font-weight:600;padding:2px 7px;border-radius:4px}
-.tag-statamic{background:#EFF6FF;color:#0040B8}
-.tag-tw{background:#F0FDF4;color:#15803D}
+.cms-wrap{display:flex;gap:4px;margin-top:12px;justify-content:center}
+.cms-badge{width:22px;height:22px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:white}
+.cms-s{background:#4AA67A}
+.cms-tw{background:#38BDF8}
 .module-filters{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
 .mf-btn{padding:6px 14px;font-size:13px;font-weight:500;border-radius:20px;border:1px solid var(--border);background:var(--bg);color:var(--body);cursor:pointer;transition:.12s}
 .mf-btn:hover,.mf-btn.active{background:var(--primary);color:white;border-color:var(--primary)}
@@ -514,6 +515,48 @@ h3.group-title{font-size:15px;font-weight:600;color:var(--heading);margin-bottom
   </div>
 </section>
 
+<!-- MODULE ICON DEFS (inline SVG, reused via JS) -->
+<svg style="display:none" id="svg-defs">
+  <symbol id="ico-anchor" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9.75V21m0 0l-3-3m3 3l3-3M6.75 9.75h10.5M12 3v.75M8.25 6.75A3.75 3.75 0 0112 3a3.75 3.75 0 013.75 3.75"/></symbol>
+  <symbol id="ico-badge" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z"/><path d="M6 6h.008v.008H6V6z"/></symbol>
+  <symbol id="ico-cards" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.25 7.125C2.25 6.504 2.754 6 3.375 6h6c.621 0 1.125.504 1.125 1.125v3.75c0 .621-.504 1.125-1.125 1.125h-6a1.125 1.125 0 01-1.125-1.125v-3.75zM14.25 8.625c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v8.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 01-1.125-1.125v-8.25zM3.75 16.125c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 01-1.125-1.125v-2.25z"/></symbol>
+  <symbol id="ico-memo" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z"/></symbol>
+  <symbol id="ico-contact" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></symbol>
+  <symbol id="ico-counter" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></symbol>
+  <symbol id="ico-html" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/></symbol>
+  <symbol id="ico-list" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></symbol>
+  <symbol id="ico-layers" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3"/></symbol>
+  <symbol id="ico-map" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6.75V15m0-8.25L3 9.75M9 6.75l6 3.75m0-3.75v8.25m0-8.25l6-3.75M15 15l6 3.75M15 15l-6-3.75m0 0l-6 3.75M3 9.75V19.5a.75.75 0 001.125.651L9 17.25m0 0l6 3.75M9 17.25l-6-3.75M15 21l6-3.75M15 21V12.75"/></symbol>
+  <symbol id="ico-photo" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></symbol>
+  <symbol id="ico-quote" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"/></symbol>
+  <symbol id="ico-sitemap" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25A2.25 2.25 0 0113.5 8.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></symbol>
+  <symbol id="ico-tabs" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5L7.5 3h9L21 7.5M3 7.5h18M3 7.5V18a2.25 2.25 0 002.25 2.25h13.5A2.25 2.25 0 0021 18V7.5"/></symbol>
+  <symbol id="ico-textmedia" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.75 6h16.5M3.75 9.75h7.5M3.75 13.5h7.5M3.75 17.25h7.5M13.5 9.75h6.75v7.5H13.5V9.75z"/></symbol>
+  <symbol id="ico-person" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></symbol>
+  <symbol id="ico-code" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/></symbol>
+  <symbol id="ico-teaser" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z"/></symbol>
+  <symbol id="ico-youtube" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z"/></symbol>
+  <symbol id="ico-compare" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/></symbol>
+  <symbol id="ico-stack" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6.878V6a2.25 2.25 0 012.25-2.25h7.5A2.25 2.25 0 0118 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 004.5 9v.878m13.5-3A2.25 2.25 0 0119.5 9v.878m0 0a2.246 2.246 0 00-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0121 12v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6c0-.98.626-1.813 1.5-2.122"/></symbol>
+  <symbol id="ico-cog" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z"/><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></symbol>
+  <symbol id="ico-cursor" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zm-7.518-.267A8.25 8.25 0 1120.25 10.5M8.288 14.212A5.25 5.25 0 1117.25 10.5"/></symbol>
+  <symbol id="ico-doc" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></symbol>
+  <symbol id="ico-text" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12"/></symbol>
+  <symbol id="ico-columns" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4.5v15m6-15v15m-10.875 0h15.75c.621 0 1.125-.504 1.125-1.125V5.625c0-.621-.504-1.125-1.125-1.125H4.125C3.504 4.5 3 5.004 3 5.625v12.75c0 .621.504 1.125 1.125 1.125z"/></symbol>
+  <symbol id="ico-btn" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM2.25 7.5h19.5m-19.5 4.5h9"/><rect x="3" y="9.5" width="10" height="5" rx="2.5"/></symbol>
+  <symbol id="ico-form" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.75 12h16.5m-16.5 3.75h16.5m-16.5 3.75h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z"/></symbol>
+  <symbol id="ico-logos" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.25 21h19.5m-18-18v18m2.25-18v18M19.5 21V3.375c0-.621-.504-1.125-1.125-1.125H9.375c-.621 0-1.125.504-1.125 1.125V21M3.75 18h16.5M7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm9-4.5h.008v.008h-.008V12.75zm0 2.25h.008v.008h-.008V15z"/></symbol>
+  <symbol id="ico-star" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></symbol>
+  <symbol id="ico-hero" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25A2.25 2.25 0 015.25 3h13.5A2.25 2.25 0 0121 5.25z"/></symbol>
+  <symbol id="ico-price" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.25 7.756a4.5 4.5 0 100 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></symbol>
+  <symbol id="ico-trophy" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0"/></symbol>
+  <symbol id="ico-blog" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z"/></symbol>
+  <symbol id="ico-faq" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"/></symbol>
+  <symbol id="ico-jobs" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z"/></symbol>
+  <symbol id="ico-book" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></symbol>
+  <symbol id="ico-share" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z"/></symbol>
+</svg>
+
 <!-- MODULES -->
 <section id="modules" data-title="Modulübersicht">
   <h1 class="page-title">Content Module</h1>
@@ -528,243 +571,44 @@ h3.group-title{font-size:15px;font-weight:600;color:var(--heading);margin-bottom
   </div>
 
   <ul class="module-grid" id="module-grid">
-
-    <!-- CONTENTELEMENTS -->
-    <li class="module-card" data-cat="contentelement">
-      <div class="module-icon-wrap" style="background:#EFF6FF">🔗</div>
-      <h6>Anchor Nav</h6><p>Sprungmarken-Navigation innerhalb einer langen Seite.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
-      <a class="full-link" href="#modules" aria-label="Anchor Nav"></a>
-    </li>
-    <li class="module-card" data-cat="contentelement">
-      <div class="module-icon-wrap" style="background:#EFF6FF">🏷️</div>
-      <h6>Badge List</h6><p>Liste mit farbigen Badges oder Tags.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
-      <a class="full-link" href="#modules" aria-label="Badge List"></a>
-    </li>
-    <li class="module-card" data-cat="contentelement">
-      <div class="module-icon-wrap" style="background:#EFF6FF">🃏</div>
-      <h6>Cards</h6><p>Grid aus Karten mit Bild, Titel, Text und Link.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
-      <a class="full-link" href="#cards" aria-label="Cards"></a>
-    </li>
-    <li class="module-card" data-cat="contentelement">
-      <div class="module-icon-wrap" style="background:#EFF6FF">📌</div>
-      <h6>Memo Cards</h6><p>Icon-Karten für Feature-Listen und Vorteile.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
-      <a class="full-link" href="#modules" aria-label="Memo Cards"></a>
-    </li>
-    <li class="module-card" data-cat="contentelement">
-      <div class="module-icon-wrap" style="background:#EFF6FF">📞</div>
-      <h6>Contactbox</h6><p>Kontakt-Aufforderungs-Box mit Bild und CTA-Button.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
-      <a class="full-link" href="#modules" aria-label="Contactbox"></a>
-    </li>
-    <li class="module-card" data-cat="contentelement">
-      <div class="module-icon-wrap" style="background:#EFF6FF">📊</div>
-      <h6>Counter</h6><p>Animierte Statistik-Zahlen mit Beschriftung.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
-      <a class="full-link" href="#counter" aria-label="Counter"></a>
-    </li>
-    <li class="module-card" data-cat="contentelement">
-      <div class="module-icon-wrap" style="background:#EFF6FF">🖥️</div>
-      <h6>HTML</h6><p>Freies HTML-Feld für individuelle Inhalte.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span></div>
-      <a class="full-link" href="#modules" aria-label="HTML"></a>
-    </li>
-    <li class="module-card" data-cat="contentelement">
-      <div class="module-icon-wrap" style="background:#EFF6FF">✅</div>
-      <h6>Icon List</h6><p>Liste mit Icons und Beschreibungstexten.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
-      <a class="full-link" href="#modules" aria-label="Icon List"></a>
-    </li>
-    <li class="module-card" data-cat="contentelement">
-      <div class="module-icon-wrap" style="background:#EFF6FF">🪄</div>
-      <h6>Layered Boxed</h6><p>Gestapelte Boxen mit Glas- oder Overlapping-Effekt.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
-      <a class="full-link" href="#modules" aria-label="Layered Boxed"></a>
-    </li>
-    <li class="module-card" data-cat="contentelement">
-      <div class="module-icon-wrap" style="background:#EFF6FF">🗺️</div>
-      <h6>Mapbox</h6><p>Interaktive Karte mit Mapbox GL JS.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span></div>
-      <a class="full-link" href="#modules" aria-label="Mapbox"></a>
-    </li>
-    <li class="module-card" data-cat="contentelement">
-      <div class="module-icon-wrap" style="background:#EFF6FF">🖼️</div>
-      <h6>Media</h6><p>Bild oder Video als eigenständiges Seitenelement.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
-      <a class="full-link" href="#modules" aria-label="Media"></a>
-    </li>
-    <li class="module-card" data-cat="contentelement">
-      <div class="module-icon-wrap" style="background:#EFF6FF">💬</div>
-      <h6>Quote Box</h6><p>Hervorgehobenes Zitat mit Autor und optionalem Bild.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
-      <a class="full-link" href="#modules" aria-label="Quote Box"></a>
-    </li>
-    <li class="module-card" data-cat="contentelement">
-      <div class="module-icon-wrap" style="background:#EFF6FF">🗂️</div>
-      <h6>Sitemap</h6><p>Automatisch generierte Übersicht aller Seiten.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span></div>
-      <a class="full-link" href="#modules" aria-label="Sitemap"></a>
-    </li>
-    <li class="module-card" data-cat="contentelement">
-      <div class="module-icon-wrap" style="background:#EFF6FF">📑</div>
-      <h6>Tabs</h6><p>Inhalte in Tab-Navigation aufgeteilt.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
-      <a class="full-link" href="#modules" aria-label="Tabs"></a>
-    </li>
-    <li class="module-card" data-cat="contentelement">
-      <div class="module-icon-wrap" style="background:#EFF6FF">📰</div>
-      <h6>Text Media</h6><p>Text und Bild/Video nebeneinander, Seite konfigurierbar.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
-      <a class="full-link" href="#text-media" aria-label="Text Media"></a>
-    </li>
-    <li class="module-card" data-cat="contentelement">
-      <div class="module-icon-wrap" style="background:#EFF6FF">👤</div>
-      <h6>Headshot Card</h6><p>Team-Karte mit Portrait-Foto und Kontaktdaten.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
-      <a class="full-link" href="#modules" aria-label="Headshot Card"></a>
-    </li>
-    <li class="module-card" data-cat="contentelement">
-      <div class="module-icon-wrap" style="background:#EFF6FF">💻</div>
-      <h6>Code</h6><p>Syntax-Highlighting Code-Block mit Copy-Button.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span></div>
-      <a class="full-link" href="#modules" aria-label="Code"></a>
-    </li>
-    <li class="module-card" data-cat="contentelement">
-      <div class="module-icon-wrap" style="background:#EFF6FF">🔍</div>
-      <h6>Teaser Cards</h6><p>Vorschau-Karten für Blog-Beiträge oder Referenzen.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
-      <a class="full-link" href="#modules" aria-label="Teaser Cards"></a>
-    </li>
-    <li class="module-card" data-cat="contentelement">
-      <div class="module-icon-wrap" style="background:#EFF6FF">▶️</div>
-      <h6>YouTube Player</h6><p>Datenschutzkonformer YouTube-Player mit Lazy Load.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span></div>
-      <a class="full-link" href="#modules" aria-label="YouTube Player"></a>
-    </li>
-    <li class="module-card" data-cat="contentelement">
-      <div class="module-icon-wrap" style="background:#EFF6FF">↔️</div>
-      <h6>Image Comparison</h6><p>Vorher/Nachher-Slider zum Vergleich zweier Bilder.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
-      <a class="full-link" href="#modules" aria-label="Image Comparison"></a>
-    </li>
-    <li class="module-card" data-cat="contentelement">
-      <div class="module-icon-wrap" style="background:#EFF6FF">📚</div>
-      <h6>Stacked Cards</h6><p>Übereinander gestapelte Karten mit Hover-Effekt.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
-      <a class="full-link" href="#modules" aria-label="Stacked Cards"></a>
-    </li>
-    <li class="module-card" data-cat="contentelement">
-      <div class="module-icon-wrap" style="background:#EFF6FF">⚙️</div>
-      <h6>Konfigurator</h6><p>Individueller Preis-Konfigurator für Pakete.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span></div>
-      <a class="full-link" href="#modules" aria-label="Konfigurator"></a>
-    </li>
-    <li class="module-card" data-cat="contentelement">
-      <div class="module-icon-wrap" style="background:#EFF6FF">🎯</div>
-      <h6>Sales Element</h6><p>Individuelles Sales-Page-Element.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span></div>
-      <a class="full-link" href="#modules" aria-label="Sales Element"></a>
-    </li>
-
-    <!-- TEXT -->
-    <li class="module-card" data-cat="text">
-      <div class="module-icon-wrap" style="background:#F5F3FF">📄</div>
-      <h6>Article</h6><p>Langer Fließtext mit Bard-Editor, Medien und Abschnitten.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
-      <a class="full-link" href="#modules" aria-label="Article"></a>
-    </li>
-    <li class="module-card" data-cat="text">
-      <div class="module-icon-wrap" style="background:#F5F3FF">📝</div>
-      <h6>Text</h6><p>Dachzeile + Überschrift + Fließtext + Buttons.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
-      <a class="full-link" href="#modules" aria-label="Text"></a>
-    </li>
-    <li class="module-card" data-cat="text">
-      <div class="module-icon-wrap" style="background:#F5F3FF">📋</div>
-      <h6>Text Columns</h6><p>Fließtext aufgeteilt in 2–3 Spalten.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
-      <a class="full-link" href="#modules" aria-label="Text Columns"></a>
-    </li>
-    <li class="module-card" data-cat="text">
-      <div class="module-icon-wrap" style="background:#F5F3FF">🔘</div>
-      <h6>Buttons</h6><p>Eigenständige Button-Gruppe mit mehreren CTAs.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
-      <a class="full-link" href="#buttons" aria-label="Buttons"></a>
-    </li>
-
-    <!-- COLLECTION WALLS -->
-    <li class="module-card" data-cat="collection">
-      <div class="module-icon-wrap" style="background:#FFF7ED">🏢</div>
-      <h6>Logo Wall</h6><p>Kunden- und Partner-Logos aus der customer-Collection.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
-      <a class="full-link" href="#logo-wall" aria-label="Logo Wall"></a>
-    </li>
-    <li class="module-card" data-cat="collection">
-      <div class="module-icon-wrap" style="background:#FFF7ED">⭐</div>
-      <h6>Testimonial Wall</h6><p>Kundenstimmen und Bewertungen als Karten-Grid.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
-      <a class="full-link" href="#testimonials" aria-label="Testimonials"></a>
-    </li>
-    <li class="module-card" data-cat="collection">
-      <div class="module-icon-wrap" style="background:#FFF7ED">🏆</div>
-      <h6>Hero Wall</h6><p>Referenz-Websites als visueller Showcase mit Screenshots.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
-      <a class="full-link" href="#modules" aria-label="Hero Wall"></a>
-    </li>
-    <li class="module-card" data-cat="collection">
-      <div class="module-icon-wrap" style="background:#FFF7ED">💰</div>
-      <h6>Price Wall</h6><p>Preispakete aus der prices-Collection.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
-      <a class="full-link" href="#price-wall" aria-label="Price Wall"></a>
-    </li>
-    <li class="module-card" data-cat="collection">
-      <div class="module-icon-wrap" style="background:#FFF7ED">🖼️</div>
-      <h6>Reference Wall</h6><p>Referenzkarten mit Beschreibung und Link.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
-      <a class="full-link" href="#modules" aria-label="Reference Wall"></a>
-    </li>
-    <li class="module-card" data-cat="collection">
-      <div class="module-icon-wrap" style="background:#FFF7ED">📰</div>
-      <h6>Blog Wall</h6><p>Blog-Beiträge als Grid aus der blog-Collection.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
-      <a class="full-link" href="#modules" aria-label="Blog Wall"></a>
-    </li>
-    <li class="module-card" data-cat="collection">
-      <div class="module-icon-wrap" style="background:#FFF7ED">❓</div>
-      <h6>FAQ Accordion</h6><p>Häufige Fragen als Accordion aus der faqs-Collection.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
-      <a class="full-link" href="#faq" aria-label="FAQ"></a>
-    </li>
-    <li class="module-card" data-cat="collection">
-      <div class="module-icon-wrap" style="background:#FFF7ED">💼</div>
-      <h6>Jobs Wall</h6><p>Offene Stellen aus der jobs-Collection.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
-      <a class="full-link" href="#modules" aria-label="Jobs Wall"></a>
-    </li>
-    <li class="module-card" data-cat="collection">
-      <div class="module-icon-wrap" style="background:#FFF7ED">📖</div>
-      <h6>Glossar Wall</h6><p>Glossar-Einträge aus der glossar-Collection.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
-      <a class="full-link" href="#modules" aria-label="Glossar Wall"></a>
-    </li>
-
-    <!-- OTHER -->
-    <li class="module-card" data-cat="other">
-      <div class="module-icon-wrap" style="background:#ECFDF5">📬</div>
-      <h6>Form</h6><p>Eingebettetes Statamic-Formular mit Validierung.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span></div>
-      <a class="full-link" href="#modules" aria-label="Form"></a>
-    </li>
-    <li class="module-card" data-cat="other">
-      <div class="module-icon-wrap" style="background:#ECFDF5">🔄</div>
-      <h6>Shared Component</h6><p>Wiederverwendbare Inhalte aus einer Collection.</p>
-      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span></div>
-      <a class="full-link" href="#modules" aria-label="Shared Component"></a>
-    </li>
-
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-anchor"/></svg></div><h6>Anchor Nav</h6><p>Sprungmarken-Navigation innerhalb einer langen Seite.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-badge"/></svg></div><h6>Badge List</h6><p>Liste mit farbigen Badges oder Tags.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-cards"/></svg></div><h6>Cards</h6><p>Grid aus Karten mit Bild, Titel, Text und Link.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#cards"></a></li>
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-memo"/></svg></div><h6>Memo Cards</h6><p>Icon-Karten für Feature-Listen und Vorteile.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-contact"/></svg></div><h6>Contactbox</h6><p>Kontakt-Aufforderungs-Box mit Bild und CTA-Button.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-counter"/></svg></div><h6>Counter</h6><p>Animierte Statistik-Zahlen mit Beschriftung.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#counter"></a></li>
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-html"/></svg></div><h6>HTML</h6><p>Freies HTML-Feld für individuelle Inhalte.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-list"/></svg></div><h6>Icon List</h6><p>Liste mit Icons und Beschreibungstexten.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-layers"/></svg></div><h6>Layered Boxed</h6><p>Gestapelte Boxen mit Glas- oder Overlapping-Effekt.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-map"/></svg></div><h6>Mapbox</h6><p>Interaktive Karte mit Mapbox GL JS.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-photo"/></svg></div><h6>Media</h6><p>Bild oder Video als eigenständiges Seitenelement.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-quote"/></svg></div><h6>Quote Box</h6><p>Hervorgehobenes Zitat mit Autor und optionalem Bild.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-sitemap"/></svg></div><h6>Sitemap</h6><p>Automatisch generierte Übersicht aller Seiten.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-tabs"/></svg></div><h6>Tabs</h6><p>Inhalte in Tab-Navigation aufgeteilt.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-textmedia"/></svg></div><h6>Text Media</h6><p>Text und Bild/Video nebeneinander, Seite konfigurierbar.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#text-media"></a></li>
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-person"/></svg></div><h6>Headshot Card</h6><p>Team-Karte mit Portrait-Foto und Kontaktdaten.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-code"/></svg></div><h6>Code</h6><p>Syntax-Highlighting Code-Block mit Copy-Button.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-teaser"/></svg></div><h6>Teaser Cards</h6><p>Vorschau-Karten für Blog-Beiträge oder Referenzen.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-youtube"/></svg></div><h6>YouTube Player</h6><p>Datenschutzkonformer YouTube-Player mit Lazy Load.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-compare"/></svg></div><h6>Image Comparison</h6><p>Vorher/Nachher-Slider zum Vergleich zweier Bilder.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-stack"/></svg></div><h6>Stacked Cards</h6><p>Übereinander gestapelte Karten mit Hover-Effekt.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-cog"/></svg></div><h6>Konfigurator</h6><p>Individueller Preis-Konfigurator für Pakete.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-cursor"/></svg></div><h6>Sales Element</h6><p>Individuelles Sales-Page-Element.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="text"><div class="module-icon-wrap"><svg><use href="#ico-doc"/></svg></div><h6>Article</h6><p>Langer Fließtext mit Bard-Editor, Medien und Abschnitten.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="text"><div class="module-icon-wrap"><svg><use href="#ico-text"/></svg></div><h6>Text</h6><p>Dachzeile + Überschrift + Fließtext + Buttons.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="text"><div class="module-icon-wrap"><svg><use href="#ico-columns"/></svg></div><h6>Text Columns</h6><p>Fließtext aufgeteilt in 2–3 Spalten.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="text"><div class="module-icon-wrap"><svg><use href="#ico-btn"/></svg></div><h6>Buttons</h6><p>Eigenständige Button-Gruppe mit mehreren CTAs.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#buttons"></a></li>
+    <li class="module-card" data-cat="collection"><div class="module-icon-wrap"><svg><use href="#ico-logos"/></svg></div><h6>Logo Wall</h6><p>Kunden- und Partner-Logos aus der customer-Collection.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#logo-wall"></a></li>
+    <li class="module-card" data-cat="collection"><div class="module-icon-wrap"><svg><use href="#ico-star"/></svg></div><h6>Testimonial Wall</h6><p>Kundenstimmen und Bewertungen als Karten-Grid.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#testimonials"></a></li>
+    <li class="module-card" data-cat="collection"><div class="module-icon-wrap"><svg><use href="#ico-hero"/></svg></div><h6>Hero Wall</h6><p>Referenz-Websites als visueller Showcase.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="collection"><div class="module-icon-wrap"><svg><use href="#ico-price"/></svg></div><h6>Price Wall</h6><p>Preispakete aus der prices-Collection.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#price-wall"></a></li>
+    <li class="module-card" data-cat="collection"><div class="module-icon-wrap"><svg><use href="#ico-trophy"/></svg></div><h6>Reference Wall</h6><p>Referenzkarten mit Beschreibung und Link.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="collection"><div class="module-icon-wrap"><svg><use href="#ico-blog"/></svg></div><h6>Blog Wall</h6><p>Blog-Beiträge als Grid aus der blog-Collection.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="collection"><div class="module-icon-wrap"><svg><use href="#ico-faq"/></svg></div><h6>FAQ Accordion</h6><p>Häufige Fragen als Accordion aus der faqs-Collection.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#faq"></a></li>
+    <li class="module-card" data-cat="collection"><div class="module-icon-wrap"><svg><use href="#ico-jobs"/></svg></div><h6>Jobs Wall</h6><p>Offene Stellen aus der jobs-Collection.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="collection"><div class="module-icon-wrap"><svg><use href="#ico-book"/></svg></div><h6>Glossar Wall</h6><p>Glossar-Einträge aus der glossar-Collection.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="other"><div class="module-icon-wrap"><svg><use href="#ico-form"/></svg></div><h6>Form</h6><p>Eingebettetes Statamic-Formular mit Validierung.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="other"><div class="module-icon-wrap"><svg><use href="#ico-share"/></svg></div><h6>Shared Component</h6><p>Wiederverwendbare Inhalte aus einer Collection.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
   </ul>
 </section>
 
