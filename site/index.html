@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HPH Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ── CSS Variables ─────────────────────────────────────────────── */
+:root {
+  --primary: #0040B8;
+  --primary-middle: #0078FF;
+  --primary-light: #027CEC;
+  --primary-dark: #0038AF;
+  --primary-xl: #C3D7EE;
+  --dark: #0E1012;
+  --n-xl: #F4F4F4;
+  --n-l: #EFEFEF;
+  --n-m: #D4D4D4;
+  --n: #B7BDC4;
+  --n-d: #484848;
+  --text: #32363D;
+  --text-l: #484848;
+  --highlight: #F61A75;
+  --grad-hero: linear-gradient(72.87deg, #1548BB 27.5%, #027CEC 85.64%);
+  --grad-btn: linear-gradient(90.79deg, #3376F6 0.46%, #0040B8 99.09%);
+  --grad-headline: linear-gradient(71.08deg, #003EC8 30.98%, #67BAEF 76.86%);
+  /* UI */
+  --bg: #ffffff;
+  --bg-sub: #F9FAFB;
+  --sidebar-bg: #ffffff;
+  --topbar-bg: #ffffff;
+  --border: #E5E7EB;
+  --nav-text: #374151;
+  --nav-active-bg: #EFF6FF;
+  --nav-active: #0040B8;
+  --label: #9CA3AF;
+  --heading: #111827;
+  --body: #6B7280;
+  --code-bg: #F3F4F6;
+  --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.04);
+  --radius: 8px;
+  --sidebar-w: 264px;
+}
+[data-theme="dark"] {
+  --bg: #0E1012;
+  --bg-sub: #161A1F;
+  --sidebar-bg: #161A1F;
+  --topbar-bg: #161A1F;
+  --border: #2D3748;
+  --nav-text: #D1D5DB;
+  --nav-active-bg: #1E3A5F;
+  --nav-active: #60A5FA;
+  --label: #6B7280;
+  --heading: #F9FAFB;
+  --body: #9CA3AF;
+  --code-bg: #1F2937;
+  --shadow: 0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+/* ── Reset ─────────────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);transition:background .2s,color .2s;line-height:1.6}
+a{color:var(--primary);text-decoration:none}
+code,pre{font-family:'Fira Code','Cascadia Code','Consolas',monospace}
+img{max-width:100%;display:block}
+
+/* ── Layout ─────────────────────────────────────────────────────── */
+#app{display:flex;min-height:100vh}
+
+/* ── Sidebar ─────────────────────────────────────────────────────── */
+#sidebar{
+  width:var(--sidebar-w);min-width:var(--sidebar-w);
+  background:var(--sidebar-bg);
+  border-right:1px solid var(--border);
+  position:fixed;top:0;left:0;bottom:0;
+  overflow-y:auto;z-index:100;
+  display:flex;flex-direction:column;
+  transition:background .2s,border-color .2s;
+}
+.sidebar-logo{
+  padding:20px 20px 16px;
+  border-bottom:1px solid var(--border);
+}
+.logo-mark{
+  font-size:20px;font-weight:700;color:var(--primary);letter-spacing:-0.5px;
+}
+.logo-sub{
+  font-size:11px;color:var(--label);font-weight:500;margin-top:1px;text-transform:uppercase;letter-spacing:.05em;
+}
+.sidebar-search{
+  padding:12px 16px;border-bottom:1px solid var(--border);
+}
+.sidebar-search input{
+  width:100%;padding:7px 12px 7px 32px;
+  border:1px solid var(--border);border-radius:6px;
+  font-size:13px;background:var(--bg-sub);color:var(--heading);
+  outline:none;transition:.15s;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%239CA3AF' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:9px center;background-size:16px;
+}
+.sidebar-search input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(0,64,184,.12);}
+.sidebar-nav{padding:8px 0;flex:1}
+.nav-section-label{
+  font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--label);padding:16px 20px 4px;
+}
+.nav-item{
+  display:flex;align-items:center;gap:8px;
+  padding:7px 20px;font-size:13.5px;font-weight:400;
+  color:var(--nav-text);cursor:pointer;border-radius:0;
+  transition:background .12s,color .12s;user-select:none;
+}
+.nav-item:hover{background:var(--nav-active-bg);color:var(--nav-active)}
+.nav-item.active{background:var(--nav-active-bg);color:var(--nav-active);font-weight:600}
+.nav-item .nav-icon{font-size:15px;width:20px;text-align:center;flex-shrink:0}
+
+/* ── Topbar ─────────────────────────────────────────────────────── */
+#topbar{
+  position:fixed;top:0;left:var(--sidebar-w);right:0;
+  height:56px;background:var(--topbar-bg);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 32px;z-index:90;
+  transition:background .2s,border-color .2s;
+}
+.breadcrumb{font-size:14px;color:var(--body)}
+.breadcrumb span{color:var(--heading);font-weight:500}
+.topbar-right{display:flex;align-items:center;gap:12px}
+.version-badge{
+  font-size:12px;font-weight:600;padding:3px 10px;
+  border-radius:20px;background:var(--nav-active-bg);color:var(--primary);
+  border:1px solid var(--primary-xl);
+}
+.theme-toggle{
+  width:36px;height:36px;border-radius:8px;border:1px solid var(--border);
+  background:var(--bg-sub);cursor:pointer;display:flex;align-items:center;justify-content:center;
+  font-size:17px;transition:.15s;
+}
+.theme-toggle:hover{background:var(--nav-active-bg);border-color:var(--primary)}
+
+/* ── Main Content ─────────────────────────────────────────────────── */
+#content{
+  margin-left:var(--sidebar-w);margin-top:56px;
+  padding:48px 48px 80px;width:100%;max-width:calc(var(--sidebar-w) + 900px);
+}
+section[id]{display:none}
+section[id].active{display:block}
+
+/* ── Typography helpers ─────────────────────────────────────────── */
+.page-title{font-size:28px;font-weight:700;color:var(--heading);margin-bottom:6px;letter-spacing:-.3px}
+.page-subtitle{font-size:15px;color:var(--body);margin-bottom:32px;max-width:560px}
+.section-divider{border:none;border-top:1px solid var(--border);margin:40px 0}
+h3.group-title{font-size:15px;font-weight:600;color:var(--heading);margin-bottom:12px}
+
+/* ── Cards & Grid ─────────────────────────────────────────────────── */
+.card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+.card-sm{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:16px 20px;box-shadow:var(--shadow)}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.flex-row{display:flex;gap:12px;flex-wrap:wrap}
+
+/* ── Component Block (Preview + Code tabs) ─────────────────────── */
+.component-block{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:32px}
+.component-block-title{font-size:14px;font-weight:600;color:var(--heading);padding:16px 20px;border-bottom:1px solid var(--border);background:var(--bg-sub)}
+.tab-bar{display:flex;gap:4px;padding:12px 16px;background:var(--bg-sub);border-bottom:1px solid var(--border)}
+.tab-btn{
+  padding:5px 14px;font-size:13px;font-weight:500;
+  border-radius:6px;cursor:pointer;border:none;
+  background:transparent;color:var(--body);transition:.12s;
+}
+.tab-btn:hover{background:var(--border);color:var(--heading)}
+.tab-btn.active{background:var(--primary);color:white}
+.tab-preview{padding:32px;background:var(--bg);min-height:80px}
+.tab-code{display:none;background:var(--code-bg);padding:20px 24px;overflow-x:auto}
+.tab-code pre{font-size:12.5px;color:var(--heading);line-height:1.7;white-space:pre}
+.component-notes{padding:12px 20px;font-size:13px;color:var(--body);border-top:1px solid var(--border);background:var(--bg-sub)}
+
+/* ── Token Tables ─────────────────────────────────────────────────── */
+.token-table{width:100%;border-collapse:collapse;font-size:13.5px}
+.token-table th{text-align:left;padding:8px 12px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--label);border-bottom:2px solid var(--border)}
+.token-table td{padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:middle}
+.token-table tr:last-child td{border-bottom:none}
+.token-table tr:hover td{background:var(--bg-sub)}
+.color-dot{width:32px;height:32px;border-radius:50%;border:1px solid rgba(0,0,0,.08);display:inline-block;vertical-align:middle;flex-shrink:0}
+.token-name{font-family:monospace;font-size:13px;color:var(--primary)}
+.hex-val{font-family:monospace;font-size:12px;color:var(--body)}
+
+/* ── Color Swatches (DaisyUI style) ─────────────────────────────── */
+.swatch-row{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.swatch-item{text-align:center;width:72px}
+.swatch-circle{width:56px;height:56px;border-radius:50%;margin:0 auto 6px;border:1px solid rgba(0,0,0,.08);box-shadow:var(--shadow)}
+.swatch-label{font-size:11px;font-weight:500;color:var(--body)}
+.swatch-hex{font-size:10.5px;font-family:monospace;color:var(--label)}
+
+/* ── Type Scale ─────────────────────────────────────────────────── */
+.type-row{display:flex;align-items:baseline;gap:20px;padding:12px 0;border-bottom:1px solid var(--border)}
+.type-meta{width:220px;flex-shrink:0}
+.type-token{font-family:monospace;font-size:12px;color:var(--primary);display:block}
+.type-size{font-size:12px;color:var(--body);margin-top:2px}
+.type-sample{color:var(--heading);font-weight:500;line-height:1.2}
+
+/* ── Spacing Bars ─────────────────────────────────────────────────── */
+.spacing-row{display:flex;align-items:center;gap:16px;padding:10px 0;border-bottom:1px solid var(--border)}
+.spacing-meta{width:160px;flex-shrink:0}
+.spacing-bar{height:10px;background:var(--primary);border-radius:4px;min-width:8px;opacity:.7}
+.spacing-clamp{font-size:12px;font-family:monospace;color:var(--body)}
+
+/* ── Gradient Cards ─────────────────────────────────────────────── */
+.gradient-card{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-md)}
+.gradient-preview{height:120px}
+.gradient-info{padding:14px 16px;background:var(--bg);border:1px solid var(--border);border-top:none;border-radius:0 0 var(--radius) var(--radius)}
+.gradient-info h4{font-size:14px;font-weight:600;color:var(--heading);margin-bottom:4px}
+.gradient-code{font-size:11px;font-family:monospace;color:var(--body);line-height:1.5;word-break:break-all}
+
+/* ── Alert / Warning ─────────────────────────────────────────────── */
+.alert{padding:14px 16px;border-radius:var(--radius);font-size:13.5px;display:flex;gap:10px;align-items:flex-start;margin-bottom:16px}
+.alert-warn{background:#FFFBEB;border:1px solid #FCD34D;color:#92400E}
+.alert-error{background:#FEF2F2;border:1px solid #FCA5A5;color:#991B1B}
+.alert-info{background:#EFF6FF;border:1px solid #BFDBFE;color:#1E40AF}
+[data-theme="dark"] .alert-warn{background:#292215;border-color:#78350F;color:#FCD34D}
+[data-theme="dark"] .alert-error{background:#1F1010;border-color:#7F1D1D;color:#FCA5A5}
+[data-theme="dark"] .alert-info{background:#0F172A;border-color:#1E3A5F;color:#93C5FD}
+.alert-icon{font-size:16px;flex-shrink:0;margin-top:1px}
+
+/* ── Issue badges ─────────────────────────────────────────────────── */
+.badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:600}
+.badge-red{background:#FEE2E2;color:#DC2626}
+.badge-yellow{background:#FEF3C7;color:#D97706}
+.badge-green{background:#DCFCE7;color:#16A34A}
+[data-theme="dark"] .badge-red{background:#450A0A;color:#FCA5A5}
+[data-theme="dark"] .badge-yellow{background:#451A03;color:#FCD34D}
+[data-theme="dark"] .badge-green{background:#052E16;color:#86EFAC}
+.issue-item{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;gap:16px;align-items:flex-start}
+.issue-item:last-child{border-bottom:none}
+.issue-content h4{font-size:14px;font-weight:600;color:var(--heading);margin-bottom:4px}
+.issue-content p{font-size:13px;color:var(--body)}
+
+/* ── Overview ─────────────────────────────────────────────────────── */
+.hero-card{
+  border-radius:12px;padding:40px 40px;margin-bottom:24px;
+  background:var(--grad-hero);color:white;
+  position:relative;overflow:hidden;
+}
+.hero-card::before{
+  content:'';position:absolute;right:-40px;top:-40px;
+  width:260px;height:260px;border-radius:50%;
+  background:rgba(255,255,255,.06);
+}
+.hero-card::after{
+  content:'';position:absolute;right:60px;bottom:-60px;
+  width:180px;height:180px;border-radius:50%;
+  background:rgba(255,255,255,.04);
+}
+.hero-title{font-size:32px;font-weight:700;letter-spacing:-.5px;margin-bottom:8px;position:relative;z-index:1}
+.hero-sub{font-size:15px;opacity:.88;position:relative;z-index:1}
+.stat-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;box-shadow:var(--shadow)}
+.stat-num{font-size:32px;font-weight:700;color:var(--primary);line-height:1}
+.stat-label{font-size:13px;color:var(--body);margin-top:4px}
+.stack-tag{display:inline-flex;align-items:center;padding:5px 12px;background:var(--bg-sub);border:1px solid var(--border);border-radius:6px;font-size:13px;font-weight:500;color:var(--heading);gap:6px}
+
+/* ── Buttons preview ─────────────────────────────────────────────── */
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:8px;font-weight:600;font-size:14px;cursor:pointer;border:none;transition:.15s;line-height:1}
+.btn-primary{background:var(--grad-btn);color:white;box-shadow:0 4px 12px rgba(0,64,184,.3)}
+.btn-primary:hover{box-shadow:0 6px 16px rgba(0,64,184,.4);transform:translateY(-1px)}
+.btn-secondary{background:white;color:var(--primary);border:2px solid var(--primary)!important}
+.btn-secondary:hover{background:var(--nav-active-bg)}
+.btn-highlight{background:linear-gradient(135deg,#d72aa8,#f61a75);color:white;box-shadow:0 4px 12px rgba(246,26,117,.3)}
+.btn-ghost{background:transparent;color:var(--primary);border:none!important}
+.btn-ghost:hover{background:var(--nav-active-bg)}
+.btn-sm{padding:6px 14px;font-size:13px}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none!important;box-shadow:none!important}
+
+/* ── Pricing ─────────────────────────────────────────────────────── */
+.price-card{border:1px solid var(--border);border-radius:12px;padding:28px;background:var(--bg);box-shadow:var(--shadow)}
+.price-card.featured{background:var(--grad-hero);border:none;color:white}
+.price-card.featured .price-amount,.price-card.featured .price-name{color:white}
+.price-card.featured .price-period{color:rgba(255,255,255,.7)}
+.price-card.featured .price-feature{color:rgba(255,255,255,.85)}
+.price-name{font-size:16px;font-weight:700;color:var(--heading);margin-bottom:12px}
+.price-amount{font-size:34px;font-weight:800;color:var(--heading);line-height:1}
+.price-period{font-size:13px;color:var(--body);margin-bottom:20px}
+.price-features{list-style:none;margin-bottom:24px;space-y:6px}
+.price-feature{font-size:13px;color:var(--body);padding:4px 0;display:flex;gap:8px;align-items:center}
+.check-icon{color:var(--primary);font-size:14px;flex-shrink:0}
+.price-card.featured .check-icon{color:white}
+
+/* ── Testimonials ─────────────────────────────────────────────────── */
+.testimonial-card{background:var(--bg-sub);border:1px solid var(--border);border-radius:10px;padding:20px}
+.stars{color:#FBBF24;font-size:14px;margin-bottom:10px}
+.testimonial-text{font-size:14px;color:var(--heading);line-height:1.6;margin-bottom:12px;font-style:italic}
+.testimonial-author{font-size:13px;font-weight:600;color:var(--heading)}
+.testimonial-source{font-size:12px;color:var(--body)}
+
+/* ── FAQ ─────────────────────────────────────────────────────────── */
+.faq-item{border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:8px}
+.faq-q{padding:14px 16px;font-size:14px;font-weight:600;color:var(--heading);display:flex;justify-content:space-between;align-items:center;cursor:pointer;background:var(--bg)}
+.faq-q:hover{background:var(--bg-sub)}
+.faq-a{padding:0 16px 14px;font-size:13.5px;color:var(--body);line-height:1.6;background:var(--bg)}
+
+/* ── Logo Wall ─────────────────────────────────────────────────────── */
+.logo-wall{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;padding:24px}
+.logo-pill{padding:10px 20px;background:var(--bg);border:1px solid var(--border);border-radius:8px;font-weight:700;font-size:14px;box-shadow:var(--shadow)}
+
+/* ── Changelog ─────────────────────────────────────────────────────── */
+.changelog-entry{padding:20px 0;border-bottom:1px solid var(--border)}
+.changelog-version{font-size:20px;font-weight:700;color:var(--heading);margin-bottom:4px}
+.changelog-date{font-size:13px;color:var(--body);margin-bottom:12px}
+.changelog-list{list-style:none}
+.changelog-list li{font-size:14px;color:var(--body);padding:3px 0;display:flex;gap:8px}
+.changelog-list li::before{content:'→';color:var(--primary);font-weight:700;flex-shrink:0}
+
+/* ── Responsive ─────────────────────────────────────────────────────── */
+@media(max-width:768px){
+  #sidebar{transform:translateX(-100%)}
+  #content{margin-left:0;padding:72px 20px 40px}
+  #topbar{left:0}
+  .grid-3,.grid-4,.grid-5{grid-template-columns:1fr 1fr}
+  .grid-2{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ── SIDEBAR ─────────────────────────────────────────────────────── -->
+<div id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark">HPH</div>
+    <div class="logo-sub">Design System</div>
+  </div>
+  <div class="sidebar-search">
+    <input type="text" placeholder="Suchen..." id="nav-search">
+  </div>
+  <nav class="sidebar-nav" id="sidebar-nav">
+    <div class="nav-item active" data-section="overview"><span class="nav-icon">🏠</span> Overview</div>
+
+    <div class="nav-section-label">Tokens</div>
+    <div class="nav-item" data-section="colors"><span class="nav-icon">🎨</span> Colors</div>
+    <div class="nav-item" data-section="typography"><span class="nav-icon">🔤</span> Typography</div>
+    <div class="nav-item" data-section="spacing"><span class="nav-icon">📐</span> Spacing</div>
+    <div class="nav-item" data-section="gradients"><span class="nav-icon">🌈</span> Gradients</div>
+
+    <div class="nav-section-label">Komponenten</div>
+    <div class="nav-item" data-section="buttons"><span class="nav-icon">🔘</span> Buttons</div>
+    <div class="nav-item" data-section="cards"><span class="nav-icon">🃏</span> Cards</div>
+    <div class="nav-item" data-section="counter"><span class="nav-icon">📊</span> Counter</div>
+    <div class="nav-item" data-section="price-wall"><span class="nav-icon">💰</span> Price Wall</div>
+    <div class="nav-item" data-section="testimonials"><span class="nav-icon">💬</span> Testimonials</div>
+    <div class="nav-item" data-section="faq"><span class="nav-icon">❓</span> FAQ</div>
+    <div class="nav-item" data-section="logo-wall"><span class="nav-icon">🖼️</span> Logo Wall</div>
+    <div class="nav-item" data-section="text-media"><span class="nav-icon">📰</span> Text + Media</div>
+
+    <div class="nav-section-label">Alle Module</div>
+    <div class="nav-item" data-section="modules"><span class="nav-icon">📦</span> Modulübersicht</div>
+
+    <div class="nav-section-label">Guidelines</div>
+    <div class="nav-item" data-section="issues"><span class="nav-icon">⚠️</span> Known Issues</div>
+    <div class="nav-item" data-section="changelog"><span class="nav-icon">📋</span> Changelog</div>
+  </nav>
+</div>
+
+<!-- ── TOPBAR ─────────────────────────────────────────────────────── -->
+<div id="topbar">
+  <div class="breadcrumb">Design System / <span id="breadcrumb">Overview</span></div>
+  <div class="topbar-right">
+    <span class="version-badge">v1.0.0</span>
+    <button class="theme-toggle" id="theme-toggle" title="Dark Mode">🌙</button>
+  </div>
+</div>
+
+<!-- ── CONTENT ─────────────────────────────────────────────────────── -->
+<main id="content">
+
+<!-- ══════════════ OVERVIEW ══════════════ -->
+<section id="overview" data-title="Overview">
+  <div class="hero-card">
+    <div class="hero-title">HPH Design System</div>
+    <div class="hero-sub">Komponenten, Tokens und Richtlinien für Homepage Helden</div>
+  </div>
+  <div class="grid-4" style="margin-bottom:32px">
+    <div class="stat-card"><div class="stat-num">37</div><div class="stat-label">Content Module</div></div>
+    <div class="stat-card"><div class="stat-num">8</div><div class="stat-label">Komponenten</div></div>
+    <div class="stat-card"><div class="stat-num">10+</div><div class="stat-label">Design Tokens</div></div>
+    <div class="stat-card"><div class="stat-num">v1.0</div><div class="stat-label">Aktuelle Version</div></div>
+  </div>
+  <div class="card" style="margin-bottom:24px">
+    <h3 class="group-title" style="margin-bottom:12px">Tech Stack</h3>
+    <div class="flex-row">
+      <span class="stack-tag">⚙️ Statamic 5</span>
+      <span class="stack-tag">🎨 Tailwind CSS 3</span>
+      <span class="stack-tag">🏔️ Alpine.js</span>
+      <span class="stack-tag">🌿 Antlers</span>
+      <span class="stack-tag">⚡ Vite</span>
+      <span class="stack-tag">🖌️ Figma</span>
+    </div>
+  </div>
+  <div class="card">
+    <h3 class="group-title" style="margin-bottom:12px">Was ist das Design System?</h3>
+    <p style="font-size:14px;color:var(--body);line-height:1.7;margin-bottom:12px">Das HPH Design System ist die zentrale Referenz für alle visuellen Entscheidungen bei Homepage Helden. Es dokumentiert Design-Tokens (Farben, Typografie, Abstände), Komponenten-Previews und Nutzungsrichtlinien.</p>
+    <p style="font-size:14px;color:var(--body);line-height:1.7">Ziel: Konsistenz zwischen Figma-Designs und Tailwind-Implementierung — für Entwickler, Designer und neue Team-Mitglieder.</p>
+  </div>
+</section>
+
+<!-- ══════════════ COLORS ══════════════ -->
+<section id="colors" data-title="Colors">
+  <h1 class="page-title">Farb-Tokens</h1>
+  <p class="page-subtitle">Alle definierten Farben des HPH Design Systems. Definiert in <code>tailwind.config.site.js</code>.</p>
+
+  <h3 class="group-title">Primary — Markenblau</h3>
+  <div class="swatch-row">
+    <div class="swatch-item"><div class="swatch-circle" style="background:#C3D7EE"></div><div class="swatch-label">extralight</div><div class="swatch-hex">#C3D7EE</div></div>
+    <div class="swatch-item"><div class="swatch-circle" style="background:#027CEC"></div><div class="swatch-label">light</div><div class="swatch-hex">#027CEC</div></div>
+    <div class="swatch-item"><div class="swatch-circle" style="background:#0078FF"></div><div class="swatch-label">middle</div><div class="swatch-hex">#0078FF</div></div>
+    <div class="swatch-item"><div class="swatch-circle" style="background:#0040B8;border:3px solid #0040B8;box-shadow:0 0 0 3px #C3D7EE"></div><div class="swatch-label" style="font-weight:700">DEFAULT ★</div><div class="swatch-hex">#0040B8</div></div>
+    <div class="swatch-item"><div class="swatch-circle" style="background:#0038AF"></div><div class="swatch-label">dark</div><div class="swatch-hex">#0038AF</div></div>
+  </div>
+
+  <h3 class="group-title" style="margin-top:8px">Neutral — Grautöne</h3>
+  <div class="swatch-row">
+    <div class="swatch-item"><div class="swatch-circle" style="background:#F4F4F4;border:1px solid #E5E7EB"></div><div class="swatch-label">extraLight</div><div class="swatch-hex">#F4F4F4</div></div>
+    <div class="swatch-item"><div class="swatch-circle" style="background:#EFEFEF;border:1px solid #E5E7EB"></div><div class="swatch-label">light</div><div class="swatch-hex">#EFEFEF</div></div>
+    <div class="swatch-item"><div class="swatch-circle" style="background:#D4D4D4"></div><div class="swatch-label">middle</div><div class="swatch-hex">#D4D4D4</div></div>
+    <div class="swatch-item"><div class="swatch-circle" style="background:#B7BDC4"></div><div class="swatch-label">DEFAULT</div><div class="swatch-hex">#B7BDC4</div></div>
+    <div class="swatch-item"><div class="swatch-circle" style="background:#484848"></div><div class="swatch-label">dark</div><div class="swatch-hex">#484848</div></div>
+  </div>
+
+  <h3 class="group-title" style="margin-top:8px">Text & Akzente</h3>
+  <div class="swatch-row">
+    <div class="swatch-item"><div class="swatch-circle" style="background:#32363D"></div><div class="swatch-label">text default</div><div class="swatch-hex">#32363D</div></div>
+    <div class="swatch-item"><div class="swatch-circle" style="background:#484848"></div><div class="swatch-label">text light</div><div class="swatch-hex">#484848</div></div>
+    <div class="swatch-item"><div class="swatch-circle" style="background:#F61A75"></div><div class="swatch-label">highlight</div><div class="swatch-hex">#F61A75</div></div>
+    <div class="swatch-item"><div class="swatch-circle" style="background:#0E1012"></div><div class="swatch-label">dark BG</div><div class="swatch-hex">#0E1012</div></div>
+    <div class="swatch-item"><div class="swatch-circle" style="background:#637884"></div><div class="swatch-label">nav label</div><div class="swatch-hex">#637884</div></div>
+  </div>
+
+  <hr class="section-divider">
+  <div class="alert alert-warn"><span class="alert-icon">⚠️</span><div><strong>Inkonsistenz:</strong> Highlight-Farbe divergiert — Tailwind: <code>#F61A75</code>, Figma: <code>#c63ba3</code>. Bitte klären welche Farbe korrekt ist.</div></div>
+  <div class="alert alert-warn"><span class="alert-icon">⚠️</span><div><strong>Fehlender Token:</strong> <code>#0E1012</code> (Dark BG) ist nicht als benannter Token in <code>tailwind.config.site.js</code> definiert — nur hardcoded in Templates.</div></div>
+</section>
+
+<!-- ══════════════ TYPOGRAPHY ══════════════ -->
+<section id="typography" data-title="Typography">
+  <h1 class="page-title">Typografie</h1>
+  <p class="page-subtitle">Fluid Type Scale mit <code>clamp()</code> — skaliert fließend zwischen Breakpoints.</p>
+
+  <div class="card" style="margin-bottom:24px">
+    <h3 class="group-title">Schriftfamilien</h3>
+    <table class="token-table">
+      <thead><tr><th>Schrift</th><th>Verwendung</th><th>Quelle</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Cera Variable</strong></td><td>Überschriften, Display-Text</td><td><span class="badge badge-yellow">⚠️ Lizenz prüfen (DEMO)</span></td></tr>
+        <tr><td><strong>Inter</strong></td><td>Fließtext, UI, Navigation</td><td><span class="badge badge-green">✓ Google Fonts (kostenlos)</span></td></tr>
+        <tr><td><strong>Inter Tight</strong></td><td>Zahlen, kompakte Headlines</td><td><span class="badge badge-green">✓ Google Fonts (kostenlos)</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="group-title" style="margin-bottom:0">Type Scale</h3>
+  <div style="margin-top:8px">
+    <div class="type-row">
+      <div class="type-meta"><code class="token-name">custom-6xl</code><div class="type-size">clamp(42px → 70px)</div></div>
+      <div class="type-sample" style="font-size:clamp(42px,5vw+1rem,70px)">HPH</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><code class="token-name">custom-5xl</code><div class="type-size">clamp(34px → 60px)</div></div>
+      <div class="type-sample" style="font-size:clamp(34px,4vw+1rem,60px)">Homepage Helden</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><code class="token-name">custom-4xl</code><div class="type-size">clamp(28px → 40px)</div></div>
+      <div class="type-sample" style="font-size:clamp(28px,3vw+1rem,40px)">Professionelles Webdesign</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><code class="token-name">custom-3xl</code><div class="type-size">clamp(22px → 26px)</div></div>
+      <div class="type-sample" style="font-size:clamp(22px,2vw+1rem,26px)">Wir sind Ihre Webagentur</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><code class="token-name">custom-2xl</code><div class="type-size">clamp(18px → 21px)</div></div>
+      <div class="type-sample" style="font-size:clamp(18px,2vw+1rem,21px)">Individuelle Websites für KMU</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><code class="token-name">custom-xl</code><div class="type-size">clamp(16px → 19px) — Body</div></div>
+      <div class="type-sample" style="font-size:clamp(16px,1vw+1rem,19px);font-weight:400;color:var(--body)">Fließtext, Beschreibungen und UI-Elemente nutzen diese Größe als Standard.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><code class="token-name">custom-base</code><div class="type-size">1rem (16px)</div></div>
+      <div class="type-sample" style="font-size:1rem;font-weight:400;color:var(--body)">Standard-Basis-Schriftgröße</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><code class="token-name">custom-sm</code><div class="type-size">0.8rem (12.8px)</div></div>
+      <div class="type-sample" style="font-size:.8rem;font-weight:400;color:var(--body)">Labels, Captions, kleine Hinweise</div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+  <div class="alert alert-warn"><span class="alert-icon">⚠️</span><div><strong>Cera Variable DEMO:</strong> Das Figma-Design verwendet eine Trial-Version der Schrift. Vor Production-Einsatz kommerzielle Lizenz erwerben oder auf Inter Tight umstellen.</div></div>
+</section>
+
+<!-- ══════════════ SPACING ══════════════ -->
+<section id="spacing" data-title="Spacing">
+  <h1 class="page-title">Spacing &amp; Layout</h1>
+  <p class="page-subtitle">Fluid Spacing mit <code>clamp()</code> — alle Abstände skalieren mit dem Viewport.</p>
+  <div class="card">
+    <div class="spacing-row">
+      <div class="spacing-meta"><code class="token-name">extraSmall</code></div>
+      <div class="spacing-bar" style="width:40px"></div>
+      <div class="spacing-clamp">clamp(10px, 2.5vmin, 31px) — 10–31px</div>
+    </div>
+    <div class="spacing-row">
+      <div class="spacing-meta"><code class="token-name">small</code></div>
+      <div class="spacing-bar" style="width:80px"></div>
+      <div class="spacing-clamp">clamp(20px, 5vmin, 62px) — 20–62px</div>
+    </div>
+    <div class="spacing-row">
+      <div class="spacing-meta"><code class="token-name">default</code></div>
+      <div class="spacing-bar" style="width:140px"></div>
+      <div class="spacing-clamp">clamp(40px, 10vmin, 125px) — 40–125px</div>
+    </div>
+    <div class="spacing-row">
+      <div class="spacing-meta"><code class="token-name">large</code></div>
+      <div class="spacing-bar" style="width:200px"></div>
+      <div class="spacing-clamp">clamp(60px, 15vmin, 187px) — 60–187px</div>
+    </div>
+    <div class="spacing-row">
+      <div class="spacing-meta"><code class="token-name">extraLarge</code></div>
+      <div class="spacing-bar" style="width:260px"></div>
+      <div class="spacing-clamp">clamp(80px, 20vmin, 250px) — 80–250px</div>
+    </div>
+    <div class="spacing-row" style="border-bottom:none">
+      <div class="spacing-meta"><code class="token-name">hero</code></div>
+      <div class="spacing-bar" style="width:300px;opacity:.4"></div>
+      <div class="spacing-clamp">12vh — Viewport-relativ (Hero-Sektionen)</div>
+    </div>
+  </div>
+  <hr class="section-divider">
+  <div class="card">
+    <h3 class="group-title">Verwendung</h3>
+    <pre style="font-size:13px;color:var(--heading);background:var(--code-bg);padding:16px;border-radius:6px;overflow-x:auto;line-height:1.7">&lt;section class="py-default px-small"&gt;
+  &lt;div class="mb-large"&gt;...&lt;/div&gt;
+&lt;/section&gt;</pre>
+  </div>
+</section>
+
+<!-- ══════════════ GRADIENTS ══════════════ -->
+<section id="gradients" data-title="Gradients">
+  <h1 class="page-title">Gradients</h1>
+  <p class="page-subtitle">Vordefinierte Verläufe für Hero-Bereiche, Buttons und Text-Highlights.</p>
+  <div class="grid-2">
+    <div class="gradient-card">
+      <div class="gradient-preview" style="background:linear-gradient(72.87deg, #1548BB 27.5%, #027CEC 85.64%)"></div>
+      <div class="gradient-info"><h4>Hero Gradient</h4><div class="gradient-code">linear-gradient(72.87deg, #1548BB 27.5%, #027CEC 85.64%)<br>Klasse: bg-hero-gradient</div></div>
+    </div>
+    <div class="gradient-card">
+      <div class="gradient-preview" style="background:linear-gradient(90.79deg, #3376F6 0.46%, #0040B8 99.09%)"></div>
+      <div class="gradient-info"><h4>Button Gradient</h4><div class="gradient-code">linear-gradient(90.79deg, #3376F6 0.46%, #0040B8 99.09%)<br>Klasse: bg-button-gradient</div></div>
+    </div>
+    <div class="gradient-card">
+      <div class="gradient-preview" style="background:linear-gradient(123deg, #000 0%, #1F1F1F 100%)"></div>
+      <div class="gradient-info"><h4>Hero Dark</h4><div class="gradient-code">linear-gradient(123deg, #000 0%, #1F1F1F 100%)<br>Klasse: bg-hero-gradient-dark</div></div>
+    </div>
+    <div class="gradient-card">
+      <div class="gradient-preview" style="display:flex;align-items:center;justify-content:center;background:#F9FAFB">
+        <span style="font-size:40px;font-weight:800;background:linear-gradient(71.08deg,#003EC8 30.98%,#67BAEF 76.86%);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Headline</span>
+      </div>
+      <div class="gradient-info"><h4>Headline Gradient (Text)</h4><div class="gradient-code">linear-gradient(71.08deg, #003EC8 30.98%, #67BAEF 76.86%)<br>Klasse: bg-headline-gradient + bg-clip-text</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ BUTTONS ══════════════ -->
+<section id="buttons" data-title="Buttons">
+  <h1 class="page-title">Buttons</h1>
+  <p class="page-subtitle">Alle Button-Varianten. Primär-Buttons nutzen den Button-Gradienten mit Schatten.</p>
+
+  <div class="component-block">
+    <div class="component-block-title">Button Varianten</div>
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="preview">Preview</button>
+      <button class="tab-btn" data-tab="code">HTML</button>
+    </div>
+    <div class="tab-preview">
+      <div class="flex-row" style="align-items:center">
+        <button class="btn btn-primary">Angebot anfordern <span>→</span></button>
+        <button class="btn btn-secondary">Mehr erfahren</button>
+        <button class="btn btn-highlight">Jetzt starten →</button>
+        <button class="btn btn-primary btn-sm">Klein →</button>
+        <button class="btn btn-ghost">Ghost Button</button>
+        <button class="btn btn-primary" disabled>Disabled</button>
+      </div>
+    </div>
+    <div class="tab-code"><pre><!-- Primary -->
+&lt;button class="btn btn-primary"&gt;Angebot anfordern →&lt;/button&gt;
+
+<!-- Secondary -->
+&lt;button class="btn btn-secondary"&gt;Mehr erfahren&lt;/button&gt;
+
+<!-- Highlight (CTA) -->
+&lt;button class="btn btn-highlight"&gt;Jetzt starten →&lt;/button&gt;
+
+<!-- Small -->
+&lt;button class="btn btn-primary btn-sm"&gt;Klein →&lt;/button&gt;
+
+<!-- Ghost -->
+&lt;button class="btn btn-ghost"&gt;Ghost Button&lt;/button&gt;</pre></div>
+    <div class="component-notes">Primär: Button-Gradient + Box-Shadow. Highlight: Rosa-Gradient für besondere CTAs. Ghost: Kein Hintergrund, nur Text.</div>
+  </div>
+</section>
+
+<!-- ══════════════ CARDS ══════════════ -->
+<section id="cards" data-title="Cards">
+  <h1 class="page-title">Cards</h1>
+  <p class="page-subtitle">Karten für Leistungen, Features und Inhalte. 2–4 Spalten möglich.</p>
+  <div class="component-block">
+    <div class="component-block-title">3-Spalten Card Grid</div>
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="preview">Preview</button>
+      <button class="tab-btn" data-tab="code">HTML</button>
+    </div>
+    <div class="tab-preview">
+      <div class="grid-3">
+        <div style="background:white;border:1px solid var(--border);border-radius:10px;overflow:hidden;box-shadow:var(--shadow)">
+          <div style="height:120px;background:#C3D7EE;display:flex;align-items:center;justify-content:center">
+            <div style="width:48px;height:48px;border-radius:50%;background:#0040B8;display:flex;align-items:center;justify-content:center;color:white;font-size:20px">🖥️</div>
+          </div>
+          <div style="padding:16px"><h4 style="font-size:15px;font-weight:700;color:var(--heading);margin-bottom:6px">Webdesign</h4><p style="font-size:13px;color:var(--body)">Individuelle Designs die zu Ihrer Marke passen.</p></div>
+        </div>
+        <div style="background:white;border:1px solid var(--border);border-radius:10px;overflow:hidden;box-shadow:var(--shadow)">
+          <div style="height:120px;background:#C3D7EE;display:flex;align-items:center;justify-content:center">
+            <div style="width:48px;height:48px;border-radius:50%;background:#0040B8;display:flex;align-items:center;justify-content:center;color:white;font-size:20px">⚡</div>
+          </div>
+          <div style="padding:16px"><h4 style="font-size:15px;font-weight:700;color:var(--heading);margin-bottom:6px">Performance</h4><p style="font-size:13px;color:var(--body)">Optimiert für Core Web Vitals und PageSpeed.</p></div>
+        </div>
+        <div style="background:white;border:1px solid var(--border);border-radius:10px;overflow:hidden;box-shadow:var(--shadow)">
+          <div style="height:120px;background:#C3D7EE;display:flex;align-items:center;justify-content:center">
+            <div style="width:48px;height:48px;border-radius:50%;background:#0040B8;display:flex;align-items:center;justify-content:center;color:white;font-size:20px">📈</div>
+          </div>
+          <div style="padding:16px"><h4 style="font-size:15px;font-weight:700;color:var(--heading);margin-bottom:6px">SEO</h4><p style="font-size:13px;color:var(--body)">Gefunden werden bei Google und Co.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-code"><pre>&lt;div class="grid grid-cols-3 gap-4"&gt;
+  &lt;div class="rounded-xl overflow-hidden border border-neutral-light shadow-sm"&gt;
+    &lt;div class="h-32 bg-primary-extralight flex items-center justify-center"&gt;
+      &lt;!-- Icon --&gt;
+    &lt;/div&gt;
+    &lt;div class="p-4"&gt;
+      &lt;h3 class="font-bold text-lg text-fontColor"&gt;Webdesign&lt;/h3&gt;
+      &lt;p class="text-sm text-neutral-dark mt-1"&gt;...&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre></div>
+  </div>
+</section>
+
+<!-- ══════════════ COUNTER ══════════════ -->
+<section id="counter" data-title="Counter">
+  <h1 class="page-title">Counter</h1>
+  <p class="page-subtitle">Animierte Statistik-Zahlen. Meist auf hellem oder neutralem Hintergrund.</p>
+  <div class="component-block">
+    <div class="component-block-title">Stats Counter</div>
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="preview">Preview</button>
+      <button class="tab-btn" data-tab="code">HTML</button>
+    </div>
+    <div class="tab-preview" style="background:var(--n-xl)">
+      <div class="grid-4" style="text-align:center">
+        <div><div style="font-size:clamp(36px,4vw,52px);font-weight:800;color:#0040B8;line-height:1">200+</div><div style="font-size:13px;color:var(--body);margin-top:6px;font-weight:500">Projekte</div></div>
+        <div><div style="font-size:clamp(36px,4vw,52px);font-weight:800;color:#0040B8;line-height:1">4,9</div><div style="font-size:13px;color:var(--body);margin-top:6px;font-weight:500">Google Rating ⭐</div></div>
+        <div><div style="font-size:clamp(36px,4vw,52px);font-weight:800;color:#0040B8;line-height:1">12+</div><div style="font-size:13px;color:var(--body);margin-top:6px;font-weight:500">Jahre Erfahrung</div></div>
+        <div><div style="font-size:clamp(36px,4vw,52px);font-weight:800;color:#0040B8;line-height:1">100%</div><div style="font-size:13px;color:var(--body);margin-top:6px;font-weight:500">Zufriedenheit</div></div>
+      </div>
+    </div>
+    <div class="tab-code"><pre>&lt;div class="grid grid-cols-4 gap-8 text-center"&gt;
+  &lt;div&gt;
+    &lt;p class="text-custom-6xl font-bold text-primary"
+       x-data x-intersect="$el.classList.add('counted')"&gt;200+&lt;/p&gt;
+    &lt;p class="text-sm text-neutral-dark mt-1"&gt;Projekte&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre></div>
+  </div>
+</section>
+
+<!-- ══════════════ PRICE WALL ══════════════ -->
+<section id="price-wall" data-title="Price Wall">
+  <h1 class="page-title">Price Wall</h1>
+  <p class="page-subtitle">Preistabellen mit bis zu 3 Paketen. Das mittlere Paket ist hervorgehoben.</p>
+  <div class="component-block">
+    <div class="component-block-title">3-Spalten Preistabelle</div>
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="preview">Preview</button>
+      <button class="tab-btn" data-tab="code">HTML</button>
+    </div>
+    <div class="tab-preview">
+      <div class="grid-3">
+        <div class="price-card">
+          <div class="price-name">Starter</div>
+          <div class="price-amount">ab 2.500 €</div>
+          <div class="price-period">Einmalig</div>
+          <ul class="price-features">
+            <li class="price-feature"><span class="check-icon">✓</span> 5 Seiten</li>
+            <li class="price-feature"><span class="check-icon">✓</span> Responsive Design</li>
+            <li class="price-feature"><span class="check-icon">✓</span> CMS-Zugang</li>
+          </ul>
+          <button class="btn btn-secondary" style="width:100%;justify-content:center">Anfragen</button>
+        </div>
+        <div class="price-card featured" style="position:relative">
+          <span style="position:absolute;top:16px;right:16px;background:#F61A75;color:white;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px">Beliebt</span>
+          <div class="price-name">Professional</div>
+          <div class="price-amount">ab 5.000 €</div>
+          <div class="price-period">Einmalig</div>
+          <ul class="price-features">
+            <li class="price-feature"><span class="check-icon">✓</span> 15 Seiten</li>
+            <li class="price-feature"><span class="check-icon">✓</span> Custom Design</li>
+            <li class="price-feature"><span class="check-icon">✓</span> SEO-Optimierung</li>
+            <li class="price-feature"><span class="check-icon">✓</span> 3 Monate Support</li>
+          </ul>
+          <button class="btn" style="width:100%;justify-content:center;background:white;color:#0040B8;font-weight:700">Anfragen</button>
+        </div>
+        <div class="price-card">
+          <div class="price-name">Enterprise</div>
+          <div class="price-amount">Individuell</div>
+          <div class="price-period">Auf Anfrage</div>
+          <ul class="price-features">
+            <li class="price-feature"><span class="check-icon">✓</span> Unbegrenzt Seiten</li>
+            <li class="price-feature"><span class="check-icon">✓</span> API-Integrationen</li>
+            <li class="price-feature"><span class="check-icon">✓</span> Laufende Betreuung</li>
+          </ul>
+          <button class="btn btn-secondary" style="width:100%;justify-content:center">Anfragen</button>
+        </div>
+      </div>
+    </div>
+    <div class="tab-code"><pre>&lt;!-- Collection: prices --&gt;
+&lt;div class="grid grid-cols-3 gap-6"&gt;
+  {{ prices }}
+    &lt;div class="rounded-2xl p-7 border
+      {{ if featured }}bg-hero-gradient text-white border-transparent{{ else }}bg-white border-neutral-light{{ /if }}"&gt;
+      &lt;h3 class="font-bold text-xl"&gt;{{ name }}&lt;/h3&gt;
+      &lt;p class="text-4xl font-bold mt-3"&gt;{{ price }}&lt;/p&gt;
+      &lt;!-- features list --&gt;
+    &lt;/div&gt;
+  {{ /prices }}
+&lt;/div&gt;</pre></div>
+  </div>
+</section>
+
+<!-- ══════════════ TESTIMONIALS ══════════════ -->
+<section id="testimonials" data-title="Testimonials">
+  <h1 class="page-title">Testimonials</h1>
+  <p class="page-subtitle">Kundenstimmen. Collection: <code>testimonials</code>.</p>
+  <div class="component-block">
+    <div class="component-block-title">Testimonial Wall</div>
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="preview">Preview</button>
+      <button class="tab-btn" data-tab="code">HTML</button>
+    </div>
+    <div class="tab-preview">
+      <div class="grid-3">
+        <div class="testimonial-card"><div class="stars">★★★★★</div><p class="testimonial-text">"Die neue Website kann sich echt sehen lassen. Unsere Erwartungen wurden übertroffen."</p><div class="testimonial-author">Max Mustermann</div><div class="testimonial-source">steueragenten.de</div></div>
+        <div class="testimonial-card" style="background:#0040B8;border-color:#0040B8"><div class="stars">★★★★★</div><p class="testimonial-text" style="color:rgba(255,255,255,.9)">"Professionell, schnell und immer erreichbar. Absolut empfehlenswert!"</p><div class="testimonial-author" style="color:white">Maria Müller</div><div class="testimonial-source" style="color:rgba(255,255,255,.6)">beispiel-firma.de</div></div>
+        <div class="testimonial-card"><div class="stars">★★★★★</div><p class="testimonial-text">"Top Ergebnis, faire Preise, tolle Zusammenarbeit. Gerne wieder!"</p><div class="testimonial-author">Klaus Schmidt</div><div class="testimonial-source">mein-unternehmen.de</div></div>
+      </div>
+    </div>
+    <div class="tab-code"><pre>&lt;!-- Collection: testimonials --&gt;
+{{ testimonials }}
+  &lt;div class="rounded-xl p-5 bg-neutral-extraLight"&gt;
+    &lt;div class="text-yellow-400 mb-3"&gt;★★★★★&lt;/div&gt;
+    &lt;p class="text-sm italic text-fontColor leading-relaxed mb-3"&gt;{{ quote }}&lt;/p&gt;
+    &lt;p class="font-semibold text-sm"&gt;{{ name }}&lt;/p&gt;
+    &lt;p class="text-xs text-neutral"&gt;{{ company }}&lt;/p&gt;
+  &lt;/div&gt;
+{{ /testimonials }}</pre></div>
+  </div>
+</section>
+
+<!-- ══════════════ FAQ ══════════════ -->
+<section id="faq" data-title="FAQ">
+  <h1 class="page-title">FAQ Accordion</h1>
+  <p class="page-subtitle">Häufig gestellte Fragen. Collection: <code>faqs</code>. Interaktion via Alpine.js.</p>
+  <div class="component-block">
+    <div class="component-block-title">FAQ Accordion</div>
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="preview">Preview</button>
+      <button class="tab-btn" data-tab="code">HTML</button>
+    </div>
+    <div class="tab-preview">
+      <div style="max-width:580px">
+        <div class="faq-item"><div class="faq-q">Was kostet eine Website? <span>▼</span></div><div class="faq-a">Eine einfache Unternehmenswebsite beginnt bei ca. 2.500 €. Der genaue Preis hängt vom Umfang ab.</div></div>
+        <div class="faq-item"><div class="faq-q">Wie lange dauert die Entwicklung? <span style="color:var(--label)">▼</span></div></div>
+        <div class="faq-item"><div class="faq-q">Bietet ihr auch Wartung an? <span style="color:var(--label)">▼</span></div></div>
+      </div>
+    </div>
+    <div class="tab-code"><pre>&lt;!-- Alpine.js Accordion --&gt;
+{{ faqs }}
+  &lt;div x-data="{ open: false }" class="border border-neutral-light rounded-xl overflow-hidden mb-2"&gt;
+    &lt;button @click="open = !open"
+      class="w-full flex justify-between items-center px-5 py-4 font-semibold text-fontColor bg-white"&gt;
+      {{ question }}
+      &lt;span :class="open ? 'rotate-180' : ''" class="transition-transform"&gt;▼&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div x-show="open" x-collapse class="px-5 pb-4 text-sm text-neutral-dark bg-white"&gt;
+      {{ answer }}
+    &lt;/div&gt;
+  &lt;/div&gt;
+{{ /faqs }}</pre></div>
+    <div class="component-notes">Interaktion via Alpine.js <code>x-collapse</code> Plugin. Dark-Mode-Variante verfügbar.</div>
+  </div>
+</section>
+
+<!-- ══════════════ LOGO WALL ══════════════ -->
+<section id="logo-wall" data-title="Logo Wall">
+  <h1 class="page-title">Logo Wall</h1>
+  <p class="page-subtitle">Kunden- und Partner-Logos. Collection: <code>customer</code>.</p>
+  <div class="component-block">
+    <div class="component-block-title">Logo Wall</div>
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="preview">Preview</button>
+      <button class="tab-btn" data-tab="code">HTML</button>
+    </div>
+    <div class="tab-preview" style="background:var(--n-xl)">
+      <p style="text-align:center;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--n);margin-bottom:20px">Unsere Technologien</p>
+      <div class="logo-wall">
+        <div class="logo-pill" style="color:#21759b">WordPress</div>
+        <div class="logo-pill" style="color:#ff8700">TYPO3</div>
+        <div class="logo-pill" style="color:#4070d4">Statamic</div>
+        <div class="logo-pill" style="color:#95bf46">Shopify</div>
+        <div class="logo-pill" style="color:#ff2d20">Laravel</div>
+        <div class="logo-pill" style="color:#38bdf8">Tailwind CSS</div>
+      </div>
+    </div>
+    <div class="tab-code"><pre>&lt;!-- Collection: customer --&gt;
+&lt;div class="flex flex-wrap justify-center gap-3 opacity-60"&gt;
+  {{ customer }}
+    &lt;div class="bg-white rounded-xl px-6 py-3 shadow-sm"&gt;
+      {{ logo }}
+        &lt;img src="{{ url }}" alt="{{ customer:title }}" class="h-8 w-auto"&gt;
+      {{ /logo }}
+    &lt;/div&gt;
+  {{ /customer }}
+&lt;/div&gt;</pre></div>
+  </div>
+</section>
+
+<!-- ══════════════ TEXT MEDIA ══════════════ -->
+<section id="text-media" data-title="Text + Media">
+  <h1 class="page-title">Text + Media</h1>
+  <p class="page-subtitle">Text und Bild/Video nebeneinander. Bildposition links oder rechts.</p>
+  <div class="component-block">
+    <div class="component-block-title">Text links, Bild rechts</div>
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="preview">Preview</button>
+      <button class="tab-btn" data-tab="code">HTML</button>
+    </div>
+    <div class="tab-preview">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center">
+        <div>
+          <p style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#0040B8;margin-bottom:8px">Was uns auszeichnet</p>
+          <h2 style="font-size:clamp(22px,2vw,30px);font-weight:700;color:var(--heading);line-height:1.25;margin-bottom:16px">Webdesign mit Strategie und Leidenschaft</h2>
+          <p style="font-size:14px;color:var(--body);line-height:1.7;margin-bottom:20px">Wir verbinden kreatives Design mit technischem Know-how. Jede Website wird individuell konzipiert und umgesetzt — passend zu Ihrer Marke.</p>
+          <button class="btn btn-primary btn-sm">Mehr erfahren →</button>
+        </div>
+        <div style="background:var(--n-xl);border-radius:12px;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;color:var(--n);font-size:14px;font-weight:500">Bild / Video</div>
+      </div>
+    </div>
+    <div class="tab-code"><pre>&lt;section class="py-default"&gt;
+  &lt;div class="grid grid-cols-2 gap-12 items-center max-w-5xl mx-auto px-small"&gt;
+    &lt;div&gt;
+      &lt;p class="text-sm font-semibold uppercase tracking-widest text-primary mb-3"&gt;{{ roofline }}&lt;/p&gt;
+      &lt;h2 class="text-custom-4xl font-bold text-fontColor leading-tight mb-6"&gt;{{ headline }}&lt;/h2&gt;
+      &lt;div class="prose text-neutral-dark"&gt;{{ text }}&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div&gt;{{ media }}...{{ /media }}&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</pre></div>
+    <div class="component-notes">Felder: roofline, headline, text (Bard), media (Bild/Video/YouTube), media_position (links/rechts), background.</div>
+  </div>
+</section>
+
+<!-- ══════════════ MODULES ══════════════ -->
+<section id="modules" data-title="Modulübersicht">
+  <h1 class="page-title">Alle Content Module</h1>
+  <p class="page-subtitle">Der Page Builder bietet <strong>37 Module</strong> in 5 Kategorien.</p>
+
+  <h3 class="group-title">Contentelements (23)</h3>
+  <div class="card" style="margin-bottom:20px">
+    <table class="token-table">
+      <thead><tr><th>Modul</th><th>Beschreibung</th></tr></thead>
+      <tbody>
+        <tr><td><code class="token-name">anchor_nav</code></td><td style="color:var(--body)">Sprungmarken-Navigation innerhalb einer Seite</td></tr>
+        <tr><td><code class="token-name">badge_list</code></td><td style="color:var(--body)">Liste mit farbigen Badges/Tags</td></tr>
+        <tr><td><code class="token-name">cards</code></td><td style="color:var(--body)">Grid aus Karten mit Bild, Titel, Text, Link</td></tr>
+        <tr><td><code class="token-name">memo_cards</code></td><td style="color:var(--body)">Karten mit Icon und Kurztext (Feature-Auflistung)</td></tr>
+        <tr><td><code class="token-name">contactbox</code></td><td style="color:var(--body)">Kontakt-Aufforderungs-Box mit CTA</td></tr>
+        <tr><td><code class="token-name">counter</code></td><td style="color:var(--body)">Animierte Statistik-Zahlen</td></tr>
+        <tr><td><code class="token-name">html</code></td><td style="color:var(--body)">Freies HTML-Eingabefeld</td></tr>
+        <tr><td><code class="token-name">icon_list</code></td><td style="color:var(--body)">Liste mit Icons und Beschreibungstext</td></tr>
+        <tr><td><code class="token-name">layered_boxed</code></td><td style="color:var(--body)">Gestapelte Boxen mit Glas-/Overlapping-Effekt</td></tr>
+        <tr><td><code class="token-name">mapbox</code></td><td style="color:var(--body)">Interaktive Karte (Mapbox GL JS)</td></tr>
+        <tr><td><code class="token-name">media</code></td><td style="color:var(--body)">Bild oder Video als eigenständiges Element</td></tr>
+        <tr><td><code class="token-name">quote_box</code></td><td style="color:var(--body)">Hervorgehobenes Zitat mit Autor</td></tr>
+        <tr><td><code class="token-name">sitemap</code></td><td style="color:var(--body)">Automatisch generierte Seitenübersicht</td></tr>
+        <tr><td><code class="token-name">tabs</code></td><td style="color:var(--body)">Tab-Navigation mit Inhalts-Panels</td></tr>
+        <tr><td><code class="token-name">text_media</code></td><td style="color:var(--body)">Text + Bild/Video (positionierbar)</td></tr>
+        <tr><td><code class="token-name">headshot_card</code></td><td style="color:var(--body)">Team-Karte mit Portrait-Foto</td></tr>
+        <tr><td><code class="token-name">code</code></td><td style="color:var(--body)">Syntax-Highlighting Code-Block</td></tr>
+        <tr><td><code class="token-name">teaser_cards</code></td><td style="color:var(--body)">Vorschau-Karten (Blog, Referenzen)</td></tr>
+        <tr><td><code class="token-name">youtubeplayer</code></td><td style="color:var(--body)">Eingebetteter YouTube-Player (lazy)</td></tr>
+        <tr><td><code class="token-name">image_comparison_slider</code></td><td style="color:var(--body)">Vorher/Nachher-Bild-Slider</td></tr>
+        <tr><td><code class="token-name">stacked_cards</code></td><td style="color:var(--body)">Übereinander gestapelte Karten mit Hover-Effekt</td></tr>
+        <tr><td><code class="token-name">special_configurator</code></td><td style="color:var(--body)">Individueller Preis-Konfigurator</td></tr>
+        <tr><td><code class="token-name">special_sales</code></td><td style="color:var(--body)">Sales-Page-Element (individuell)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="group-title">Text (4)</h3>
+  <div class="card" style="margin-bottom:20px">
+    <table class="token-table">
+      <thead><tr><th>Modul</th><th>Beschreibung</th></tr></thead>
+      <tbody>
+        <tr><td><code class="token-name">article</code></td><td style="color:var(--body)">Langer Fließtext mit Bard-Editor und Medien</td></tr>
+        <tr><td><code class="token-name">text</code></td><td style="color:var(--body)">Dachzeile + Überschrift + Text + Buttons</td></tr>
+        <tr><td><code class="token-name">text_columns</code></td><td style="color:var(--body)">Text in 2–3 Spalten aufgeteilt</td></tr>
+        <tr><td><code class="token-name">buttons</code></td><td style="color:var(--body)">Eigenständige Button-Gruppe</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="group-title">Collection Walls (9)</h3>
+  <div class="card" style="margin-bottom:20px">
+    <table class="token-table">
+      <thead><tr><th>Modul</th><th>Collection</th><th>Beschreibung</th></tr></thead>
+      <tbody>
+        <tr><td><code class="token-name">logo_wall</code></td><td style="color:var(--body)">customer</td><td style="color:var(--body)">Kunden-/Partner-Logos</td></tr>
+        <tr><td><code class="token-name">testimonial_wall</code></td><td style="color:var(--body)">testimonials</td><td style="color:var(--body)">Kundenstimmen/Bewertungen</td></tr>
+        <tr><td><code class="token-name">hero_wall</code></td><td style="color:var(--body)">references</td><td style="color:var(--body)">Referenz-Websites als Showcase</td></tr>
+        <tr><td><code class="token-name">price_wall</code></td><td style="color:var(--body)">prices</td><td style="color:var(--body)">Preispakete</td></tr>
+        <tr><td><code class="token-name">reference_wall</code></td><td style="color:var(--body)">references</td><td style="color:var(--body)">Referenzkarten mit Text</td></tr>
+        <tr><td><code class="token-name">blog_wall</code></td><td style="color:var(--body)">blog</td><td style="color:var(--body)">Blog-Beiträge als Grid</td></tr>
+        <tr><td><code class="token-name">faq_accordion</code></td><td style="color:var(--body)">faqs</td><td style="color:var(--body)">FAQ als Accordion</td></tr>
+        <tr><td><code class="token-name">jobs_wall</code></td><td style="color:var(--body)">jobs</td><td style="color:var(--body)">Offene Stellen</td></tr>
+        <tr><td><code class="token-name">glossar_wall</code></td><td style="color:var(--body)">glossar</td><td style="color:var(--body)">Glossar-Einträge</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="group-title">Forms &amp; Reusable (2)</h3>
+  <div class="card">
+    <table class="token-table">
+      <thead><tr><th>Modul</th><th>Beschreibung</th></tr></thead>
+      <tbody>
+        <tr><td><code class="token-name">form</code></td><td style="color:var(--body)">Eingebettetes Statamic-Formular</td></tr>
+        <tr><td><code class="token-name">shared_component</code></td><td style="color:var(--body)">Wiederverwendbarer Inhalt aus Collection</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════════ ISSUES ══════════════ -->
+<section id="issues" data-title="Known Issues">
+  <h1 class="page-title">Known Issues</h1>
+  <p class="page-subtitle">Bekannte Inkonsistenzen zwischen Figma-Design und Code-Implementierung.</p>
+
+  <div class="card" style="padding:0;overflow:hidden">
+    <div class="issue-item">
+      <div><span class="badge badge-red">🔴 Kritisch</span></div>
+      <div class="issue-content"><h4>Cera Variable DEMO — Font-Lizenz</h4><p>Das Figma-Design verwendet "Cera Variable DEMO" — eine Trial-Version der Schrift. Vor Produktiveinsatz kommerzielle Lizenz erwerben oder auf Inter Tight umstellen.</p></div>
+    </div>
+    <div class="issue-item">
+      <div><span class="badge badge-red">🔴 Kritisch</span></div>
+      <div class="issue-content"><h4>Highlight-Farbe divergiert</h4><p>Tailwind: <code>#F61A75</code> — Figma: <code>#c63ba3</code>. Beide werden produktiv verwendet. Einheitliche Entscheidung nötig.</p></div>
+    </div>
+    <div class="issue-item">
+      <div><span class="badge badge-yellow">🟡 Mittel</span></div>
+      <div class="issue-content"><h4>Text-Default leicht verschoben</h4><p>Figma: <code>#31363c</code> vs. Tailwind: <code>#32363D</code> (1 Hex-Wert Differenz). Kaum sichtbar, sollte aber synchronisiert werden.</p></div>
+    </div>
+    <div class="issue-item">
+      <div><span class="badge badge-yellow">🟡 Mittel</span></div>
+      <div class="issue-content"><h4>Text-Light leicht verschoben</h4><p>Figma: <code>#474747</code> vs. Tailwind: <code>#484848</code>. Gleiche Situation wie Text-Default.</p></div>
+    </div>
+    <div class="issue-item">
+      <div><span class="badge badge-yellow">🟡 Mittel</span></div>
+      <div class="issue-content"><h4>Dark BG fehlt als Token</h4><p><code>#0E1012</code> wird als Hintergrundfarbe für Dark-Sektionen genutzt, ist aber nicht als benannter Token in <code>tailwind.config.site.js</code> definiert — nur hardcoded in Templates. Fix: <code>dark: '#0E1012'</code> ergänzen.</p></div>
+    </div>
+    <div class="issue-item">
+      <div><span class="badge badge-yellow">🟡 Mittel</span></div>
+      <div class="issue-content"><h4>Doppeltes Picture-Partial</h4><p><code>components/_picture.antlers.html</code> und <code>_picture_new.antlers.html</code> existieren beide. Die alte Datei entfernen.</p></div>
+    </div>
+    <div class="issue-item">
+      <div><span class="badge badge-green">🟢 Low</span></div>
+      <div class="issue-content"><h4>Download-Modul nicht in Figma</h4><p>Das Page-Builder-Modul <code>_download.antlers.html</code> existiert im Code, fehlt aber in der Figma-Dokumentation.</p></div>
+    </div>
+    <div class="issue-item" style="border-bottom:none">
+      <div><span class="badge badge-green">🟢 Low</span></div>
+      <div class="issue-content"><h4>Special-Module schlecht dokumentiert</h4><p><code>special_configurator</code> und <code>special_sales</code> sind sehr individuelle Module ohne ausreichende Dokumentation. Screenshots und Beschreibungen ergänzen.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ CHANGELOG ══════════════ -->
+<section id="changelog" data-title="Changelog">
+  <h1 class="page-title">Changelog</h1>
+  <p class="page-subtitle">Versionshistorie des Design Systems.</p>
+  <div class="card">
+    <div class="changelog-entry">
+      <div class="changelog-version">v1.0.0</div>
+      <div class="changelog-date">10. März 2026 — Initiales Release</div>
+      <ul class="changelog-list">
+        <li>Design-Token-Audit: Farben, Typografie, Spacing und Gradients dokumentiert</li>
+        <li>Alle 37 Content-Module katalogisiert und beschrieben</li>
+        <li>8 Komponenten als interaktive Previews mit Code-Tabs</li>
+        <li>8 bekannte Inkonsistenzen zwischen Figma und Tailwind identifiziert</li>
+        <li>GitHub Pages Deploy-Pipeline eingerichtet (auto-deploy bei Push)</li>
+        <li>Dark Mode implementiert</li>
+      </ul>
+    </div>
+    <div class="changelog-entry" style="border-bottom:none">
+      <div class="changelog-version" style="color:var(--body)">Geplant: v1.1.0</div>
+      <div class="changelog-date">Demnächst</div>
+      <ul class="changelog-list">
+        <li>Tokens Studio Figma-Plugin Integration</li>
+        <li>Dark BG als offizieller Tailwind-Token</li>
+        <li>Highlight-Farbe synchronisiert</li>
+        <li>Hero-Modul Preview</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ── JAVASCRIPT ─────────────────────────────────────────────────────── -->
+<script>
+// ── Theme Toggle ──────────────────────────────────────────────────────
+const html = document.documentElement;
+const toggleBtn = document.getElementById('theme-toggle');
+const saved = localStorage.getItem('hph-theme') || 'light';
+html.dataset.theme = saved;
+toggleBtn.textContent = saved === 'dark' ? '☀️' : '🌙';
+
+toggleBtn.addEventListener('click', () => {
+  const next = html.dataset.theme === 'dark' ? 'light' : 'dark';
+  html.dataset.theme = next;
+  toggleBtn.textContent = next === 'dark' ? '☀️' : '🌙';
+  localStorage.setItem('hph-theme', next);
+});
+
+// ── Hash Routing ──────────────────────────────────────────────────────
+const titles = {};
+document.querySelectorAll('section[id]').forEach(s => {
+  titles[s.id] = s.dataset.title || s.id;
+});
+
+function navigate(hash) {
+  const id = hash.replace('#','') || 'overview';
+  document.querySelectorAll('section[id]').forEach(s => s.classList.remove('active'));
+  const target = document.getElementById(id) || document.getElementById('overview');
+  if (target) {
+    target.classList.add('active');
+    document.getElementById('breadcrumb').textContent = target.dataset.title || id;
+  }
+  document.querySelectorAll('.nav-item').forEach(el => {
+    el.classList.toggle('active', el.dataset.section === (id));
+  });
+  window.scrollTo(0,0);
+}
+
+window.addEventListener('hashchange', () => navigate(location.hash));
+document.addEventListener('DOMContentLoaded', () => navigate(location.hash || '#overview'));
+
+document.querySelectorAll('.nav-item').forEach(el => {
+  el.addEventListener('click', () => {
+    location.hash = el.dataset.section;
+  });
+});
+
+// ── Tabs ──────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.component-block').forEach(block => {
+    const preview = block.querySelector('.tab-preview');
+    const code = block.querySelector('.tab-code');
+    block.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        block.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        if (preview) preview.style.display = btn.dataset.tab === 'preview' ? 'block' : 'none';
+        if (code) code.style.display = btn.dataset.tab === 'code' ? 'block' : 'none';
+      });
+    });
+  });
+
+  // ── Sidebar Search ────────────────────────────────────────────────
+  document.getElementById('nav-search').addEventListener('input', function() {
+    const q = this.value.toLowerCase();
+    document.querySelectorAll('.nav-item').forEach(el => {
+      const match = el.textContent.toLowerCase().includes(q);
+      el.style.display = match ? 'flex' : 'none';
+    });
+    document.querySelectorAll('.nav-section-label').forEach(el => {
+      // Show label if any sibling nav-items are visible
+      let sib = el.nextElementSibling;
+      let anyVisible = false;
+      while (sib && !sib.classList.contains('nav-section-label')) {
+        if (sib.style.display !== 'none') anyVisible = true;
+        sib = sib.nextElementSibling;
+      }
+      el.style.display = anyVisible ? 'block' : 'none';
+    });
+  });
+});
+</script>
+</body>
+</html>
