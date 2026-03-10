@@ -1,0 +1,19 @@
+title: Buttons
+status: ready
+variants:
+  - name: primary
+    context:
+      label: Angebot anfordern
+  - name: small
+    context:
+      label: Klein
+  - name: secondary
+    context:
+      label: Mehr erfahren
+  - name: highlight
+    context:
+      label: Jetzt starten
+notes: |
+  Primär: bg-button-gradient mit Shadow.
+  Sekundär: weißer Hintergrund mit blauem Border.
+  Highlight: Rosa/Lila Gradient für besondere CTAs.
