@@ -1,0 +1,5 @@
+title: Typografie
+status: ready
+notes: |
+  Fluid Type Scale mit clamp(). Heading-Font: Cera Variable (Lizenz prüfen!).
+  Fallback: Inter Tight / Inter.
