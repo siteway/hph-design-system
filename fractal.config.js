@@ -7,12 +7,7 @@ const hphTheme = mandelbrot({
     skin: { name: 'custom', accent: '#0040B8', complement: '#ffffff', links: '#0078FF' },
     nav: ['docs', 'components'],
     panels: ['html', 'view', 'context', 'info', 'notes'],
-    favicon: '/favicon.ico',
     format: 'yaml',
-    labels: {
-        components: { title: 'Komponenten' },
-        docs: { title: 'Dokumentation' },
-    },
 });
 
 fractal.set('project.title', 'HPH Design System');
@@ -33,4 +28,3 @@ fractal.components.set('statuses', {
 });
 
 fractal.docs.set('path', __dirname + '/src/docs');
-fractal.docs.set('indexLabel', 'Übersicht');
