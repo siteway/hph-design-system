@@ -734,42 +734,68 @@ counter: `<div class="grid grid-cols-4 gap-6 bg-neutral-extraLight p-6 rounded-x
   <div><div class="text-5xl font-extrabold text-primary-DEFAULT leading-none">100%</div><div class="text-sm text-neutral-dark mt-2 font-medium">Zufriedenheit</div></div>
 </div>`,
 
-'price-wall': `<div class="grid grid-cols-3 gap-5">
-  <div class="border border-neutral-light rounded-2xl p-6 bg-white">
-    <h3 class="font-bold text-lg text-fontColor-DEFAULT mb-3">Starter</h3>
-    <div class="text-3xl font-extrabold text-fontColor-DEFAULT leading-none">ab 2.500 €</div>
-    <div class="text-sm text-neutral-DEFAULT mb-5 mt-1">Einmalig</div>
-    <ul class="space-y-2 mb-6">
-      <li class="flex gap-2 text-sm text-neutral-dark"><span class="text-primary-DEFAULT font-bold">✓</span>5 Seiten</li>
-      <li class="flex gap-2 text-sm text-neutral-dark"><span class="text-primary-DEFAULT font-bold">✓</span>Responsive Design</li>
-      <li class="flex gap-2 text-sm text-neutral-dark"><span class="text-primary-DEFAULT font-bold">✓</span>CMS-Zugang</li>
+'price-wall': `<div class="flex flex-wrap justify-center gap-5 p-2">
+
+  <!-- Smart -->
+  <div class="relative bg-white rounded shadow-md border-l-4 flex flex-col pt-10 pb-6 px-6 w-56" style="border-left-color:#666666">
+    <span class="absolute left-1/2 -translate-x-1/2 top-0 text-xs font-bold px-4 py-1.5 rounded-b-md text-white" style="background:#666666; opacity:0">&nbsp;</span>
+    <div class="text-2xl font-semibold text-center text-fontColor-DEFAULT mb-2">Smart</div>
+    <p class="text-xs text-center text-neutral-dark mb-4">Budgetfreundliche Website mit grundlegenden Funktionen.</p>
+    <div class="text-xl font-medium text-center text-fontColor-DEFAULT mb-4">ab 5.600€</div>
+    <a class="block text-center text-sm font-semibold py-2 px-4 rounded-lg text-white mb-5" style="background:linear-gradient(90.79deg,#3376F6 0.46%,#0040B8 99.09%)">Jetzt anfragen</a>
+    <ul class="space-y-1.5 text-xs text-neutral-dark">
+      <li class="flex gap-1.5"><span class="text-primary-DEFAULT">✓</span>Design aus Branchen-Vorlage</li>
+      <li class="flex gap-1.5"><span class="text-primary-DEFAULT">✓</span>Smartphone &amp; Tablet Anpassung</li>
+      <li class="flex gap-1.5"><span class="text-primary-DEFAULT">✓</span>KI &amp; Google Optimierung</li>
+      <li class="flex gap-1.5"><span class="text-primary-DEFAULT">✓</span>Schnelle Ladezeit</li>
     </ul>
-    <button class="w-full py-2.5 rounded-lg font-semibold text-sm border-2 border-primary-DEFAULT text-primary-DEFAULT hover:bg-primary-DEFAULT hover:text-white transition-colors">Anfragen</button>
   </div>
-  <div class="rounded-2xl p-6 text-white relative" style="background:linear-gradient(72.87deg,#1548BB 27.5%,#027CEC 85.64%)">
-    <span class="absolute top-4 right-4 bg-highlight text-white text-xs font-bold px-2.5 py-1 rounded-full">Beliebt</span>
-    <h3 class="font-bold text-lg mb-3">Professional</h3>
-    <div class="text-3xl font-extrabold leading-none">ab 5.000 €</div>
-    <div class="text-sm text-blue-200 mb-5 mt-1">Einmalig</div>
-    <ul class="space-y-2 mb-6">
-      <li class="flex gap-2 text-sm text-blue-100"><span class="font-bold">✓</span>15 Seiten</li>
-      <li class="flex gap-2 text-sm text-blue-100"><span class="font-bold">✓</span>Custom Design</li>
-      <li class="flex gap-2 text-sm text-blue-100"><span class="font-bold">✓</span>SEO-Optimierung</li>
-      <li class="flex gap-2 text-sm text-blue-100"><span class="font-bold">✓</span>3 Monate Support</li>
+
+  <!-- Business (Bestseller) -->
+  <div class="relative bg-white rounded shadow-md border-l-4 flex flex-col pt-10 pb-6 px-6 w-56" style="border-left-color:hsl(189,100%,51%)">
+    <span class="absolute left-1/2 -translate-x-1/2 top-0 text-xs font-bold px-4 py-1.5 rounded-b-md text-fontColor-DEFAULT" style="background:hsl(189,100%,51%)">Bestseller</span>
+    <div class="text-2xl font-semibold text-center text-fontColor-DEFAULT mb-2">Business</div>
+    <p class="text-xs text-center text-neutral-dark mb-4">Design Unikat &amp; erweiterte SEO-Strategie.</p>
+    <div class="text-xl font-medium text-center text-fontColor-DEFAULT mb-4">ab 8.400€</div>
+    <a class="block text-center text-sm font-semibold py-2 px-4 rounded-lg text-white mb-5" style="background:linear-gradient(90.79deg,#3376F6 0.46%,#0040B8 99.09%)">Jetzt anfragen</a>
+    <ul class="space-y-1.5 text-xs text-neutral-dark">
+      <li class="flex gap-1.5"><span class="text-primary-DEFAULT">✓</span>Design Unikat (2 Entwürfe)</li>
+      <li class="flex gap-1.5"><span class="text-primary-DEFAULT">✓</span>Smartphone &amp; Tablet Anpassung</li>
+      <li class="flex gap-1.5"><span class="text-primary-DEFAULT">✓</span>KI &amp; Google Optimierung</li>
+      <li class="flex gap-1.5"><span class="text-primary-DEFAULT">✓</span>Conversion Optimierung</li>
     </ul>
-    <button class="w-full py-2.5 rounded-lg font-semibold text-sm bg-white text-primary-DEFAULT">Anfragen</button>
   </div>
-  <div class="border border-neutral-light rounded-2xl p-6 bg-white">
-    <h3 class="font-bold text-lg text-fontColor-DEFAULT mb-3">Enterprise</h3>
-    <div class="text-3xl font-extrabold text-fontColor-DEFAULT leading-none">Individuell</div>
-    <div class="text-sm text-neutral-DEFAULT mb-5 mt-1">Auf Anfrage</div>
-    <ul class="space-y-2 mb-6">
-      <li class="flex gap-2 text-sm text-neutral-dark"><span class="text-primary-DEFAULT font-bold">✓</span>Unbegrenzte Seiten</li>
-      <li class="flex gap-2 text-sm text-neutral-dark"><span class="text-primary-DEFAULT font-bold">✓</span>API-Integrationen</li>
-      <li class="flex gap-2 text-sm text-neutral-dark"><span class="text-primary-DEFAULT font-bold">✓</span>Laufende Betreuung</li>
+
+  <!-- Performance -->
+  <div class="relative bg-white rounded shadow-md border-l-4 flex flex-col pt-10 pb-6 px-6 w-56" style="border-left-color:hsl(302,100%,50%)">
+    <span class="absolute left-1/2 -translate-x-1/2 top-0 text-xs font-bold px-4 py-1.5 rounded-b-md text-white" style="background:hsl(302,100%,50%); opacity:0">&nbsp;</span>
+    <div class="text-2xl font-semibold text-center text-fontColor-DEFAULT mb-2">Performance</div>
+    <p class="text-xs text-center text-neutral-dark mb-4">Maximale Performance für anspruchsvolle Projekte.</p>
+    <div class="text-xl font-medium text-center text-fontColor-DEFAULT mb-4">ab 16.600€</div>
+    <a class="block text-center text-sm font-semibold py-2 px-4 rounded-lg text-white mb-5" style="background:linear-gradient(90.79deg,#3376F6 0.46%,#0040B8 99.09%)">Jetzt anfragen</a>
+    <ul class="space-y-1.5 text-xs text-neutral-dark">
+      <li class="flex gap-1.5"><span class="text-primary-DEFAULT">✓</span>Design Unikat (3 Entwürfe)</li>
+      <li class="flex gap-1.5"><span class="text-primary-DEFAULT">✓</span>KI &amp; Google Optimierung</li>
+      <li class="flex gap-1.5"><span class="text-primary-DEFAULT">✓</span>PageSpeed Score 90+</li>
+      <li class="flex gap-1.5"><span class="text-primary-DEFAULT">✓</span>Premium Support</li>
     </ul>
-    <button class="w-full py-2.5 rounded-lg font-semibold text-sm border-2 border-primary-DEFAULT text-primary-DEFAULT hover:bg-primary-DEFAULT hover:text-white transition-colors">Anfragen</button>
   </div>
+
+  <!-- Enterprise -->
+  <div class="relative bg-white rounded shadow-md border-l-4 flex flex-col pt-10 pb-6 px-6 w-56" style="border-left-color:hsl(82,100%,64%)">
+    <span class="absolute left-1/2 -translate-x-1/2 top-0 text-xs font-bold px-4 py-1.5 rounded-b-md text-fontColor-DEFAULT" style="background:hsl(82,100%,64%)">Auf Anfrage</span>
+    <div class="text-2xl font-semibold text-center text-fontColor-DEFAULT mb-2">Enterprise</div>
+    <p class="text-xs text-center text-neutral-dark mb-4">Individuelle Lösung für komplexe Anforderungen.</p>
+    <div class="text-xl font-medium text-center text-fontColor-DEFAULT mb-4">ab 26.400€</div>
+    <a class="block text-center text-sm font-semibold py-2 px-4 rounded-lg text-white mb-5" style="background:linear-gradient(90.79deg,#3376F6 0.46%,#0040B8 99.09%)">Jetzt anfragen</a>
+    <ul class="space-y-1.5 text-xs text-neutral-dark">
+      <li class="flex gap-1.5"><span class="text-primary-DEFAULT">✓</span>Vollständig individuell</li>
+      <li class="flex gap-1.5"><span class="text-primary-DEFAULT">✓</span>API-Integrationen</li>
+      <li class="flex gap-1.5"><span class="text-primary-DEFAULT">✓</span>Dedizierter Ansprechpartner</li>
+      <li class="flex gap-1.5"><span class="text-primary-DEFAULT">✓</span>SLA &amp; Support-Vertrag</li>
+    </ul>
+  </div>
+
 </div>`,
 
 testimonials: `<div class="grid grid-cols-3 gap-4">
