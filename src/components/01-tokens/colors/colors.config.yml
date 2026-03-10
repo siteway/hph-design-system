@@ -1,0 +1,5 @@
+title: Farb-Palette
+status: ready
+notes: |
+  Alle definierten Farben des HPH Design Systems.
+  Tokens mit ⚠️ sind noch nicht in tailwind.config.site.js definiert.
