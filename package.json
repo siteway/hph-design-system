@@ -1,0 +1,16 @@
+{
+  "name": "hph-design-system",
+  "version": "1.0.0",
+  "description": "Homepage Helden Design System",
+  "scripts": {
+    "start": "fractal start --sync",
+    "build": "fractal build"
+  },
+  "dependencies": {
+    "@frctl/fractal": "^1.6.0",
+    "@frctl/mandelbrot": "^1.10.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
