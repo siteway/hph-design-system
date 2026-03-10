@@ -706,32 +706,62 @@ buttons: `<div class="flex flex-wrap gap-3 items-center p-2">
   <button class="px-6 py-3 rounded-lg text-white font-semibold text-sm opacity-40 cursor-not-allowed" style="background:linear-gradient(90.79deg,#3376F6 0.46%,#0040B8 99.09%)" disabled>Disabled</button>
 </div>`,
 
-cards: `<div class="grid grid-cols-3 gap-4">
-  <div class="rounded-xl overflow-hidden border border-neutral-light shadow-sm hover:shadow-md transition-shadow">
-    <div class="h-28 bg-primary-extralight flex items-center justify-center">
-      <div class="w-10 h-10 rounded-full bg-primary-DEFAULT flex items-center justify-center text-white text-lg">🖥️</div>
+cards: `<div class="flex flex-wrap justify-center gap-7">
+  <div class="w-full sm:w-[calc(33.333%-1.75rem)] flex justify-between flex-col bg-white rounded-md shadow-md border border-white/50">
+    <div class="p-5">
+      <div class="flex items-center mb-5">
+        <div class="w-10 h-10 p-2 rounded-lg mr-3 flex-shrink-0" style="background:linear-gradient(45deg,hsl(220,80%,44%),hsl(220,100%,65%))">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" class="w-6 h-6"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <h4 class="mb-0 text-base font-bold text-fontColor-DEFAULT">Webdesign</h4>
+      </div>
+      <p class="text-sm text-neutral-dark leading-relaxed">Individuelles Design passend zu Ihrer Marke und Ihren Zielen.</p>
     </div>
-    <div class="p-4 bg-white"><h3 class="font-bold text-base text-fontColor-DEFAULT mb-1">Webdesign</h3><p class="text-xs text-neutral-dark leading-relaxed">Individuelle Designs die zu Ihrer Marke passen.</p></div>
+    <button class="block w-full p-4 py-3 font-light text-center border-t border-neutral-500/20 text-fontColor-DEFAULT text-sm hover:text-primary-DEFAULT rounded-b-md">Mehr erfahren →</button>
   </div>
-  <div class="rounded-xl overflow-hidden border border-neutral-light shadow-sm hover:shadow-md transition-shadow">
-    <div class="h-28 bg-primary-extralight flex items-center justify-center">
-      <div class="w-10 h-10 rounded-full bg-primary-DEFAULT flex items-center justify-center text-white text-lg">⚡</div>
+  <div class="w-full sm:w-[calc(33.333%-1.75rem)] flex justify-between flex-col bg-white rounded-md shadow-md border border-white/50">
+    <div class="p-5">
+      <div class="flex items-center mb-5">
+        <div class="w-10 h-10 p-2 rounded-lg mr-3 flex-shrink-0" style="background:linear-gradient(45deg,hsl(160,80%,30%),hsl(160,100%,55%))">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" class="w-6 h-6"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <h4 class="mb-0 text-base font-bold text-fontColor-DEFAULT">Performance</h4>
+      </div>
+      <p class="text-sm text-neutral-dark leading-relaxed">Optimiert für Core Web Vitals, PageSpeed und beste Ladezeiten.</p>
     </div>
-    <div class="p-4 bg-white"><h3 class="font-bold text-base text-fontColor-DEFAULT mb-1">Performance</h3><p class="text-xs text-neutral-dark leading-relaxed">Optimiert für Core Web Vitals und PageSpeed.</p></div>
+    <button class="block w-full p-4 py-3 font-light text-center border-t border-neutral-500/20 text-fontColor-DEFAULT text-sm hover:text-primary-DEFAULT rounded-b-md">Mehr erfahren →</button>
   </div>
-  <div class="rounded-xl overflow-hidden border border-neutral-light shadow-sm hover:shadow-md transition-shadow">
-    <div class="h-28 bg-primary-extralight flex items-center justify-center">
-      <div class="w-10 h-10 rounded-full bg-primary-DEFAULT flex items-center justify-center text-white text-lg">📈</div>
+  <div class="w-full sm:w-[calc(33.333%-1.75rem)] flex justify-between flex-col bg-white rounded-md shadow-md border border-white/50">
+    <div class="p-5">
+      <div class="flex items-center mb-5">
+        <div class="w-10 h-10 p-2 rounded-lg mr-3 flex-shrink-0" style="background:linear-gradient(45deg,hsl(30,80%,44%),hsl(30,100%,65%))">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" class="w-6 h-6"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </div>
+        <h4 class="mb-0 text-base font-bold text-fontColor-DEFAULT">SEO</h4>
+      </div>
+      <p class="text-sm text-neutral-dark leading-relaxed">Sichtbarkeit bei Google durch technische und inhaltliche Optimierung.</p>
     </div>
-    <div class="p-4 bg-white"><h3 class="font-bold text-base text-fontColor-DEFAULT mb-1">SEO</h3><p class="text-xs text-neutral-dark leading-relaxed">Gefunden werden bei Google und Co.</p></div>
+    <button class="block w-full p-4 py-3 font-light text-center border-t border-neutral-500/20 text-fontColor-DEFAULT text-sm hover:text-primary-DEFAULT rounded-b-md">Mehr erfahren →</button>
   </div>
 </div>`,
 
-counter: `<div class="grid grid-cols-4 gap-6 bg-neutral-extraLight p-6 rounded-xl text-center">
-  <div><div class="text-5xl font-extrabold text-primary-DEFAULT leading-none">200+</div><div class="text-sm text-neutral-dark mt-2 font-medium">Projekte</div></div>
-  <div><div class="text-5xl font-extrabold text-primary-DEFAULT leading-none">4,9</div><div class="text-sm text-neutral-dark mt-2 font-medium">Google Rating ⭐</div></div>
-  <div><div class="text-5xl font-extrabold text-primary-DEFAULT leading-none">12+</div><div class="text-sm text-neutral-dark mt-2 font-medium">Jahre Erfahrung</div></div>
-  <div><div class="text-5xl font-extrabold text-primary-DEFAULT leading-none">100%</div><div class="text-sm text-neutral-dark mt-2 font-medium">Zufriedenheit</div></div>
+counter: `<div class="flex flex-wrap justify-between gap-5">
+  <div class="flex-1 text-center rounded-md shadow-md bg-white/50 py-5 px-8 min-w-[120px]">
+    <div class="text-5xl font-bold text-fontColor-DEFAULT leading-tight">200<span class="text-2xl font-medium">+</span></div>
+    <div class="mt-3 text-base font-medium text-fontColor-DEFAULT">Projekte</div>
+  </div>
+  <div class="flex-1 text-center rounded-md shadow-md bg-white/50 py-5 px-8 min-w-[120px]">
+    <div class="text-5xl font-bold text-fontColor-DEFAULT leading-tight">4,9<span class="text-2xl font-medium">★</span></div>
+    <div class="mt-3 text-base font-medium text-fontColor-DEFAULT">Google Bewertung</div>
+  </div>
+  <div class="flex-1 text-center rounded-md shadow-md bg-white/50 py-5 px-8 min-w-[120px]">
+    <div class="text-5xl font-bold text-fontColor-DEFAULT leading-tight"><span class="text-2xl font-medium">seit </span>2012</div>
+    <div class="mt-3 text-base font-medium text-fontColor-DEFAULT">Gegründet</div>
+  </div>
+  <div class="flex-1 text-center rounded-md shadow-md bg-white/50 py-5 px-8 min-w-[120px]">
+    <div class="text-5xl font-bold text-fontColor-DEFAULT leading-tight">98<span class="text-2xl font-medium">%</span></div>
+    <div class="mt-3 text-base font-medium text-fontColor-DEFAULT">Weiterempfehlung</div>
+  </div>
 </div>`,
 
 'price-wall': `<div class="flex flex-wrap justify-center gap-5 p-2">
@@ -799,60 +829,561 @@ counter: `<div class="grid grid-cols-4 gap-6 bg-neutral-extraLight p-6 rounded-x
 </div>`,
 
 testimonials: `<div class="grid grid-cols-3 gap-4">
-  <div class="bg-neutral-extraLight rounded-xl p-5">
-    <div class="text-yellow-400 text-sm mb-3">★★★★★</div>
-    <p class="text-sm text-fontColor-DEFAULT leading-relaxed mb-3 italic">"Die neue Website kann sich sehen lassen. Unsere Erwartungen wurden übertroffen."</p>
-    <p class="font-semibold text-sm text-fontColor-DEFAULT">Max Mustermann</p>
-    <p class="text-xs text-neutral-DEFAULT">steueragenten.de</p>
+  <div class="bg-white p-5 rounded-md shadow-md flex flex-col justify-between">
+    <div>
+      <div class="flex gap-0.5 mb-3">
+        <svg viewBox="0 0 16 16" class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M8 .5l1.8 5.4H15l-4.6 3.3 1.7 5.4L8 11.3l-4.1 3.3 1.7-5.4L1 5.9h5.2z"/></svg>
+        <svg viewBox="0 0 16 16" class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M8 .5l1.8 5.4H15l-4.6 3.3 1.7 5.4L8 11.3l-4.1 3.3 1.7-5.4L1 5.9h5.2z"/></svg>
+        <svg viewBox="0 0 16 16" class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M8 .5l1.8 5.4H15l-4.6 3.3 1.7 5.4L8 11.3l-4.1 3.3 1.7-5.4L1 5.9h5.2z"/></svg>
+        <svg viewBox="0 0 16 16" class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M8 .5l1.8 5.4H15l-4.6 3.3 1.7 5.4L8 11.3l-4.1 3.3 1.7-5.4L1 5.9h5.2z"/></svg>
+        <svg viewBox="0 0 16 16" class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M8 .5l1.8 5.4H15l-4.6 3.3 1.7 5.4L8 11.3l-4.1 3.3 1.7-5.4L1 5.9h5.2z"/></svg>
+      </div>
+      <div class="text-sm font-semibold text-fontColor-DEFAULT mb-2">Sehr professionell!</div>
+      <p class="font-thin text-[13px] leading-relaxed text-neutral-dark">Die neue Website ist ein Quantensprung. Unsere Kunden finden uns jetzt viel schneller online.</p>
+    </div>
+    <p class="font-normal text-sm text-fontColor-DEFAULT mt-3">Max Mustermann</p>
   </div>
-  <div class="rounded-xl p-5" style="background:linear-gradient(72.87deg,#1548BB 27.5%,#027CEC 85.64%)">
-    <div class="text-yellow-400 text-sm mb-3">★★★★★</div>
-    <p class="text-sm text-white leading-relaxed mb-3 italic opacity-90">"Professionell, schnell und immer erreichbar. Absolut empfehlenswert!"</p>
-    <p class="font-semibold text-sm text-white">Maria Müller</p>
-    <p class="text-xs text-blue-200">beispiel-firma.de</p>
+  <div class="bg-white p-5 rounded-md shadow-md flex flex-col justify-between">
+    <div>
+      <div class="flex gap-0.5 mb-3">
+        <svg viewBox="0 0 16 16" class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M8 .5l1.8 5.4H15l-4.6 3.3 1.7 5.4L8 11.3l-4.1 3.3 1.7-5.4L1 5.9h5.2z"/></svg>
+        <svg viewBox="0 0 16 16" class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M8 .5l1.8 5.4H15l-4.6 3.3 1.7 5.4L8 11.3l-4.1 3.3 1.7-5.4L1 5.9h5.2z"/></svg>
+        <svg viewBox="0 0 16 16" class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M8 .5l1.8 5.4H15l-4.6 3.3 1.7 5.4L8 11.3l-4.1 3.3 1.7-5.4L1 5.9h5.2z"/></svg>
+        <svg viewBox="0 0 16 16" class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M8 .5l1.8 5.4H15l-4.6 3.3 1.7 5.4L8 11.3l-4.1 3.3 1.7-5.4L1 5.9h5.2z"/></svg>
+        <svg viewBox="0 0 16 16" class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M8 .5l1.8 5.4H15l-4.6 3.3 1.7 5.4L8 11.3l-4.1 3.3 1.7-5.4L1 5.9h5.2z"/></svg>
+      </div>
+      <div class="text-sm font-semibold text-fontColor-DEFAULT mb-2">Immer erreichbar!</div>
+      <p class="font-thin text-[13px] leading-relaxed text-neutral-dark">Professionell, schnell und zuverlässig. Die Zusammenarbeit hat von Anfang bis Ende Spaß gemacht.</p>
+    </div>
+    <p class="font-normal text-sm text-fontColor-DEFAULT mt-3">Maria Müller · beispiel-firma.de</p>
   </div>
-  <div class="bg-neutral-extraLight rounded-xl p-5">
-    <div class="text-yellow-400 text-sm mb-3">★★★★★</div>
-    <p class="text-sm text-fontColor-DEFAULT leading-relaxed mb-3 italic">"Top Ergebnis, faire Preise, tolle Zusammenarbeit. Gerne wieder!"</p>
-    <p class="font-semibold text-sm text-fontColor-DEFAULT">Klaus Schmidt</p>
-    <p class="text-xs text-neutral-DEFAULT">mein-unternehmen.de</p>
+  <div class="bg-white p-5 rounded-md shadow-md flex flex-col justify-between">
+    <div>
+      <div class="flex gap-0.5 mb-3">
+        <svg viewBox="0 0 16 16" class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M8 .5l1.8 5.4H15l-4.6 3.3 1.7 5.4L8 11.3l-4.1 3.3 1.7-5.4L1 5.9h5.2z"/></svg>
+        <svg viewBox="0 0 16 16" class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M8 .5l1.8 5.4H15l-4.6 3.3 1.7 5.4L8 11.3l-4.1 3.3 1.7-5.4L1 5.9h5.2z"/></svg>
+        <svg viewBox="0 0 16 16" class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M8 .5l1.8 5.4H15l-4.6 3.3 1.7 5.4L8 11.3l-4.1 3.3 1.7-5.4L1 5.9h5.2z"/></svg>
+        <svg viewBox="0 0 16 16" class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M8 .5l1.8 5.4H15l-4.6 3.3 1.7 5.4L8 11.3l-4.1 3.3 1.7-5.4L1 5.9h5.2z"/></svg>
+        <svg viewBox="0 0 16 16" class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M8 .5l1.8 5.4H15l-4.6 3.3 1.7 5.4L8 11.3l-4.1 3.3 1.7-5.4L1 5.9h5.2z"/></svg>
+      </div>
+      <div class="text-sm font-semibold text-fontColor-DEFAULT mb-2">Gerne wieder!</div>
+      <p class="font-thin text-[13px] leading-relaxed text-neutral-dark">Top Ergebnis, faire Preise und ein tolles Team. Wir sind rundum zufrieden mit dem Ergebnis.</p>
+    </div>
+    <p class="font-normal text-sm text-fontColor-DEFAULT mt-3">Klaus Schmidt</p>
   </div>
 </div>`,
 
-faq: `<div class="space-y-2 max-w-xl mx-auto">
-  <div class="border border-neutral-light rounded-xl overflow-hidden">
-    <div class="flex justify-between items-center px-5 py-4 bg-white font-semibold text-sm text-fontColor-DEFAULT">Was kostet eine Website? <span class="text-primary-DEFAULT text-xs">▼</span></div>
-    <div class="px-5 pb-4 bg-white text-sm text-neutral-dark leading-relaxed">Eine einfache Unternehmenswebsite beginnt bei ca. 2.500 €. Der genaue Preis hängt vom Umfang ab.</div>
+faq: `<div class="flex flex-col gap-4 max-w-2xl mx-auto">
+  <div class="rounded-2xl border border-neutral-light overflow-hidden shadow-sm">
+    <button class="w-full flex justify-between items-center p-5 bg-white text-left">
+      <span class="font-semibold text-sm text-fontColor-DEFAULT">Was kostet eine professionelle Website?</span>
+      <svg class="w-4 h-4 text-primary-DEFAULT flex-shrink-0 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+    </button>
+    <div class="px-5 pb-5 bg-white text-sm text-neutral-dark leading-relaxed border-t border-neutral-light">
+      Eine professionelle Unternehmenswebsite mit individuellem Design beginnt bei uns ab 5.600 €. Der Preis hängt von Umfang, Funktionen und gewähltem Paket ab.
+    </div>
   </div>
-  <div class="border border-neutral-light rounded-xl overflow-hidden">
-    <div class="flex justify-between items-center px-5 py-4 bg-white font-semibold text-sm text-fontColor-DEFAULT">Wie lange dauert die Entwicklung? <span class="text-neutral-DEFAULT text-xs">▼</span></div>
+  <div class="rounded-2xl border border-neutral-light overflow-hidden shadow-sm">
+    <button class="w-full flex justify-between items-center p-5 bg-white text-left">
+      <span class="font-semibold text-sm text-fontColor-DEFAULT">Wie lange dauert die Entwicklung einer Website?</span>
+      <svg class="w-4 h-4 text-neutral-DEFAULT flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+    </button>
   </div>
-  <div class="border border-neutral-light rounded-xl overflow-hidden">
-    <div class="flex justify-between items-center px-5 py-4 bg-white font-semibold text-sm text-fontColor-DEFAULT">Bietet ihr auch Wartung an? <span class="text-neutral-DEFAULT text-xs">▼</span></div>
+  <div class="rounded-2xl border border-neutral-light overflow-hidden shadow-sm">
+    <button class="w-full flex justify-between items-center p-5 bg-white text-left">
+      <span class="font-semibold text-sm text-fontColor-DEFAULT">Kann ich die Website später selbst bearbeiten?</span>
+      <svg class="w-4 h-4 text-neutral-DEFAULT flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+    </button>
+  </div>
+  <div class="rounded-2xl border border-neutral-light overflow-hidden shadow-sm">
+    <button class="w-full flex justify-between items-center p-5 bg-white text-left">
+      <span class="font-semibold text-sm text-fontColor-DEFAULT">Bietet ihr auch laufende Betreuung und Wartung an?</span>
+      <svg class="w-4 h-4 text-neutral-DEFAULT flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+    </button>
   </div>
 </div>`,
 
-'logo-wall': `<div>
-  <p class="text-center text-xs font-semibold uppercase tracking-widest text-neutral-DEFAULT mb-6">Unsere Technologien & Partner</p>
-  <div class="flex flex-wrap justify-center items-center gap-3 opacity-70">
-    <div class="bg-white rounded-xl px-5 py-3 shadow-sm border border-neutral-light font-bold text-sm text-blue-700">WordPress</div>
-    <div class="bg-white rounded-xl px-5 py-3 shadow-sm border border-neutral-light font-bold text-sm text-orange-500">TYPO3</div>
-    <div class="bg-white rounded-xl px-5 py-3 shadow-sm border border-neutral-light font-bold text-sm text-indigo-600">Statamic</div>
-    <div class="bg-white rounded-xl px-5 py-3 shadow-sm border border-neutral-light font-bold text-sm text-green-600">Shopify</div>
-    <div class="bg-white rounded-xl px-5 py-3 shadow-sm border border-neutral-light font-bold text-sm text-red-500">Laravel</div>
-    <div class="bg-white rounded-xl px-5 py-3 shadow-sm border border-neutral-light font-bold text-sm text-sky-500">Tailwind CSS</div>
+'logo-wall': `<div class="flex flex-wrap items-center justify-center gap-3 py-4">
+  <div class="bg-white rounded-lg px-4 py-2.5 shadow-sm border border-neutral-light flex items-center gap-2">
+    <div class="w-6 h-6 rounded bg-gray-100 flex items-center justify-center text-[10px] font-black text-blue-700">D</div>
+    <span class="text-xs font-semibold text-neutral-dark">Dr. Meier & Partner</span>
+  </div>
+  <div class="bg-white rounded-lg px-4 py-2.5 shadow-sm border border-neutral-light flex items-center gap-2">
+    <div class="w-6 h-6 rounded bg-green-50 flex items-center justify-center text-[10px] font-black text-green-700">B</div>
+    <span class="text-xs font-semibold text-neutral-dark">BauTech GmbH</span>
+  </div>
+  <div class="bg-white rounded-lg px-4 py-2.5 shadow-sm border border-neutral-light flex items-center gap-2">
+    <div class="w-6 h-6 rounded bg-orange-50 flex items-center justify-center text-[10px] font-black text-orange-600">K</div>
+    <span class="text-xs font-semibold text-neutral-dark">Kanzlei Richter</span>
+  </div>
+  <div class="bg-white rounded-lg px-4 py-2.5 shadow-sm border border-neutral-light flex items-center gap-2">
+    <div class="w-6 h-6 rounded bg-purple-50 flex items-center justify-center text-[10px] font-black text-purple-700">M</div>
+    <span class="text-xs font-semibold text-neutral-dark">Müller Immobilien</span>
+  </div>
+  <div class="bg-white rounded-lg px-4 py-2.5 shadow-sm border border-neutral-light flex items-center gap-2">
+    <div class="w-6 h-6 rounded bg-blue-50 flex items-center justify-center text-[10px] font-black text-blue-600">S</div>
+    <span class="text-xs font-semibold text-neutral-dark">Steuer Pro AG</span>
+  </div>
+  <div class="bg-white rounded-lg px-4 py-2.5 shadow-sm border border-neutral-light flex items-center gap-2">
+    <div class="w-6 h-6 rounded bg-red-50 flex items-center justify-center text-[10px] font-black text-red-600">H</div>
+    <span class="text-xs font-semibold text-neutral-dark">Handwerk Plus</span>
+  </div>
+  <div class="bg-white rounded-lg px-4 py-2.5 shadow-sm border border-neutral-light flex items-center gap-2">
+    <div class="w-6 h-6 rounded bg-teal-50 flex items-center justify-center text-[10px] font-black text-teal-700">A</div>
+    <span class="text-xs font-semibold text-neutral-dark">Arztpraxis Vogel</span>
+  </div>
+  <div class="bg-white rounded-lg px-4 py-2.5 shadow-sm border border-neutral-light flex items-center gap-2">
+    <div class="w-6 h-6 rounded bg-yellow-50 flex items-center justify-center text-[10px] font-black text-yellow-700">F</div>
+    <span class="text-xs font-semibold text-neutral-dark">Friseur Trends</span>
+  </div>
+  <div class="bg-white rounded-lg px-4 py-2.5 shadow-sm border border-neutral-light flex items-center gap-2">
+    <div class="w-6 h-6 rounded bg-indigo-50 flex items-center justify-center text-[10px] font-black text-indigo-700">T</div>
+    <span class="text-xs font-semibold text-neutral-dark">TechVision UG</span>
   </div>
 </div>`,
 
-'text-media': `<div class="grid grid-cols-2 gap-10 items-center">
-  <div>
-    <p class="text-xs font-bold uppercase tracking-widest text-primary-DEFAULT mb-2">Was uns auszeichnet</p>
+'text-media': `<div class="flex flex-col lg:flex-row items-center gap-10">
+  <div class="lg:w-1/2 w-full">
+    <p class="text-xs font-bold uppercase tracking-widest text-primary-DEFAULT mb-3">Was uns auszeichnet</p>
     <h2 class="text-2xl font-bold text-fontColor-DEFAULT leading-tight mb-4">Webdesign mit Strategie und Leidenschaft</h2>
-    <p class="text-sm text-neutral-dark leading-relaxed mb-5">Wir verbinden kreatives Design mit technischem Know-how. Jede Website wird individuell konzipiert — passend zu Ihrer Marke.</p>
-    <button class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-white font-semibold text-sm" style="background:linear-gradient(90.79deg,#3376F6 0.46%,#0040B8 99.09%)">Mehr erfahren →</button>
+    <p class="text-sm text-neutral-dark leading-relaxed mb-6">Wir verbinden kreatives Design mit technischem Know-how. Jede Website wird individuell konzipiert — mit echtem Verständnis für Ihre Branche und Zielgruppe.</p>
+    <ul class="space-y-2 mb-6">
+      <li class="flex gap-2 text-sm text-neutral-dark"><span class="text-primary-DEFAULT font-bold mt-0.5">✓</span>Individuelles Webdesign aus einer Hand</li>
+      <li class="flex gap-2 text-sm text-neutral-dark"><span class="text-primary-DEFAULT font-bold mt-0.5">✓</span>Technisch optimiert für Google &amp; PageSpeed</li>
+      <li class="flex gap-2 text-sm text-neutral-dark"><span class="text-primary-DEFAULT font-bold mt-0.5">✓</span>Persönliche Betreuung von Anfang bis Ende</li>
+    </ul>
+    <a class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-white font-semibold text-sm" style="background:linear-gradient(90.79deg,#3376F6 0.46%,#0040B8 99.09%)">Mehr erfahren →</a>
   </div>
-  <div class="bg-neutral-extraLight rounded-xl flex items-center justify-center text-neutral-DEFAULT text-sm font-medium" style="aspect-ratio:16/10">Bild / Video</div>
-</div>`
+  <div class="lg:w-1/2 w-full relative">
+    <div class="bg-gradient-to-br from-neutral-extraLight to-primary-extralight shadow-lg rounded-lg overflow-clip" style="aspect-ratio:16/10;transform:rotate(2deg)">
+      <div class="w-full h-full flex items-center justify-center">
+        <div class="text-center opacity-40">
+          <svg class="w-12 h-12 mx-auto mb-2 text-primary-DEFAULT" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5z"/></svg>
+          <span class="text-xs font-medium text-neutral-dark">Bild / Video</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>`,
+
+'memo-cards': `<div class="flex flex-wrap justify-center gap-7">
+  <div class="w-full sm:w-[calc(33.333%-1.75rem)] flex flex-col bg-white rounded-md shadow-md border border-white/50">
+    <div class="p-5">
+      <div class="flex items-center mb-5">
+        <div class="w-10 h-10 p-2 rounded-lg mr-3 flex-shrink-0" style="background:linear-gradient(45deg,hsl(200,80%,44%),hsl(200,100%,65%))">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" class="w-6 h-6"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h4 class="mb-0 text-base font-bold text-fontColor-DEFAULT">Design Unikat</h4>
+      </div>
+      <p class="text-sm text-neutral-dark">Vollständig individuelles Design — kein Template, kein Kompromiss.</p>
+    </div>
+    <button class="block w-full p-4 py-3 font-light text-center border-t border-neutral-500/20 text-fontColor-DEFAULT text-sm hover:text-primary-DEFAULT rounded-b-md">+ zum Paket hinzufügen</button>
+  </div>
+  <div class="w-full sm:w-[calc(33.333%-1.75rem)] flex flex-col bg-white rounded-md shadow-md border border-white/50">
+    <div class="p-5">
+      <div class="flex items-center mb-5">
+        <div class="w-10 h-10 p-2 rounded-lg mr-3 flex-shrink-0" style="background:linear-gradient(45deg,hsl(260,80%,44%),hsl(260,100%,65%))">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" class="w-6 h-6"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </div>
+        <h4 class="mb-0 text-base font-bold text-fontColor-DEFAULT">SEO Premium</h4>
+      </div>
+      <p class="text-sm text-neutral-dark">Technische SEO, Keyword-Strategie und lokale Sichtbarkeit.</p>
+    </div>
+    <button class="block w-full p-4 py-3 font-light text-center border-t border-neutral-500/20 text-fontColor-DEFAULT text-sm hover:text-primary-DEFAULT rounded-b-md">+ zum Paket hinzufügen</button>
+  </div>
+  <div class="w-full sm:w-[calc(33.333%-1.75rem)] flex flex-col bg-white rounded-md shadow-md border border-white/50">
+    <div class="p-5">
+      <div class="flex items-center mb-5">
+        <div class="w-10 h-10 p-2 rounded-lg mr-3 flex-shrink-0" style="background:linear-gradient(45deg,hsl(340,80%,44%),hsl(340,100%,65%))">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" class="w-6 h-6"><path d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z"/></svg>
+        </div>
+        <h4 class="mb-0 text-base font-bold text-fontColor-DEFAULT">Wartung &amp; Support</h4>
+      </div>
+      <p class="text-sm text-neutral-dark">Monatliches Update-Paket mit Sicherheitschecks und Backups.</p>
+    </div>
+    <button class="block w-full p-4 py-3 font-light text-center border-t border-neutral-500/20 text-fontColor-DEFAULT text-sm hover:text-primary-DEFAULT rounded-b-md">+ zum Paket hinzufügen</button>
+  </div>
+</div>`,
+
+'quote-box': `<div class="flex flex-col lg:flex-row shadow-md rounded-3xl overflow-clip">
+  <div class="lg:basis-1/3 h-48 lg:h-auto bg-gradient-to-br from-neutral-extraLight to-primary-extralight flex items-center justify-center" style="transform:scale(1.05) rotate(-2deg)">
+    <div class="w-20 h-20 rounded-full bg-neutral-light/50 flex items-center justify-center">
+      <svg class="w-10 h-10 text-neutral-DEFAULT" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0"/></svg>
+    </div>
+  </div>
+  <div class="lg:basis-2/3 p-10 flex flex-col items-center justify-center text-center" style="background:linear-gradient(72.87deg,#1548BB 27.5%,#027CEC 85.64%)">
+    <p class="relative italic font-semibold text-lg text-white max-w-lg leading-relaxed">
+      <span class="absolute -top-4 -left-2 text-white/20 text-6xl font-serif leading-none">"</span>
+      Die Zusammenarbeit mit Homepage Helden war ein echtes Erlebnis. Unsere neue Website hat unsere Buchungsrate um 40% gesteigert.
+    </p>
+    <p class="mt-8 font-medium text-white">Sarah Bergmann / Geschäftsführerin · bergmann-consulting.de</p>
+  </div>
+</div>`,
+
+'icon-list': `<div class="flex flex-wrap justify-center gap-y-10">
+  <div class="w-full sm:w-1/2 xl:w-1/4 px-10 py-5 text-center xl:border-l border-neutral-light first:border-none">
+    <div class="w-10 h-10 p-2 rounded-lg mx-auto mb-4" style="background:linear-gradient(45deg,hsl(210,80%,44%),hsl(210,100%,65%))">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" class="w-6 h-6"><path d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg>
+    </div>
+    <h4 class="text-base font-bold text-fontColor-DEFAULT mb-2">Strategisches Design</h4>
+    <p class="text-sm text-neutral-dark">Jedes Design-Entscheidung folgt einem klaren strategischen Ziel.</p>
+  </div>
+  <div class="w-full sm:w-1/2 xl:w-1/4 px-10 py-5 text-center xl:border-l border-neutral-light">
+    <div class="w-10 h-10 p-2 rounded-lg mx-auto mb-4" style="background:linear-gradient(45deg,hsl(150,80%,30%),hsl(150,100%,50%))">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" class="w-6 h-6"><path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+    </div>
+    <h4 class="text-base font-bold text-fontColor-DEFAULT mb-2">Blitzschnell</h4>
+    <p class="text-sm text-neutral-dark">Optimiert für maximale Ladegeschwindigkeit und Core Web Vitals.</p>
+  </div>
+  <div class="w-full sm:w-1/2 xl:w-1/4 px-10 py-5 text-center xl:border-l border-neutral-light">
+    <div class="w-10 h-10 p-2 rounded-lg mx-auto mb-4" style="background:linear-gradient(45deg,hsl(280,80%,44%),hsl(280,100%,65%))">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" class="w-6 h-6"><path d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/></svg>
+    </div>
+    <h4 class="text-base font-bold text-fontColor-DEFAULT mb-2">Mobile First</h4>
+    <p class="text-sm text-neutral-dark">Perfekte Darstellung auf allen Endgeräten und Bildschirmgrößen.</p>
+  </div>
+  <div class="w-full sm:w-1/2 xl:w-1/4 px-10 py-5 text-center xl:border-l border-neutral-light">
+    <div class="w-10 h-10 p-2 rounded-lg mx-auto mb-4" style="background:linear-gradient(45deg,hsl(30,80%,44%),hsl(30,100%,65%))">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" class="w-6 h-6"><path d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+    </div>
+    <h4 class="text-base font-bold text-fontColor-DEFAULT mb-2">DSGVO-konform</h4>
+    <p class="text-sm text-neutral-dark">Datenschutz von Anfang an eingebaut — kein nachträgliches Flickwerk.</p>
+  </div>
+</div>`,
+
+'contact-box': `<div class="flex flex-col lg:flex-row max-w-4xl mx-auto bg-white rounded-md shadow-md overflow-clip">
+  <div class="w-full lg:w-2/5 p-8 bg-neutral-50">
+    <h6 class="text-sm font-bold text-fontColor-DEFAULT mb-8">Kontakt aufnehmen</h6>
+    <div class="space-y-4 mb-8">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-primary-extralight flex items-center justify-center flex-shrink-0">
+          <svg class="w-4 h-4 text-primary-DEFAULT" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+        </div>
+        <span class="text-sm text-fontColor-DEFAULT">+49 89 1234 5678</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-primary-extralight flex items-center justify-center flex-shrink-0">
+          <svg class="w-4 h-4 text-primary-DEFAULT" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+        </div>
+        <span class="text-sm text-fontColor-DEFAULT">hallo@homepage-helden.de</span>
+      </div>
+    </div>
+    <div class="flex items-center gap-4 mt-8">
+      <div class="w-16 h-16 rounded-full bg-neutral-200 flex-shrink-0 overflow-clip flex items-center justify-center">
+        <svg class="w-8 h-8 text-neutral-DEFAULT" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0"/></svg>
+      </div>
+      <div>
+        <p class="text-sm font-bold text-fontColor-DEFAULT">Paul Müller</p>
+        <p class="text-xs text-neutral-dark mt-0.5">Ihr persönlicher Ansprechpartner</p>
+      </div>
+    </div>
+  </div>
+  <div class="w-full lg:w-3/5 p-8">
+    <h6 class="text-sm font-bold text-fontColor-DEFAULT mb-6">Kostenlose Erstberatung anfragen</h6>
+    <div class="space-y-4">
+      <div class="grid grid-cols-2 gap-3">
+        <input type="text" placeholder="Vorname" class="w-full border border-neutral-light rounded-lg px-3 py-2 text-sm text-fontColor-DEFAULT focus:outline-none focus:border-primary-DEFAULT" value="Max">
+        <input type="text" placeholder="Nachname" class="w-full border border-neutral-light rounded-lg px-3 py-2 text-sm text-fontColor-DEFAULT focus:outline-none focus:border-primary-DEFAULT" value="Mustermann">
+      </div>
+      <input type="email" placeholder="E-Mail-Adresse" class="w-full border border-neutral-light rounded-lg px-3 py-2 text-sm text-fontColor-DEFAULT focus:outline-none" value="max@firma.de">
+      <textarea placeholder="Ihre Nachricht" rows="3" class="w-full border border-neutral-light rounded-lg px-3 py-2 text-sm text-fontColor-DEFAULT focus:outline-none resize-none">Guten Tag, ich interessiere mich für...</textarea>
+      <button class="w-full py-2.5 rounded-lg text-white font-semibold text-sm" style="background:linear-gradient(90.79deg,#3376F6 0.46%,#0040B8 99.09%)">Jetzt Anfrage senden →</button>
+    </div>
+  </div>
+</div>`,
+
+'blog-wall': `<div class="grid grid-cols-3 gap-5">
+  <a class="block rounded-3xl overflow-clip shadow-md relative h-64 group">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary-extralight to-primary-DEFAULT/30"></div>
+    <div class="absolute inset-0 bg-radial-gradient after:absolute after:inset-0 after:bg-gradient-to-t after:from-black/70 after:to-transparent"></div>
+    <div class="absolute inset-0 p-5 flex flex-col justify-between">
+      <div class="inline-block bg-white/20 text-white text-xs font-bold px-2.5 py-1 rounded-full backdrop-blur-sm w-fit">Webdesign</div>
+      <div>
+        <p class="text-xl font-bold text-white group-hover:translate-y-0 transition-all">5 Fehler die Ihre Website-Besucher sofort vergraulen</p>
+        <p class="text-sm text-white/80 mt-1 opacity-0 group-hover:opacity-100 transition-all">15.02.2025</p>
+      </div>
+    </div>
+  </a>
+  <a class="block rounded-3xl overflow-clip shadow-md relative h-64 group">
+    <div class="absolute inset-0 bg-gradient-to-br from-emerald-100 to-emerald-400/40"></div>
+    <div class="absolute inset-0 after:absolute after:inset-0 after:bg-gradient-to-t after:from-black/70 after:to-transparent"></div>
+    <div class="absolute inset-0 p-5 flex flex-col justify-between">
+      <div class="inline-block bg-white/20 text-white text-xs font-bold px-2.5 py-1 rounded-full backdrop-blur-sm w-fit">SEO</div>
+      <div>
+        <p class="text-xl font-bold text-white">Warum PageSpeed Score 90+ für Ihr Ranking entscheidend ist</p>
+        <p class="text-sm text-white/80 mt-1 opacity-0 group-hover:opacity-100 transition-all">03.01.2025</p>
+      </div>
+    </div>
+  </a>
+  <a class="block rounded-3xl overflow-clip shadow-md relative h-64 group">
+    <div class="absolute inset-0 bg-gradient-to-br from-orange-100 to-orange-400/30"></div>
+    <div class="absolute inset-0 after:absolute after:inset-0 after:bg-gradient-to-t after:from-black/70 after:to-transparent"></div>
+    <div class="absolute inset-0 p-5 flex flex-col justify-between">
+      <div class="inline-block bg-white/20 text-white text-xs font-bold px-2.5 py-1 rounded-full backdrop-blur-sm w-fit">Tipps</div>
+      <div>
+        <p class="text-xl font-bold text-white">TYPO3, WordPress oder Statamic — Was passt zu Ihrem Unternehmen?</p>
+        <p class="text-sm text-white/80 mt-1 opacity-0 group-hover:opacity-100 transition-all">12.12.2024</p>
+      </div>
+    </div>
+  </a>
+</div>`,
+
+'stacked-cards': `<div class="space-y-4">
+  <div class="rounded-lg shadow-md overflow-clip">
+    <div class="flex flex-col lg:flex-row items-stretch">
+      <div class="lg:w-1/2 bg-white p-7 shadow-md">
+        <p class="text-xs font-bold text-neutral-DEFAULT mb-2">01 / 03</p>
+        <h4 class="text-xl font-bold text-fontColor-DEFAULT mb-3">Beratungsgespräch</h4>
+        <p class="text-sm text-neutral-dark leading-relaxed">Wir lernen uns kennen, verstehen Ihre Ziele und erarbeiten gemeinsam die perfekte Strategie für Ihr Projekt.</p>
+      </div>
+      <div class="lg:w-1/2 bg-gradient-to-br from-primary-extralight to-neutral-extraLight flex items-center justify-center" style="aspect-ratio:16/10">
+        <svg class="w-16 h-16 text-primary-DEFAULT/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/></svg>
+      </div>
+    </div>
+  </div>
+  <div class="rounded-lg shadow-sm overflow-clip opacity-80">
+    <div class="flex flex-col lg:flex-row items-stretch">
+      <div class="lg:w-1/2 bg-white p-7 shadow-md">
+        <p class="text-xs font-bold text-neutral-DEFAULT mb-2">02 / 03</p>
+        <h4 class="text-xl font-bold text-fontColor-DEFAULT mb-3">Design &amp; Entwicklung</h4>
+        <p class="text-sm text-neutral-dark">Unser Team erstellt das Design und entwickelt Ihre Website — mit regelmäßigem Feedback.</p>
+      </div>
+      <div class="lg:w-1/2 bg-gradient-to-br from-emerald-50 to-primary-extralight flex items-center justify-center" style="aspect-ratio:16/10"></div>
+    </div>
+  </div>
+</div>`,
+
+'teaser-cards': `<div class="grid grid-cols-3 gap-8">
+  <div class="bg-white flex flex-col shadow-md rounded-md border border-white/50 overflow-clip">
+    <div class="h-48 bg-gradient-to-br from-primary-extralight to-neutral-light overflow-clip flex items-center justify-center">
+      <svg class="w-12 h-12 text-primary-DEFAULT/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5z"/></svg>
+    </div>
+    <div class="p-8">
+      <h4 class="text-lg font-bold text-fontColor-DEFAULT pb-4 mb-4 border-b border-gray-100">Steueragenten Stuttgart</h4>
+      <p class="text-sm text-neutral-dark leading-relaxed">Moderne Steuerberater-Website mit Online-Terminbuchung und Mandanten-Login.</p>
+    </div>
+    <div class="p-8 pt-0 text-center">
+      <a class="inline-flex items-center gap-1 text-sm font-semibold text-primary-DEFAULT hover:text-primary-light">Zum Projekt →</a>
+    </div>
+  </div>
+  <div class="bg-white flex flex-col shadow-md rounded-md border border-white/50 overflow-clip">
+    <div class="h-48 bg-gradient-to-br from-emerald-50 to-teal-100 overflow-clip flex items-center justify-center">
+      <svg class="w-12 h-12 text-teal-400/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5z"/></svg>
+    </div>
+    <div class="p-8">
+      <h4 class="text-lg font-bold text-fontColor-DEFAULT pb-4 mb-4 border-b border-gray-100">Zahnarztpraxis Müller</h4>
+      <p class="text-sm text-neutral-dark leading-relaxed">Vertrauensbildende Website mit Online-Terminvergabe und Patientenbewertungen.</p>
+    </div>
+    <div class="p-8 pt-0 text-center">
+      <a class="inline-flex items-center gap-1 text-sm font-semibold text-primary-DEFAULT hover:text-primary-light">Zum Projekt →</a>
+    </div>
+  </div>
+  <div class="bg-white flex flex-col shadow-md rounded-md border border-white/50 overflow-clip">
+    <div class="h-48 bg-gradient-to-br from-orange-50 to-amber-100 overflow-clip flex items-center justify-center">
+      <svg class="w-12 h-12 text-amber-400/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5z"/></svg>
+    </div>
+    <div class="p-8">
+      <h4 class="text-lg font-bold text-fontColor-DEFAULT pb-4 mb-4 border-b border-gray-100">BauTech Handwerk GmbH</h4>
+      <p class="text-sm text-neutral-dark leading-relaxed">Handwerker-Website mit Projektgalerie, Kontaktformular und Google Reviews.</p>
+    </div>
+    <div class="p-8 pt-0 text-center">
+      <a class="inline-flex items-center gap-1 text-sm font-semibold text-primary-DEFAULT hover:text-primary-light">Zum Projekt →</a>
+    </div>
+  </div>
+</div>`,
+
+'headshot-card': `<div class="flex gap-10 justify-between items-center flex-col lg:flex-row max-w-3xl mx-auto p-6 bg-white rounded-xl shadow-md">
+  <div class="flex sm:flex-row flex-col text-center sm:text-left gap-5 items-center">
+    <div class="w-28 h-28 rounded-full bg-gradient-to-br from-primary-extralight to-primary-DEFAULT/20 flex-shrink-0 flex items-center justify-center overflow-clip">
+      <svg class="w-14 h-14 text-primary-DEFAULT/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0"/></svg>
+    </div>
+    <div>
+      <p class="font-bold text-base text-fontColor-DEFAULT">Paul Helden</p>
+      <p class="text-sm text-neutral-dark mt-1">Geschäftsführer &amp; Webstratege</p>
+      <p class="text-sm text-neutral-dark mt-1 text-xs">Über 12 Jahre Erfahrung in Webentwicklung und Online-Marketing</p>
+    </div>
+  </div>
+  <div class="flex flex-col gap-3">
+    <p class="text-sm font-semibold text-fontColor-DEFAULT">Direkt Kontakt aufnehmen:</p>
+    <div class="flex gap-4">
+      <div class="flex items-center gap-2 text-sm text-fontColor-DEFAULT hover:text-primary-DEFAULT cursor-pointer">
+        <div class="w-7 h-7 rounded-lg bg-primary-extralight flex items-center justify-center">
+          <svg class="w-3.5 h-3.5 text-primary-DEFAULT" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+        </div>
+        +49 89 123 456
+      </div>
+      <div class="flex items-center gap-2 text-sm text-fontColor-DEFAULT hover:text-primary-DEFAULT cursor-pointer">
+        <div class="w-7 h-7 rounded-lg bg-primary-extralight flex items-center justify-center">
+          <svg class="w-3.5 h-3.5 text-primary-DEFAULT" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+        </div>
+        E-Mail
+      </div>
+    </div>
+  </div>
+</div>`,
+
+'layered-boxed': `<div class="grid grid-cols-3 gap-5">
+  <div class="bg-white bg-opacity-50 border border-white/50 rounded-md shadow-md overflow-clip">
+    <div class="h-44 bg-gradient-to-br from-primary-extralight to-primary-DEFAULT/20 flex items-center justify-center">
+      <svg class="w-10 h-10 text-primary-DEFAULT/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5"/></svg>
+    </div>
+    <div class="p-7">
+      <h4 class="text-base font-bold text-fontColor-DEFAULT pb-4 mb-4 border-b border-gray-100">Responsive Design</h4>
+      <p class="text-sm text-neutral-dark leading-relaxed">Perfekte Darstellung auf Smartphone, Tablet und Desktop — automatisch.</p>
+    </div>
+  </div>
+  <div class="bg-white bg-opacity-50 border border-white/50 rounded-md shadow-md overflow-clip">
+    <div class="h-44 bg-gradient-to-br from-emerald-50 to-teal-100 flex items-center justify-center">
+      <svg class="w-10 h-10 text-teal-500/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+    </div>
+    <div class="p-7">
+      <h4 class="text-base font-bold text-fontColor-DEFAULT pb-4 mb-4 border-b border-gray-100">PageSpeed 90+</h4>
+      <p class="text-sm text-neutral-dark leading-relaxed">Blitzschnelle Ladezeiten durch optimierten Code und moderne Bildformate.</p>
+    </div>
+  </div>
+  <div class="bg-white bg-opacity-50 border border-white/50 rounded-md shadow-md overflow-clip">
+    <div class="h-44 bg-gradient-to-br from-orange-50 to-amber-100 flex items-center justify-center">
+      <svg class="w-10 h-10 text-amber-500/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+    </div>
+    <div class="p-7">
+      <h4 class="text-base font-bold text-fontColor-DEFAULT pb-4 mb-4 border-b border-gray-100">DSGVO-konform</h4>
+      <p class="text-sm text-neutral-dark leading-relaxed">Datenschutz von Anfang an — Cookie-Banner, Einwilligungen und sichere Datenverarbeitung.</p>
+    </div>
+  </div>
+</div>`,
+
+'anchor-nav': `<div class="items-center justify-between gap-5 p-8 bg-white flex flex-col md:flex-row md:gap-10 rounded-2xl shadow-md lg:px-16">
+  <div class="w-full md:w-1/3">
+    <h5 class="text-lg font-bold text-fontColor-DEFAULT mb-2">Leistungen im Überblick</h5>
+    <p class="text-sm text-neutral-dark">Alle Bereiche auf einem Blick — klicken Sie auf eine Sektion, um direkt dorthin zu springen.</p>
+  </div>
+  <nav class="w-full md:w-2/3">
+    <ul class="flex flex-wrap gap-y-3 gap-x-6">
+      <li class="flex items-center gap-2">
+        <div class="w-5 h-5 rounded-md flex-shrink-0" style="background:linear-gradient(45deg,hsl(220,80%,44%),hsl(220,100%,65%))"></div>
+        <a href="#" class="text-sm font-medium text-primary-DEFAULT hover:text-primary-light">Webdesign</a>
+      </li>
+      <li class="flex items-center gap-2">
+        <div class="w-5 h-5 rounded-md flex-shrink-0" style="background:linear-gradient(45deg,hsl(150,80%,30%),hsl(150,100%,50%))"></div>
+        <a href="#" class="text-sm font-medium text-primary-DEFAULT hover:text-primary-light">SEO &amp; Marketing</a>
+      </li>
+      <li class="flex items-center gap-2">
+        <div class="w-5 h-5 rounded-md flex-shrink-0" style="background:linear-gradient(45deg,hsl(280,80%,44%),hsl(280,100%,65%))"></div>
+        <a href="#" class="text-sm font-medium text-primary-DEFAULT hover:text-primary-light">Webshop</a>
+      </li>
+      <li class="flex items-center gap-2">
+        <div class="w-5 h-5 rounded-md flex-shrink-0" style="background:linear-gradient(45deg,hsl(30,80%,44%),hsl(30,100%,65%))"></div>
+        <a href="#" class="text-sm font-medium text-primary-DEFAULT hover:text-primary-light">Wartung &amp; Pflege</a>
+      </li>
+    </ul>
+  </nav>
+</div>`,
+
+tabs: `<div class="flex flex-col lg:flex-row items-stretch overflow-clip rounded-2xl shadow-md" style="background:linear-gradient(72.87deg,#1548BB 27.5%,#027CEC 85.64%)">
+  <ul class="flex lg:flex-col gap-1 p-4 lg:py-6 lg:w-[32%] overflow-auto">
+    <li class="rounded-2xl px-4 py-4 cursor-pointer bg-white/15 backdrop-blur-sm">
+      <div class="flex items-center gap-4">
+        <svg class="w-5 h-5 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5"/></svg>
+        <div>
+          <p class="text-sm font-semibold text-white">Webdesign</p>
+          <p class="text-xs text-white/70 mt-0.5 hidden lg:block">Maßgeschneidertes Design</p>
+        </div>
+      </div>
+    </li>
+    <li class="rounded-2xl px-4 py-4 cursor-pointer hover:bg-white/10 transition-colors">
+      <div class="flex items-center gap-4">
+        <svg class="w-5 h-5 text-white/60 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+        <div>
+          <p class="text-sm font-semibold text-white/70">Performance</p>
+          <p class="text-xs text-white/50 mt-0.5 hidden lg:block">PageSpeed &amp; Core Vitals</p>
+        </div>
+      </div>
+    </li>
+    <li class="rounded-2xl px-4 py-4 cursor-pointer hover:bg-white/10 transition-colors">
+      <div class="flex items-center gap-4">
+        <svg class="w-5 h-5 text-white/60 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        <div>
+          <p class="text-sm font-semibold text-white/70">SEO</p>
+          <p class="text-xs text-white/50 mt-0.5 hidden lg:block">Google-Sichtbarkeit</p>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <div class="bg-white rounded-2xl shadow-md w-full lg:w-[68%] overflow-clip">
+    <div class="flex gap-2 p-3 border-b border-gray-200">
+      <span class="w-3 h-3 bg-red-400 rounded-full"></span>
+      <span class="w-3 h-3 bg-gray-200 rounded-full"></span>
+      <span class="w-3 h-3 bg-green-400 rounded-full"></span>
+    </div>
+    <div class="p-8 flex flex-col xl:flex-row gap-8 items-start">
+      <div class="xl:w-1/2">
+        <h4 class="text-xl font-bold text-fontColor-DEFAULT mb-3">Webdesign das verkauft</h4>
+        <p class="text-sm text-neutral-dark leading-relaxed mb-5">Wir entwerfen Websites, die nicht nur gut aussehen, sondern aktiv neue Kunden gewinnen. Jedes Detail ist auf Conversion optimiert.</p>
+        <a class="inline-flex items-center gap-2 text-sm font-semibold text-white px-4 py-2 rounded-lg" style="background:linear-gradient(90.79deg,#3376F6 0.46%,#0040B8 99.09%)">Mehr erfahren →</a>
+      </div>
+      <div class="xl:w-1/2 bg-gradient-to-br from-primary-extralight to-neutral-extraLight rounded-3xl" style="aspect-ratio:4/3"></div>
+    </div>
+  </div>
+</div>`,
+
+'hero-wall': `<div class="relative overflow-clip rounded-2xl" style="max-height:380px">
+  <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white to-transparent z-10"></div>
+  <div class="grid grid-cols-2 gap-3 p-1">
+    <div class="space-y-3">
+      <div class="rounded-xl shadow-md overflow-clip border border-neutral-light bg-white">
+        <div class="h-6 flex items-center gap-1.5 px-3 bg-neutral-extraLight border-b border-neutral-light">
+          <span class="w-2 h-2 rounded-full bg-red-400"></span><span class="w-2 h-2 rounded-full bg-gray-200"></span><span class="w-2 h-2 rounded-full bg-green-400"></span>
+          <span class="flex-1 h-3 rounded-sm bg-neutral-light mx-2 text-[8px] flex items-center px-1 text-neutral-dark overflow-hidden">steueragenten.de</span>
+        </div>
+        <div class="h-36 bg-gradient-to-br from-blue-900 to-blue-700 p-3">
+          <div class="h-3 w-20 bg-white/30 rounded mb-2"></div>
+          <div class="h-5 w-32 bg-white/50 rounded mb-3"></div>
+          <div class="h-2 w-24 bg-white/20 rounded mb-1"></div>
+          <div class="h-2 w-20 bg-white/20 rounded mb-3"></div>
+          <div class="h-6 w-20 rounded bg-blue-400"></div>
+        </div>
+      </div>
+      <div class="rounded-xl shadow-md overflow-clip border border-neutral-light bg-white">
+        <div class="h-6 flex items-center gap-1.5 px-3 bg-neutral-extraLight border-b border-neutral-light">
+          <span class="w-2 h-2 rounded-full bg-red-400"></span><span class="w-2 h-2 rounded-full bg-gray-200"></span><span class="w-2 h-2 rounded-full bg-green-400"></span>
+          <span class="flex-1 h-3 rounded-sm bg-neutral-light mx-2 text-[8px] flex items-center px-1 text-neutral-dark overflow-hidden">zahnarzt-muster.de</span>
+        </div>
+        <div class="h-36 bg-gradient-to-br from-teal-50 to-white p-3">
+          <div class="h-3 w-24 bg-teal-200 rounded mb-2"></div>
+          <div class="h-5 w-36 bg-teal-700/40 rounded mb-3"></div>
+          <div class="h-2 w-28 bg-gray-200 rounded mb-1"></div>
+          <div class="h-6 w-20 rounded bg-teal-500 mt-2"></div>
+        </div>
+      </div>
+    </div>
+    <div class="space-y-3">
+      <div class="rounded-xl shadow-md overflow-clip border border-neutral-light bg-white">
+        <div class="h-6 flex items-center gap-1.5 px-3 bg-neutral-extraLight border-b border-neutral-light">
+          <span class="w-2 h-2 rounded-full bg-red-400"></span><span class="w-2 h-2 rounded-full bg-gray-200"></span><span class="w-2 h-2 rounded-full bg-green-400"></span>
+          <span class="flex-1 h-3 rounded-sm bg-neutral-light mx-2 text-[8px] flex items-center px-1 text-neutral-dark overflow-hidden">bautech-gmbh.de</span>
+        </div>
+        <div class="h-36 bg-gradient-to-br from-orange-600 to-orange-900 p-3">
+          <div class="h-3 w-16 bg-white/30 rounded mb-2"></div>
+          <div class="h-5 w-32 bg-white/50 rounded mb-3"></div>
+          <div class="h-2 w-24 bg-white/20 rounded mb-1"></div>
+          <div class="h-6 w-20 rounded bg-orange-300 mt-2"></div>
+        </div>
+      </div>
+      <div class="rounded-xl shadow-md overflow-clip border border-neutral-light bg-white">
+        <div class="h-6 flex items-center gap-1.5 px-3 bg-neutral-extraLight border-b border-neutral-light">
+          <span class="w-2 h-2 rounded-full bg-red-400"></span><span class="w-2 h-2 rounded-full bg-gray-200"></span><span class="w-2 h-2 rounded-full bg-green-400"></span>
+          <span class="flex-1 h-3 rounded-sm bg-neutral-light mx-2 text-[8px] flex items-center px-1 text-neutral-dark overflow-hidden">anwalt-richter.de</span>
+        </div>
+        <div class="h-36 bg-gradient-to-br from-slate-800 to-slate-600 p-3">
+          <div class="h-3 w-20 bg-white/30 rounded mb-2"></div>
+          <div class="h-5 w-28 bg-white/50 rounded mb-3"></div>
+          <div class="h-2 w-24 bg-white/20 rounded mb-1"></div>
+          <div class="h-6 w-20 rounded bg-slate-400 mt-2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>`,
 
 };
 
