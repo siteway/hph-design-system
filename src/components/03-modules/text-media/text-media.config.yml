@@ -1,0 +1,5 @@
+title: Text Media
+status: ready
+notes: |
+  Felder: roofline, headline, text, media (Bild/Video), media_position (links/rechts).
+  Varianten: Bild rechts, Bild links, Dark Mode, ohne Frame.
