@@ -158,6 +158,21 @@ h3.group-title{font-size:15px;font-weight:600;color:var(--heading);margin-bottom
 .stat-label{font-size:13px;color:var(--body);margin-top:4px}
 .stack-tag{display:inline-flex;align-items:center;padding:5px 12px;background:var(--bg-sub);border:1px solid var(--border);border-radius:6px;font-size:13px;font-weight:500;color:var(--heading);gap:6px}
 
+/* Module Grid */
+.module-grid{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px}
+.module-card{position:relative;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:16px 16px 14px;cursor:pointer;transition:border-color .15s,box-shadow .15s,transform .15s;display:flex;flex-direction:column}
+.module-card:hover{border-color:var(--primary);box-shadow:0 4px 16px rgba(0,64,184,.12);transform:translateY(-2px)}
+.module-card .full-link{position:absolute;inset:0;border-radius:10px;z-index:1}
+.module-icon-wrap{width:52px;height:52px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:12px;flex-shrink:0}
+.module-card h6{font-size:13px;font-weight:700;color:var(--heading);margin-bottom:4px;line-height:1.3}
+.module-card p{font-size:12px;color:var(--body);line-height:1.45;flex:1}
+.module-tags{display:flex;gap:4px;margin-top:10px;flex-wrap:wrap}
+.module-tag{font-size:10px;font-weight:600;padding:2px 7px;border-radius:4px}
+.tag-statamic{background:#EFF6FF;color:#0040B8}
+.tag-tw{background:#F0FDF4;color:#15803D}
+.module-filters{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.mf-btn{padding:6px 14px;font-size:13px;font-weight:500;border-radius:20px;border:1px solid var(--border);background:var(--bg);color:var(--body);cursor:pointer;transition:.12s}
+.mf-btn:hover,.mf-btn.active{background:var(--primary);color:white;border-color:var(--primary)}
 /* Changelog */
 .changelog-entry{padding:20px 0;border-bottom:1px solid var(--border)}
 .changelog-version{font-size:20px;font-weight:700;color:var(--heading);margin-bottom:4px}
@@ -501,69 +516,256 @@ h3.group-title{font-size:15px;font-weight:600;color:var(--heading);margin-bottom
 
 <!-- MODULES -->
 <section id="modules" data-title="Modulübersicht">
-  <h1 class="page-title">Alle Content Module</h1>
-  <p class="page-subtitle"><strong>37 Module</strong> in 5 Kategorien im Page Builder.</p>
-  <h3 class="group-title">Contentelements (23)</h3>
-  <div class="card" style="margin-bottom:20px;padding:0;overflow:hidden">
-    <table class="token-table">
-      <thead><tr><th>Modul</th><th>Beschreibung</th></tr></thead>
-      <tbody>
-        <tr><td><code class="token-name">anchor_nav</code></td><td style="color:var(--body)">Sprungmarken-Navigation innerhalb einer Seite</td></tr>
-        <tr><td><code class="token-name">badge_list</code></td><td style="color:var(--body)">Liste mit farbigen Badges/Tags</td></tr>
-        <tr><td><code class="token-name">cards</code></td><td style="color:var(--body)">Grid aus Karten mit Bild, Titel, Text</td></tr>
-        <tr><td><code class="token-name">memo_cards</code></td><td style="color:var(--body)">Karten mit Icon und Kurztext (Features)</td></tr>
-        <tr><td><code class="token-name">contactbox</code></td><td style="color:var(--body)">Kontakt-Aufforderungs-Box mit CTA</td></tr>
-        <tr><td><code class="token-name">counter</code></td><td style="color:var(--body)">Animierte Statistik-Zahlen</td></tr>
-        <tr><td><code class="token-name">html</code></td><td style="color:var(--body)">Freies HTML-Eingabefeld</td></tr>
-        <tr><td><code class="token-name">icon_list</code></td><td style="color:var(--body)">Liste mit Icons und Beschreibungstext</td></tr>
-        <tr><td><code class="token-name">layered_boxed</code></td><td style="color:var(--body)">Gestapelte Boxen mit Glas-/Overlapping-Effekt</td></tr>
-        <tr><td><code class="token-name">mapbox</code></td><td style="color:var(--body)">Interaktive Karte (Mapbox GL JS)</td></tr>
-        <tr><td><code class="token-name">media</code></td><td style="color:var(--body)">Bild oder Video als eigenständiges Element</td></tr>
-        <tr><td><code class="token-name">quote_box</code></td><td style="color:var(--body)">Hervorgehobenes Zitat mit Autor</td></tr>
-        <tr><td><code class="token-name">sitemap</code></td><td style="color:var(--body)">Automatisch generierte Seitenübersicht</td></tr>
-        <tr><td><code class="token-name">tabs</code></td><td style="color:var(--body)">Tab-Navigation mit Inhalts-Panels</td></tr>
-        <tr><td><code class="token-name">text_media</code></td><td style="color:var(--body)">Text + Bild/Video, positionierbar</td></tr>
-        <tr><td><code class="token-name">headshot_card</code></td><td style="color:var(--body)">Team-Karte mit Portrait-Foto</td></tr>
-        <tr><td><code class="token-name">code</code></td><td style="color:var(--body)">Syntax-Highlighting Code-Block</td></tr>
-        <tr><td><code class="token-name">teaser_cards</code></td><td style="color:var(--body)">Vorschau-Karten für Blog/Referenzen</td></tr>
-        <tr><td><code class="token-name">youtubeplayer</code></td><td style="color:var(--body)">Eingebetteter YouTube-Player (lazy)</td></tr>
-        <tr><td><code class="token-name">image_comparison_slider</code></td><td style="color:var(--body)">Vorher/Nachher-Bild-Slider</td></tr>
-        <tr><td><code class="token-name">stacked_cards</code></td><td style="color:var(--body)">Übereinander gestapelte Karten</td></tr>
-        <tr><td><code class="token-name">special_configurator</code></td><td style="color:var(--body)">Individueller Preis-Konfigurator</td></tr>
-        <tr><td><code class="token-name">special_sales</code></td><td style="color:var(--body)">Sales-Page-Element (individuell)</td></tr>
-      </tbody>
-    </table>
+  <h1 class="page-title">Content Module</h1>
+  <p class="page-subtitle">37 Module im Page Builder — verfügbar für alle Statamic-Seiten.</p>
+
+  <div class="module-filters" id="module-filters">
+    <button class="mf-btn active" data-filter="all">Alle (37)</button>
+    <button class="mf-btn" data-filter="contentelement">Contentelements (23)</button>
+    <button class="mf-btn" data-filter="text">Text (4)</button>
+    <button class="mf-btn" data-filter="collection">Collection Walls (9)</button>
+    <button class="mf-btn" data-filter="other">Forms &amp; Sonstiges (2)</button>
   </div>
-  <h3 class="group-title">Text (4)</h3>
-  <div class="card" style="margin-bottom:20px;padding:0;overflow:hidden">
-    <table class="token-table"><thead><tr><th>Modul</th><th>Beschreibung</th></tr></thead><tbody>
-      <tr><td><code class="token-name">article</code></td><td style="color:var(--body)">Langer Fließtext mit Bard-Editor</td></tr>
-      <tr><td><code class="token-name">text</code></td><td style="color:var(--body)">Dachzeile + Überschrift + Text + Buttons</td></tr>
-      <tr><td><code class="token-name">text_columns</code></td><td style="color:var(--body)">Text in 2–3 Spalten</td></tr>
-      <tr><td><code class="token-name">buttons</code></td><td style="color:var(--body)">Eigenständige Button-Gruppe</td></tr>
-    </tbody></table>
-  </div>
-  <h3 class="group-title">Collection Walls (9)</h3>
-  <div class="card" style="margin-bottom:20px;padding:0;overflow:hidden">
-    <table class="token-table"><thead><tr><th>Modul</th><th>Collection</th><th>Beschreibung</th></tr></thead><tbody>
-      <tr><td><code class="token-name">logo_wall</code></td><td style="color:var(--body)">customer</td><td style="color:var(--body)">Kunden-/Partner-Logos</td></tr>
-      <tr><td><code class="token-name">testimonial_wall</code></td><td style="color:var(--body)">testimonials</td><td style="color:var(--body)">Kundenstimmen</td></tr>
-      <tr><td><code class="token-name">hero_wall</code></td><td style="color:var(--body)">references</td><td style="color:var(--body)">Referenz-Websites als Showcase</td></tr>
-      <tr><td><code class="token-name">price_wall</code></td><td style="color:var(--body)">prices</td><td style="color:var(--body)">Preispakete</td></tr>
-      <tr><td><code class="token-name">reference_wall</code></td><td style="color:var(--body)">references</td><td style="color:var(--body)">Referenzkarten mit Text</td></tr>
-      <tr><td><code class="token-name">blog_wall</code></td><td style="color:var(--body)">blog</td><td style="color:var(--body)">Blog-Beiträge als Grid</td></tr>
-      <tr><td><code class="token-name">faq_accordion</code></td><td style="color:var(--body)">faqs</td><td style="color:var(--body)">FAQ Accordion</td></tr>
-      <tr><td><code class="token-name">jobs_wall</code></td><td style="color:var(--body)">jobs</td><td style="color:var(--body)">Offene Stellen</td></tr>
-      <tr><td><code class="token-name">glossar_wall</code></td><td style="color:var(--body)">glossar</td><td style="color:var(--body)">Glossar-Einträge</td></tr>
-    </tbody></table>
-  </div>
-  <h3 class="group-title">Forms &amp; Reusable (2)</h3>
-  <div class="card" style="padding:0;overflow:hidden">
-    <table class="token-table"><thead><tr><th>Modul</th><th>Beschreibung</th></tr></thead><tbody>
-      <tr><td><code class="token-name">form</code></td><td style="color:var(--body)">Eingebettetes Statamic-Formular</td></tr>
-      <tr><td><code class="token-name">shared_component</code></td><td style="color:var(--body)">Wiederverwendbarer Inhalt aus Collection</td></tr>
-    </tbody></table>
-  </div>
+
+  <ul class="module-grid" id="module-grid">
+
+    <!-- CONTENTELEMENTS -->
+    <li class="module-card" data-cat="contentelement">
+      <div class="module-icon-wrap" style="background:#EFF6FF">🔗</div>
+      <h6>Anchor Nav</h6><p>Sprungmarken-Navigation innerhalb einer langen Seite.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
+      <a class="full-link" href="#modules" aria-label="Anchor Nav"></a>
+    </li>
+    <li class="module-card" data-cat="contentelement">
+      <div class="module-icon-wrap" style="background:#EFF6FF">🏷️</div>
+      <h6>Badge List</h6><p>Liste mit farbigen Badges oder Tags.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
+      <a class="full-link" href="#modules" aria-label="Badge List"></a>
+    </li>
+    <li class="module-card" data-cat="contentelement">
+      <div class="module-icon-wrap" style="background:#EFF6FF">🃏</div>
+      <h6>Cards</h6><p>Grid aus Karten mit Bild, Titel, Text und Link.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
+      <a class="full-link" href="#cards" aria-label="Cards"></a>
+    </li>
+    <li class="module-card" data-cat="contentelement">
+      <div class="module-icon-wrap" style="background:#EFF6FF">📌</div>
+      <h6>Memo Cards</h6><p>Icon-Karten für Feature-Listen und Vorteile.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
+      <a class="full-link" href="#modules" aria-label="Memo Cards"></a>
+    </li>
+    <li class="module-card" data-cat="contentelement">
+      <div class="module-icon-wrap" style="background:#EFF6FF">📞</div>
+      <h6>Contactbox</h6><p>Kontakt-Aufforderungs-Box mit Bild und CTA-Button.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
+      <a class="full-link" href="#modules" aria-label="Contactbox"></a>
+    </li>
+    <li class="module-card" data-cat="contentelement">
+      <div class="module-icon-wrap" style="background:#EFF6FF">📊</div>
+      <h6>Counter</h6><p>Animierte Statistik-Zahlen mit Beschriftung.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
+      <a class="full-link" href="#counter" aria-label="Counter"></a>
+    </li>
+    <li class="module-card" data-cat="contentelement">
+      <div class="module-icon-wrap" style="background:#EFF6FF">🖥️</div>
+      <h6>HTML</h6><p>Freies HTML-Feld für individuelle Inhalte.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span></div>
+      <a class="full-link" href="#modules" aria-label="HTML"></a>
+    </li>
+    <li class="module-card" data-cat="contentelement">
+      <div class="module-icon-wrap" style="background:#EFF6FF">✅</div>
+      <h6>Icon List</h6><p>Liste mit Icons und Beschreibungstexten.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
+      <a class="full-link" href="#modules" aria-label="Icon List"></a>
+    </li>
+    <li class="module-card" data-cat="contentelement">
+      <div class="module-icon-wrap" style="background:#EFF6FF">🪄</div>
+      <h6>Layered Boxed</h6><p>Gestapelte Boxen mit Glas- oder Overlapping-Effekt.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
+      <a class="full-link" href="#modules" aria-label="Layered Boxed"></a>
+    </li>
+    <li class="module-card" data-cat="contentelement">
+      <div class="module-icon-wrap" style="background:#EFF6FF">🗺️</div>
+      <h6>Mapbox</h6><p>Interaktive Karte mit Mapbox GL JS.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span></div>
+      <a class="full-link" href="#modules" aria-label="Mapbox"></a>
+    </li>
+    <li class="module-card" data-cat="contentelement">
+      <div class="module-icon-wrap" style="background:#EFF6FF">🖼️</div>
+      <h6>Media</h6><p>Bild oder Video als eigenständiges Seitenelement.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
+      <a class="full-link" href="#modules" aria-label="Media"></a>
+    </li>
+    <li class="module-card" data-cat="contentelement">
+      <div class="module-icon-wrap" style="background:#EFF6FF">💬</div>
+      <h6>Quote Box</h6><p>Hervorgehobenes Zitat mit Autor und optionalem Bild.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
+      <a class="full-link" href="#modules" aria-label="Quote Box"></a>
+    </li>
+    <li class="module-card" data-cat="contentelement">
+      <div class="module-icon-wrap" style="background:#EFF6FF">🗂️</div>
+      <h6>Sitemap</h6><p>Automatisch generierte Übersicht aller Seiten.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span></div>
+      <a class="full-link" href="#modules" aria-label="Sitemap"></a>
+    </li>
+    <li class="module-card" data-cat="contentelement">
+      <div class="module-icon-wrap" style="background:#EFF6FF">📑</div>
+      <h6>Tabs</h6><p>Inhalte in Tab-Navigation aufgeteilt.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
+      <a class="full-link" href="#modules" aria-label="Tabs"></a>
+    </li>
+    <li class="module-card" data-cat="contentelement">
+      <div class="module-icon-wrap" style="background:#EFF6FF">📰</div>
+      <h6>Text Media</h6><p>Text und Bild/Video nebeneinander, Seite konfigurierbar.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
+      <a class="full-link" href="#text-media" aria-label="Text Media"></a>
+    </li>
+    <li class="module-card" data-cat="contentelement">
+      <div class="module-icon-wrap" style="background:#EFF6FF">👤</div>
+      <h6>Headshot Card</h6><p>Team-Karte mit Portrait-Foto und Kontaktdaten.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
+      <a class="full-link" href="#modules" aria-label="Headshot Card"></a>
+    </li>
+    <li class="module-card" data-cat="contentelement">
+      <div class="module-icon-wrap" style="background:#EFF6FF">💻</div>
+      <h6>Code</h6><p>Syntax-Highlighting Code-Block mit Copy-Button.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span></div>
+      <a class="full-link" href="#modules" aria-label="Code"></a>
+    </li>
+    <li class="module-card" data-cat="contentelement">
+      <div class="module-icon-wrap" style="background:#EFF6FF">🔍</div>
+      <h6>Teaser Cards</h6><p>Vorschau-Karten für Blog-Beiträge oder Referenzen.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
+      <a class="full-link" href="#modules" aria-label="Teaser Cards"></a>
+    </li>
+    <li class="module-card" data-cat="contentelement">
+      <div class="module-icon-wrap" style="background:#EFF6FF">▶️</div>
+      <h6>YouTube Player</h6><p>Datenschutzkonformer YouTube-Player mit Lazy Load.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span></div>
+      <a class="full-link" href="#modules" aria-label="YouTube Player"></a>
+    </li>
+    <li class="module-card" data-cat="contentelement">
+      <div class="module-icon-wrap" style="background:#EFF6FF">↔️</div>
+      <h6>Image Comparison</h6><p>Vorher/Nachher-Slider zum Vergleich zweier Bilder.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
+      <a class="full-link" href="#modules" aria-label="Image Comparison"></a>
+    </li>
+    <li class="module-card" data-cat="contentelement">
+      <div class="module-icon-wrap" style="background:#EFF6FF">📚</div>
+      <h6>Stacked Cards</h6><p>Übereinander gestapelte Karten mit Hover-Effekt.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
+      <a class="full-link" href="#modules" aria-label="Stacked Cards"></a>
+    </li>
+    <li class="module-card" data-cat="contentelement">
+      <div class="module-icon-wrap" style="background:#EFF6FF">⚙️</div>
+      <h6>Konfigurator</h6><p>Individueller Preis-Konfigurator für Pakete.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span></div>
+      <a class="full-link" href="#modules" aria-label="Konfigurator"></a>
+    </li>
+    <li class="module-card" data-cat="contentelement">
+      <div class="module-icon-wrap" style="background:#EFF6FF">🎯</div>
+      <h6>Sales Element</h6><p>Individuelles Sales-Page-Element.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span></div>
+      <a class="full-link" href="#modules" aria-label="Sales Element"></a>
+    </li>
+
+    <!-- TEXT -->
+    <li class="module-card" data-cat="text">
+      <div class="module-icon-wrap" style="background:#F5F3FF">📄</div>
+      <h6>Article</h6><p>Langer Fließtext mit Bard-Editor, Medien und Abschnitten.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
+      <a class="full-link" href="#modules" aria-label="Article"></a>
+    </li>
+    <li class="module-card" data-cat="text">
+      <div class="module-icon-wrap" style="background:#F5F3FF">📝</div>
+      <h6>Text</h6><p>Dachzeile + Überschrift + Fließtext + Buttons.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
+      <a class="full-link" href="#modules" aria-label="Text"></a>
+    </li>
+    <li class="module-card" data-cat="text">
+      <div class="module-icon-wrap" style="background:#F5F3FF">📋</div>
+      <h6>Text Columns</h6><p>Fließtext aufgeteilt in 2–3 Spalten.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
+      <a class="full-link" href="#modules" aria-label="Text Columns"></a>
+    </li>
+    <li class="module-card" data-cat="text">
+      <div class="module-icon-wrap" style="background:#F5F3FF">🔘</div>
+      <h6>Buttons</h6><p>Eigenständige Button-Gruppe mit mehreren CTAs.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
+      <a class="full-link" href="#buttons" aria-label="Buttons"></a>
+    </li>
+
+    <!-- COLLECTION WALLS -->
+    <li class="module-card" data-cat="collection">
+      <div class="module-icon-wrap" style="background:#FFF7ED">🏢</div>
+      <h6>Logo Wall</h6><p>Kunden- und Partner-Logos aus der customer-Collection.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
+      <a class="full-link" href="#logo-wall" aria-label="Logo Wall"></a>
+    </li>
+    <li class="module-card" data-cat="collection">
+      <div class="module-icon-wrap" style="background:#FFF7ED">⭐</div>
+      <h6>Testimonial Wall</h6><p>Kundenstimmen und Bewertungen als Karten-Grid.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
+      <a class="full-link" href="#testimonials" aria-label="Testimonials"></a>
+    </li>
+    <li class="module-card" data-cat="collection">
+      <div class="module-icon-wrap" style="background:#FFF7ED">🏆</div>
+      <h6>Hero Wall</h6><p>Referenz-Websites als visueller Showcase mit Screenshots.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
+      <a class="full-link" href="#modules" aria-label="Hero Wall"></a>
+    </li>
+    <li class="module-card" data-cat="collection">
+      <div class="module-icon-wrap" style="background:#FFF7ED">💰</div>
+      <h6>Price Wall</h6><p>Preispakete aus der prices-Collection.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
+      <a class="full-link" href="#price-wall" aria-label="Price Wall"></a>
+    </li>
+    <li class="module-card" data-cat="collection">
+      <div class="module-icon-wrap" style="background:#FFF7ED">🖼️</div>
+      <h6>Reference Wall</h6><p>Referenzkarten mit Beschreibung und Link.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
+      <a class="full-link" href="#modules" aria-label="Reference Wall"></a>
+    </li>
+    <li class="module-card" data-cat="collection">
+      <div class="module-icon-wrap" style="background:#FFF7ED">📰</div>
+      <h6>Blog Wall</h6><p>Blog-Beiträge als Grid aus der blog-Collection.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
+      <a class="full-link" href="#modules" aria-label="Blog Wall"></a>
+    </li>
+    <li class="module-card" data-cat="collection">
+      <div class="module-icon-wrap" style="background:#FFF7ED">❓</div>
+      <h6>FAQ Accordion</h6><p>Häufige Fragen als Accordion aus der faqs-Collection.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
+      <a class="full-link" href="#faq" aria-label="FAQ"></a>
+    </li>
+    <li class="module-card" data-cat="collection">
+      <div class="module-icon-wrap" style="background:#FFF7ED">💼</div>
+      <h6>Jobs Wall</h6><p>Offene Stellen aus der jobs-Collection.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
+      <a class="full-link" href="#modules" aria-label="Jobs Wall"></a>
+    </li>
+    <li class="module-card" data-cat="collection">
+      <div class="module-icon-wrap" style="background:#FFF7ED">📖</div>
+      <h6>Glossar Wall</h6><p>Glossar-Einträge aus der glossar-Collection.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span><span class="module-tag tag-tw">Tailwind</span></div>
+      <a class="full-link" href="#modules" aria-label="Glossar Wall"></a>
+    </li>
+
+    <!-- OTHER -->
+    <li class="module-card" data-cat="other">
+      <div class="module-icon-wrap" style="background:#ECFDF5">📬</div>
+      <h6>Form</h6><p>Eingebettetes Statamic-Formular mit Validierung.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span></div>
+      <a class="full-link" href="#modules" aria-label="Form"></a>
+    </li>
+    <li class="module-card" data-cat="other">
+      <div class="module-icon-wrap" style="background:#ECFDF5">🔄</div>
+      <h6>Shared Component</h6><p>Wiederverwendbare Inhalte aus einer Collection.</p>
+      <div class="module-tags"><span class="module-tag tag-statamic">Statamic</span></div>
+      <a class="full-link" href="#modules" aria-label="Shared Component"></a>
+    </li>
+
+  </ul>
 </section>
 
 <!-- ISSUES -->
@@ -867,6 +1069,18 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
+  // Module filters
+  document.getElementById('module-filters') && document.querySelectorAll('.mf-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.mf-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      document.querySelectorAll('.module-card').forEach(card => {
+        card.style.display = (f === 'all' || card.dataset.cat === f) ? 'flex' : 'none';
+      });
+    });
+  });
+
   // Sidebar search
   document.getElementById('nav-search').addEventListener('input', function() {
     const q = this.value.toLowerCase();
