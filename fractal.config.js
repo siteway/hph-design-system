@@ -4,7 +4,7 @@ const fractal = module.exports = require('@frctl/fractal').create();
 const mandelbrot = require('@frctl/mandelbrot');
 
 const hphTheme = mandelbrot({
-    skin: { name: 'custom', accent: '#0040B8', complement: '#ffffff', links: '#0078FF' },
+    skin: { name: 'navy' },
     nav: ['docs', 'components'],
     panels: ['html', 'view', 'context', 'info', 'notes'],
     format: 'yaml',
