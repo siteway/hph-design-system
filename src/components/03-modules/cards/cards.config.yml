@@ -1,0 +1,5 @@
+title: Cards
+status: ready
+notes: |
+  Felder: items[] mit image, title, text, link.
+  Varianten: 2/3/4-Spalten, mit/ohne Bild, Dark Mode.
