@@ -7,7 +7,7 @@
     "build": "fractal build"
   },
   "dependencies": {
-    "@frctl/fractal": "^1.6.0",
+    "@frctl/fractal": "^1.5.15",
     "@frctl/mandelbrot": "^1.10.0"
   },
   "engines": {
