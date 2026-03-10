@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HPH Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              extralight: '#C3D7EE',
+              light: '#027CEC',
+              middle: '#0078FF',
+              DEFAULT: '#0040B8',
+              dark: '#0038AF',
+            },
+            neutral: {
+              extraLight: '#F4F4F4',
+              light: '#EFEFEF',
+              middle: '#D4D4D4',
+              DEFAULT: '#B7BDC4',
+              dark: '#484848',
+            },
+            fontColor: { DEFAULT: '#32363D', light: '#484848' },
+            highlight: '#F61A75',
+            dark: '#0E1012',
+          },
+          fontFamily: {
+            heading: ['"Cera Variable"', 'Inter', 'system-ui', 'sans-serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; color: #32363D; }
+    .font-heading { font-family: 'Inter Tight', 'Inter', system-ui, sans-serif; }
+    :root {
+      --color-primary: #0040B8;
+      --color-primary-light: #027CEC;
+      --color-primary-middle: #0078FF;
+      --color-dark: #0E1012;
+      --color-highlight: #F61A75;
+      --color-text: #32363D;
+      --gradient-hero: linear-gradient(72.87deg, #1548BB 27.5%, #027CEC 85.64%);
+      --gradient-button: linear-gradient(90.79deg, #3376F6 0.46%, #0040B8 99.09%);
+      --gradient-headline: linear-gradient(71.08deg, #003EC8 30.98%, #67BAEF 76.86%);
+    }
+  </style>
+</head>
+<body class="bg-white">
+  {{{ yield }}}
+</body>
+</html>
