@@ -1,0 +1,6 @@
+title: Counter
+status: ready
+notes: |
+  Animierte Zahlen via GSAP/CountUp.
+  Felder: items[] mit value + label.
+  Varianten: Hell, Dunkel.
