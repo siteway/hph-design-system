@@ -209,6 +209,18 @@ h3.group-title{font-size:15px;font-weight:600;color:var(--heading);margin-bottom
     <div class="nav-item" data-section="faq"><span class="nav-icon">❓</span> FAQ</div>
     <div class="nav-item" data-section="logo-wall"><span class="nav-icon">🖼️</span> Logo Wall</div>
     <div class="nav-item" data-section="text-media"><span class="nav-icon">📰</span> Text + Media</div>
+    <div class="nav-item" data-section="memo-cards"><span class="nav-icon">📌</span> Memo Cards</div>
+    <div class="nav-item" data-section="quote-box"><span class="nav-icon">💬</span> Quote Box</div>
+    <div class="nav-item" data-section="icon-list"><span class="nav-icon">✅</span> Icon List</div>
+    <div class="nav-item" data-section="contact-box"><span class="nav-icon">📞</span> Contact Box</div>
+    <div class="nav-item" data-section="blog-wall"><span class="nav-icon">📰</span> Blog Wall</div>
+    <div class="nav-item" data-section="stacked-cards"><span class="nav-icon">📚</span> Stacked Cards</div>
+    <div class="nav-item" data-section="teaser-cards"><span class="nav-icon">🔍</span> Teaser Cards</div>
+    <div class="nav-item" data-section="headshot-card"><span class="nav-icon">👤</span> Headshot Card</div>
+    <div class="nav-item" data-section="layered-boxed"><span class="nav-icon">🪄</span> Layered Boxed</div>
+    <div class="nav-item" data-section="anchor-nav"><span class="nav-icon">🔗</span> Anchor Nav</div>
+    <div class="nav-item" data-section="tabs"><span class="nav-icon">📑</span> Tabs</div>
+    <div class="nav-item" data-section="hero-wall"><span class="nav-icon">🏆</span> Hero Wall</div>
     <div class="nav-section-label">Alle Module</div>
     <div class="nav-item" data-section="modules"><span class="nav-icon">📦</span> Modulübersicht</div>
     <div class="nav-section-label">Guidelines</div>
@@ -557,6 +569,292 @@ h3.group-title{font-size:15px;font-weight:600;color:var(--heading);margin-bottom
   <symbol id="ico-share" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z"/></symbol>
 </svg>
 
+
+<!-- MEMO CARDS -->
+<section id="memo-cards" data-title="Memo Cards">
+  <h1 class="page-title">Memo Cards</h1>
+  <p class="page-subtitle">Feature-Karten mit Gradient-Icon und Cart-Funktion. Gleiche Struktur wie Cards, aber mit Add-to-Cart CTA unten.</p>
+  <div class="component-block">
+    <div class="component-block-title">Memo Cards (3 Spalten)</div>
+    <div class="tab-bar"><button class="tab-btn active" data-tab="preview">Preview</button><button class="tab-btn" data-tab="code">HTML</button></div>
+    <div class="preview-wrap"><iframe class="preview-frame" data-preview="memo-cards" title="Memo Cards Preview"></iframe></div>
+    <div class="tab-code"><pre>&lt;div class="flex flex-wrap justify-center gap-7"&gt;
+  &lt;div class="w-full sm:w-[calc(33.333%-1.75rem)] flex flex-col bg-white rounded-md shadow-tile border border-white/50"&gt;
+    &lt;div class="p-5"&gt;
+      &lt;div class="flex items-center mb-5"&gt;
+        &lt;div class="w-10 h-10 p-2 rounded-lg mr-3" style="background:linear-gradient(45deg,hsl(200,80%,44%),hsl(200,100%,65%))"&gt;&lt;!-- icon --&gt;&lt;/div&gt;
+        &lt;h4&gt;Feature Titel&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;p class="text-sm text-neutral-dark"&gt;Beschreibung&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button class="w-full p-4 py-3 text-sm border-t border-neutral-500/20 text-fontColor hover:text-primary rounded-b-md"&gt;+ zum Paket hinzufügen&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre></div>
+  </div>
+</section>
+
+<!-- QUOTE BOX -->
+<section id="quote-box" data-title="Quote Box">
+  <h1 class="page-title">Quote Box</h1>
+  <p class="page-subtitle">Hervorgehobenes Zitat mit Bild links und blauem Gradient-Hintergrund rechts. Bild leicht gedreht und skaliert.</p>
+  <div class="component-block">
+    <div class="component-block-title">Quote Box</div>
+    <div class="tab-bar"><button class="tab-btn active" data-tab="preview">Preview</button><button class="tab-btn" data-tab="code">HTML</button></div>
+    <div class="preview-wrap"><iframe class="preview-frame" data-preview="quote-box" title="Quote Box Preview"></iframe></div>
+    <div class="tab-code"><pre>&lt;div class="flex flex-col lg:flex-row shadow-tile rounded-3xl overflow-clip"&gt;
+  &lt;div class="lg:basis-1/3 lg:h-[550px] lg:scale-110 lg:-rotate-2 overflow-clip"&gt;
+    &lt;img class="h-full w-full object-cover" src="..." /&gt;
+  &lt;/div&gt;
+  &lt;div class="p-10 lg:basis-2/3 bg-hero-gradient text-white flex flex-col items-center justify-center text-center"&gt;
+    &lt;p class="relative italic font-semibold text-xl lg:text-3xl max-w-2xl"&gt;"{{ quote_text }}"&lt;/p&gt;
+    &lt;p class="mt-12 font-medium"&gt;{{ quote_author }} / {{ position }}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre></div>
+  </div>
+</section>
+
+<!-- ICON LIST -->
+<section id="icon-list" data-title="Icon List">
+  <h1 class="page-title">Icon List</h1>
+  <p class="page-subtitle">Zentrierte Feature-Liste mit Gradient-Icon, Titel und Text. Kein Hintergrund — vertikale Trennlinien zwischen Spalten.</p>
+  <div class="component-block">
+    <div class="component-block-title">Icon List (4 Spalten)</div>
+    <div class="tab-bar"><button class="tab-btn active" data-tab="preview">Preview</button><button class="tab-btn" data-tab="code">HTML</button></div>
+    <div class="preview-wrap"><iframe class="preview-frame" data-preview="icon-list" title="Icon List Preview"></iframe></div>
+    <div class="tab-code"><pre>&lt;div class="flex flex-wrap justify-center"&gt;
+  &lt;div class="w-full xl:w-1/4 px-12 py-5 text-center xl:border-l border-neutral-light"&gt;
+    &lt;div class="w-10 h-10 p-2 rounded-lg mx-auto mb-4" style="background:linear-gradient(45deg,hsl(210,80%,44%),hsl(210,100%,65%))"&gt;&lt;/div&gt;
+    &lt;h4 class="text-xl mb-2"&gt;{{ card_headline }}&lt;/h4&gt;
+    &lt;div&gt;{{ card_text }}&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre></div>
+  </div>
+</section>
+
+<!-- CONTACT BOX -->
+<section id="contact-box" data-title="Contact Box">
+  <h1 class="page-title">Contact Box</h1>
+  <p class="page-subtitle">Zweispaltiges Layout: Linke Sidebar mit Kontaktdaten und Ansprechpartner, rechts ein eingebettetes Formular.</p>
+  <div class="component-block">
+    <div class="component-block-title">Contactbox mit Formular</div>
+    <div class="tab-bar"><button class="tab-btn active" data-tab="preview">Preview</button><button class="tab-btn" data-tab="code">HTML</button></div>
+    <div class="preview-wrap"><iframe class="preview-frame" data-preview="contact-box" title="Contact Box Preview"></iframe></div>
+    <div class="tab-code"><pre>&lt;div class="flex-col lg:flex-row max-w-6xl m-auto bg-white rounded-md shadow-tile flex items-stretch"&gt;
+  &lt;!-- Sidebar --&gt;
+  &lt;div class="w-full lg:w-2/5 p-8 lg:p-10 bg-neutral-50"&gt;
+    &lt;h6&gt;{{ info_headline }}&lt;/h6&gt;
+    &lt;!-- contactbox_links --&gt;
+    &lt;div class="flex items-center gap-4 mt-10"&gt;
+      &lt;img class="w-24 h-24 rounded-full object-cover" src="{{ contact_image }}" /&gt;
+      &lt;div&gt;&lt;p&gt;&lt;strong&gt;{{ contact_title }}&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!-- Form --&gt;
+  &lt;div class="w-full lg:w-3/5 p-8 lg:p-10"&gt;
+    &lt;h6&gt;{{ form_headline }}&lt;/h6&gt;
+    {{ partial:components/form }}
+  &lt;/div&gt;
+&lt;/div&gt;</pre></div>
+  </div>
+</section>
+
+<!-- BLOG WALL -->
+<section id="blog-wall" data-title="Blog Wall">
+  <h1 class="page-title">Blog Wall</h1>
+  <p class="page-subtitle">Blog-Beiträge als Karten-Grid. Hover-Effekt zeigt Teaser-Text. Unterstützt Carousel, Grid und gefilterte Ansichten.</p>
+  <div class="component-block">
+    <div class="component-block-title">Blog Wall (3 Karten)</div>
+    <div class="tab-bar"><button class="tab-btn active" data-tab="preview">Preview</button><button class="tab-btn" data-tab="code">HTML</button></div>
+    <div class="preview-wrap"><iframe class="preview-frame" data-preview="blog-wall" title="Blog Wall Preview"></iframe></div>
+    <div class="tab-code"><pre>&lt;!-- Blog Item --&gt;
+&lt;a class="h-[330px] p-6 relative rounded-3xl overflow-clip shadow-tile group/newsitem"&gt;
+  &lt;!-- Background image with dark overlay --&gt;
+  &lt;div class="absolute inset-0 transition group-hover/newsitem:scale-110 after:bg-gradient-radial"&gt;
+    {{ partial:components/picture_new }}
+  &lt;/div&gt;
+  &lt;div class="relative flex flex-col h-full"&gt;
+    &lt;!-- Category tag --&gt;
+    &lt;p class="text-2xl font-bold text-white absolute top-full -translate-y-full group-hover:-translate-y-full"&gt;
+      {{ title }}
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/a&gt;</pre></div>
+  </div>
+</section>
+
+<!-- STACKED CARDS -->
+<section id="stacked-cards" data-title="Stacked Cards">
+  <h1 class="page-title">Stacked Cards</h1>
+  <p class="page-subtitle">Sticky-gestapelte Karten mit Scroll-Effekt. Text-Panel links, Bild rechts. Jede Karte klebt beim Scrollen bis die nächste kommt.</p>
+  <div class="component-block">
+    <div class="component-block-title">Stacked Cards</div>
+    <div class="tab-bar"><button class="tab-btn active" data-tab="preview">Preview</button><button class="tab-btn" data-tab="code">HTML</button></div>
+    <div class="preview-wrap"><iframe class="preview-frame" data-preview="stacked-cards" title="Stacked Cards Preview"></iframe></div>
+    <div class="tab-code"><pre>&lt;div class="stack-cards js-stack-cards pb-default"&gt;
+  &lt;div class="stack-cards__item sticky top-[120px] h-0 pb-[50%] origin-[center_top] overflow-clip"&gt;
+    &lt;div class="grid grid-cols-12 absolute top-0 left-0 w-full h-full rounded-lg overflow-clip"&gt;
+      &lt;!-- Text Panel --&gt;
+      &lt;div class="col-span-6 bg-white p-5 shadow-tile rounded-lg absolute top-1/2 -translate-y-1/2 left-0 max-w-[500px]"&gt;
+        &lt;h4&gt;{{ text_headline }}&lt;/h4&gt;
+        &lt;div&gt;{{ text_text }}&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;!-- Image --&gt;
+      &lt;div class="col-span-9 col-start-4 h-full"&gt;
+        {{ partial:components/picture_new class="aspect-[16/10]" }}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre></div>
+  </div>
+</section>
+
+<!-- TEASER CARDS -->
+<section id="teaser-cards" data-title="Teaser Cards">
+  <h1 class="page-title">Teaser Cards</h1>
+  <p class="page-subtitle">Bild-Karten mit Headline (border-b), Fließtext und optionalem Button. Unterstützt 2–4 Spalten.</p>
+  <div class="component-block">
+    <div class="component-block-title">Teaser Cards (3 Spalten)</div>
+    <div class="tab-bar"><button class="tab-btn active" data-tab="preview">Preview</button><button class="tab-btn" data-tab="code">HTML</button></div>
+    <div class="preview-wrap"><iframe class="preview-frame" data-preview="teaser-cards" title="Teaser Cards Preview"></iframe></div>
+    <div class="tab-code"><pre>&lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"&gt;
+  &lt;div class="bg-white flex flex-col shadow-tile rounded-md border border-white/50 overflow-clip"&gt;
+    &lt;div class="overflow-clip"&gt;
+      &lt;img class="object-cover w-full h-60" src="..." /&gt;
+    &lt;/div&gt;
+    &lt;div class="p-8 lg:p-10"&gt;
+      &lt;h4 class="w-full pb-4 mb-4 text-xl border-b border-gray-100"&gt;{{ card_headline }}&lt;/h4&gt;
+      {{ card_text }}
+    &lt;/div&gt;
+    &lt;div class="p-8 pt-0 text-center"&gt;
+      {{ partial:components/button }}
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre></div>
+  </div>
+</section>
+
+<!-- HEADSHOT CARD -->
+<section id="headshot-card" data-title="Headshot Card">
+  <h1 class="page-title">Headshot Card</h1>
+  <p class="page-subtitle">Person-Karte mit Portrait-Foto, Name/Titel und direkten Kontakt-Links. Horizontal ausgerichtet.</p>
+  <div class="component-block">
+    <div class="component-block-title">Headshot Card</div>
+    <div class="tab-bar"><button class="tab-btn active" data-tab="preview">Preview</button><button class="tab-btn" data-tab="code">HTML</button></div>
+    <div class="preview-wrap"><iframe class="preview-frame" data-preview="headshot-card" title="Headshot Card Preview"></iframe></div>
+    <div class="tab-code"><pre>&lt;div class="flex gap-default justify-between items-center flex-col lg:flex-row"&gt;
+  &lt;div class="flex sm:flex-row gap-6 items-center"&gt;
+    &lt;img class="w-32 h-32 rounded-full object-cover bg-neutral-200" src="{{ image }}" /&gt;
+    &lt;div&gt;
+      &lt;p&gt;&lt;strong&gt;{{ title }}&lt;/strong&gt;&lt;/p&gt;
+      &lt;p class="mt-0"&gt;{{ text }}&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="flex gap-5"&gt;
+    &lt;!-- contactbox_links with icons --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre></div>
+  </div>
+</section>
+
+<!-- LAYERED BOXED -->
+<section id="layered-boxed" data-title="Layered Boxed">
+  <h1 class="page-title">Layered Boxed</h1>
+  <p class="page-subtitle">Bild-Karten im Masonry-Layout. Bild oben (h-60), Headline mit border-b, Text und optionaler Button. Glass-Morphism Effekt.</p>
+  <div class="component-block">
+    <div class="component-block-title">Layered Boxed (3 Spalten)</div>
+    <div class="tab-bar"><button class="tab-btn active" data-tab="preview">Preview</button><button class="tab-btn" data-tab="code">HTML</button></div>
+    <div class="preview-wrap"><iframe class="preview-frame" data-preview="layered-boxed" title="Layered Boxed Preview"></iframe></div>
+    <div class="tab-code"><pre>&lt;div class="w-full masonry"&gt;
+  &lt;div class="masonry-item lg:w-1/2 xl:w-1/3"&gt;
+    &lt;div class="m-5 bg-white bg-opacity-50 border rounded-md shadow-tile backdrop-blur-lg border-white/50"&gt;
+      &lt;div class="overflow-clip"&gt;
+        &lt;img class="object-cover w-full h-60" src="..." /&gt;
+      &lt;/div&gt;
+      &lt;div class="p-8 lg:p-10"&gt;
+        &lt;h4 class="pb-4 mb-4 border-b border-gray-100"&gt;{{ card_headline }}&lt;/h4&gt;
+        {{ card_text }}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre></div>
+  </div>
+</section>
+
+<!-- ANCHOR NAV -->
+<section id="anchor-nav" data-title="Anchor Nav">
+  <h1 class="page-title">Anchor Nav</h1>
+  <p class="page-subtitle">Sprungmarken-Navigation in weißer Karte. Links: Headline + Beschreibung. Rechts: flex-wrap Links mit Farb-Icons.</p>
+  <div class="component-block">
+    <div class="component-block-title">Anchor Nav</div>
+    <div class="tab-bar"><button class="tab-btn active" data-tab="preview">Preview</button><button class="tab-btn" data-tab="code">HTML</button></div>
+    <div class="preview-wrap"><iframe class="preview-frame" data-preview="anchor-nav" title="Anchor Nav Preview"></iframe></div>
+    <div class="tab-code"><pre>&lt;div class="items-center justify-between gap-5 p-8 bg-white flex md:flex-row rounded-2xl shadow-tile lg:px-20"&gt;
+  &lt;div class="w-full md:w-1/3"&gt;
+    &lt;h5&gt;{{ headline }}&lt;/h5&gt;
+    {{ description }}
+  &lt;/div&gt;
+  &lt;nav class="w-full md:w-2/3"&gt;
+    &lt;ul class="flex flex-wrap gap-y-3 gap-x-5"&gt;
+      {{ anchor_links }}
+        &lt;li class="flex items-center gap-2"&gt;
+          &lt;!-- icon with hsl color --&gt;
+          &lt;a href="#{{ section_id }}" class="text-primary hover:text-primary-middle"&gt;{{ link_title }}&lt;/a&gt;
+        &lt;/li&gt;
+      {{ /anchor_links }}
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/div&gt;</pre></div>
+  </div>
+</section>
+
+<!-- TABS -->
+<section id="tabs" data-title="Tabs">
+  <h1 class="page-title">Tabs</h1>
+  <p class="page-subtitle">Tab-Navigation mit blauem Gradient-Sidebar und Browser-Fenster rechts. Alpine.js x-data für aktiven Tab.</p>
+  <div class="component-block">
+    <div class="component-block-title">Tabs</div>
+    <div class="tab-bar"><button class="tab-btn active" data-tab="preview">Preview</button><button class="tab-btn" data-tab="code">HTML</button></div>
+    <div class="preview-wrap"><iframe class="preview-frame" data-preview="tabs" title="Tabs Preview"></iframe></div>
+    <div class="tab-code"><pre>&lt;div class="flex flex-col lg:flex-row items-stretch tab-wrapper" x-data="{ tab: 'tab-1' }"&gt;
+  &lt;!-- Tab List --&gt;
+  &lt;ul class="lg:w-[30%] lg:py-5 bg-hero-gradient"&gt;
+    &lt;li :class="{ 'active bg-white/10': tab === 'tab-1' }" @click="tab = 'tab-1'"&gt;
+      &lt;span class="text-white"&gt;Tab Titel&lt;/span&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;!-- Tab Content --&gt;
+  &lt;div class="bg-white rounded-2xl shadow-tile lg:w-[70%] group browser"&gt;
+    &lt;div class="flex gap-2 p-4 border-b browser-bar"&gt;&lt;!-- dots --&gt;&lt;/div&gt;
+    &lt;div class="p-5 md:p-20" x-show="tab === 'tab-1'"&gt;
+      &lt;h4&gt;{{ tab_headline }}&lt;/h4&gt;
+      {{ tab_text }}
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre></div>
+  </div>
+</section>
+
+<!-- HERO WALL -->
+<section id="hero-wall" data-title="Hero Wall">
+  <h1 class="page-title">Hero Wall</h1>
+  <p class="page-subtitle">Scrollende Spalten mit Referenz-Website-Screenshots. Gradient-Maske oben/unten. Konfigurierbare Spaltenanzahl und Scroll-Speed.</p>
+  <div class="component-block">
+    <div class="component-block-title">Hero Wall</div>
+    <div class="tab-bar"><button class="tab-btn active" data-tab="preview">Preview</button><button class="tab-btn" data-tab="code">HTML</button></div>
+    <div class="preview-wrap"><iframe class="preview-frame" data-preview="hero-wall" title="Hero Wall Preview"></iframe></div>
+    <div class="tab-code"><pre>&lt;div class="transparent-mask px-6 max-h-[650px] overflow-clip after:-translate-y-24"&gt;
+  &lt;div id="scrollContainer" class="scrollContainer"
+    data-scroll="true" data-speed="50"
+    data-maxcolumns="2" data-maxcolumnsMD="1"&gt;
+    {{ collection:heros }}
+      {{ partial:components/hero }}
+    {{ /collection:heros }}
+  &lt;/div&gt;
+&lt;/div&gt;</pre></div>
+  </div>
+</section>
+
+
 <!-- MODULES -->
 <section id="modules" data-title="Modulübersicht">
   <h1 class="page-title">Content Module</h1>
@@ -571,27 +869,27 @@ h3.group-title{font-size:15px;font-weight:600;color:var(--heading);margin-bottom
   </div>
 
   <ul class="module-grid" id="module-grid">
-    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-anchor"/></svg></div><h6>Anchor Nav</h6><p>Sprungmarken-Navigation innerhalb einer langen Seite.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-anchor"/></svg></div><h6>Anchor Nav</h6><p>Sprungmarken-Navigation innerhalb einer langen Seite.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#anchor-nav"></a></li>
     <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-badge"/></svg></div><h6>Badge List</h6><p>Liste mit farbigen Badges oder Tags.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
     <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-cards"/></svg></div><h6>Cards</h6><p>Grid aus Karten mit Bild, Titel, Text und Link.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#cards"></a></li>
-    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-memo"/></svg></div><h6>Memo Cards</h6><p>Icon-Karten für Feature-Listen und Vorteile.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
-    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-contact"/></svg></div><h6>Contactbox</h6><p>Kontakt-Aufforderungs-Box mit Bild und CTA-Button.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-memo"/></svg></div><h6>Memo Cards</h6><p>Icon-Karten für Feature-Listen und Vorteile.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#memo-cards"></a></li>
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-contact"/></svg></div><h6>Contactbox</h6><p>Kontakt-Aufforderungs-Box mit Bild und CTA-Button.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#contact-box"></a></li>
     <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-counter"/></svg></div><h6>Counter</h6><p>Animierte Statistik-Zahlen mit Beschriftung.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#counter"></a></li>
     <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-html"/></svg></div><h6>HTML</h6><p>Freies HTML-Feld für individuelle Inhalte.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
-    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-list"/></svg></div><h6>Icon List</h6><p>Liste mit Icons und Beschreibungstexten.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
-    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-layers"/></svg></div><h6>Layered Boxed</h6><p>Gestapelte Boxen mit Glas- oder Overlapping-Effekt.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-list"/></svg></div><h6>Icon List</h6><p>Liste mit Icons und Beschreibungstexten.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#icon-list"></a></li>
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-layers"/></svg></div><h6>Layered Boxed</h6><p>Gestapelte Boxen mit Glas- oder Overlapping-Effekt.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#layered-boxed"></a></li>
     <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-map"/></svg></div><h6>Mapbox</h6><p>Interaktive Karte mit Mapbox GL JS.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
     <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-photo"/></svg></div><h6>Media</h6><p>Bild oder Video als eigenständiges Seitenelement.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
-    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-quote"/></svg></div><h6>Quote Box</h6><p>Hervorgehobenes Zitat mit Autor und optionalem Bild.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-quote"/></svg></div><h6>Quote Box</h6><p>Hervorgehobenes Zitat mit Autor und optionalem Bild.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#quote-box"></a></li>
     <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-sitemap"/></svg></div><h6>Sitemap</h6><p>Automatisch generierte Übersicht aller Seiten.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
-    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-tabs"/></svg></div><h6>Tabs</h6><p>Inhalte in Tab-Navigation aufgeteilt.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-tabs"/></svg></div><h6>Tabs</h6><p>Inhalte in Tab-Navigation aufgeteilt.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#tabs"></a></li>
     <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-textmedia"/></svg></div><h6>Text Media</h6><p>Text und Bild/Video nebeneinander, Seite konfigurierbar.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#text-media"></a></li>
-    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-person"/></svg></div><h6>Headshot Card</h6><p>Team-Karte mit Portrait-Foto und Kontaktdaten.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-person"/></svg></div><h6>Headshot Card</h6><p>Team-Karte mit Portrait-Foto und Kontaktdaten.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#headshot-card"></a></li>
     <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-code"/></svg></div><h6>Code</h6><p>Syntax-Highlighting Code-Block mit Copy-Button.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
-    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-teaser"/></svg></div><h6>Teaser Cards</h6><p>Vorschau-Karten für Blog-Beiträge oder Referenzen.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-teaser"/></svg></div><h6>Teaser Cards</h6><p>Vorschau-Karten für Blog-Beiträge oder Referenzen.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#teaser-cards"></a></li>
     <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-youtube"/></svg></div><h6>YouTube Player</h6><p>Datenschutzkonformer YouTube-Player mit Lazy Load.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
     <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-compare"/></svg></div><h6>Image Comparison</h6><p>Vorher/Nachher-Slider zum Vergleich zweier Bilder.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
-    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-stack"/></svg></div><h6>Stacked Cards</h6><p>Übereinander gestapelte Karten mit Hover-Effekt.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-stack"/></svg></div><h6>Stacked Cards</h6><p>Übereinander gestapelte Karten mit Hover-Effekt.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#stacked-cards"></a></li>
     <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-cog"/></svg></div><h6>Konfigurator</h6><p>Individueller Preis-Konfigurator für Pakete.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
     <li class="module-card" data-cat="contentelement"><div class="module-icon-wrap"><svg><use href="#ico-cursor"/></svg></div><h6>Sales Element</h6><p>Individuelles Sales-Page-Element.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
     <li class="module-card" data-cat="text"><div class="module-icon-wrap"><svg><use href="#ico-doc"/></svg></div><h6>Article</h6><p>Langer Fließtext mit Bard-Editor, Medien und Abschnitten.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
@@ -600,10 +898,10 @@ h3.group-title{font-size:15px;font-weight:600;color:var(--heading);margin-bottom
     <li class="module-card" data-cat="text"><div class="module-icon-wrap"><svg><use href="#ico-btn"/></svg></div><h6>Buttons</h6><p>Eigenständige Button-Gruppe mit mehreren CTAs.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#buttons"></a></li>
     <li class="module-card" data-cat="collection"><div class="module-icon-wrap"><svg><use href="#ico-logos"/></svg></div><h6>Logo Wall</h6><p>Kunden- und Partner-Logos aus der customer-Collection.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#logo-wall"></a></li>
     <li class="module-card" data-cat="collection"><div class="module-icon-wrap"><svg><use href="#ico-star"/></svg></div><h6>Testimonial Wall</h6><p>Kundenstimmen und Bewertungen als Karten-Grid.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#testimonials"></a></li>
-    <li class="module-card" data-cat="collection"><div class="module-icon-wrap"><svg><use href="#ico-hero"/></svg></div><h6>Hero Wall</h6><p>Referenz-Websites als visueller Showcase.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="collection"><div class="module-icon-wrap"><svg><use href="#ico-hero"/></svg></div><h6>Hero Wall</h6><p>Referenz-Websites als visueller Showcase.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#hero-wall"></a></li>
     <li class="module-card" data-cat="collection"><div class="module-icon-wrap"><svg><use href="#ico-price"/></svg></div><h6>Price Wall</h6><p>Preispakete aus der prices-Collection.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#price-wall"></a></li>
     <li class="module-card" data-cat="collection"><div class="module-icon-wrap"><svg><use href="#ico-trophy"/></svg></div><h6>Reference Wall</h6><p>Referenzkarten mit Beschreibung und Link.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
-    <li class="module-card" data-cat="collection"><div class="module-icon-wrap"><svg><use href="#ico-blog"/></svg></div><h6>Blog Wall</h6><p>Blog-Beiträge als Grid aus der blog-Collection.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
+    <li class="module-card" data-cat="collection"><div class="module-icon-wrap"><svg><use href="#ico-blog"/></svg></div><h6>Blog Wall</h6><p>Blog-Beiträge als Grid aus der blog-Collection.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#blog-wall"></a></li>
     <li class="module-card" data-cat="collection"><div class="module-icon-wrap"><svg><use href="#ico-faq"/></svg></div><h6>FAQ Accordion</h6><p>Häufige Fragen als Accordion aus der faqs-Collection.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#faq"></a></li>
     <li class="module-card" data-cat="collection"><div class="module-icon-wrap"><svg><use href="#ico-jobs"/></svg></div><h6>Jobs Wall</h6><p>Offene Stellen aus der jobs-Collection.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
     <li class="module-card" data-cat="collection"><div class="module-icon-wrap"><svg><use href="#ico-book"/></svg></div><h6>Glossar Wall</h6><p>Glossar-Einträge aus der glossar-Collection.</p><div class="cms-wrap"><span class="cms-badge cms-s">S</span></div><a class="full-link" href="#modules"></a></li>
